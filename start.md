@@ -3,10 +3,15 @@
 Bu klasör bir proje başlangıç paketidir:
 ```
 start.md                          bu dosya: proje tanımı ve çalışma kuralları
+CLAUDE.md                         kısa çalışma kuralları (her oturumda okunur)
+DECISIONS.md                      karar günlüğü ve bekleyen sorular
 design/life-os-case-study.html    tasarım referansı (gezilebilir prototip)
+docs/RESEARCH.md                  rakip ve kullanıcı araştırması, kaynaklar, sınırlar
+docs/DESIGN.md                    tasarım ilkeleri, token'lar (v1 → v2), ekran envanteri, ton rehberi
+docs/ROADMAP.md                   milestone'lar, çıkış ölçütleri, riskler
 ```
 Kullanıcı **"başla"** dediğinde:
-1. Bu dosyayı baştan sona oku.
+1. Bu dosyayı, `CLAUDE.md`'yi, `DECISIONS.md`'yi ve `docs/DESIGN.md`'yi baştan sona oku.
 2. `design/life-os-case-study.html` dosyasını tarayıcıda aç ve kaynak kodunu incele. **Bu dosya tasarımın ve etkileşimlerin tek doğruluk kaynağıdır**; renkler, tipografi, ekranlar, geçişler ve davranışlar buradan alınacak, yeniden icat edilmeyecek.
 3. Kod yazmadan, en alttaki **"Başlarken"** bölümünde istenen dört çıktıyı sun ve onay bekle.
 
@@ -33,11 +38,23 @@ Ambient, kullanıcının hayatını sessizce organize eden kişisel bir günlük
 
 Ton: sakin, insani. **Skor, streak, suçluluk, rozet, yüzdeli baskı yok.** Robot, parıltı, "AI" dekorasyonu yok. Yapay zekâ davranışla görünür: anlar, önerir, sorar.
 
+### Konumlandırma ve ürün ilkeleri
+Kaynak: `docs/RESEARCH.md` (rakip taraması ve App Store incelemesi, Ekim 2026). Bu ilkeler tasarım ve geliştirme kararlarında bağlayıcıdır.
+- **En yakın rakip D-Plan:** yazılan cümleden yapay zekâ gün planı çıkarıyor, kullanıcı onaylıyor; ama seri, istatistik ve çok geniş kapsam (görev, alışkanlık, takvim, notlar, tuval) var. Bizim farkımız: sakin ton, tek odak, **Türkçe-önce**. Her şeyi yapmaya çalışmayacağız.
+- **Seri yok, atlamak nötr.** Her yoklamada "Bugün dinleniyorum" birinci sınıf bir seçenektir. Başarısızlık, kaçırdın, seri gibi sözcükler kullanılmaz.
+- **Plan sabittir; yapay zekâ yalnızca önerir.** Öneriler "Önerilen" durumuyla (kesikli çizgi) gelir. Kullanıcı onaylamadan hiçbir öğe taşınmaz, silinmez ya da yeniden zamanlanmaz.
+- **Bildirim güveni:** her bildirim neyi hatırlattığını söyler, aynı iş için en fazla bir kez gelir, tek dokunuşla yanıtlanır, sessiz saatlere uyar. Yinelenen ya da sessiz kalan bildirim kritik hata sayılır.
+- **Fiyat şeffaflığı:** abonelik fiyatı ve deneme koşulları karşılamada ve Profil > Plan ve fiyat sayfasında açıkça yazar. Satın alma sonrası iptal ve iade yolu uygulama içinde görünür.
+- **Türkçe birinci sınıf:** Türkçe doğal dil girişi çekirdek özelliktir ve hiçbir pakete kilitlenmez. Rakiplerin Türkçe boşluğu gerçek bir fırsattır.
+- **Kapsam disiplini:** not tuvali, sosyal, yarışma, listeler ve genel görev yönetimi yok.
+
 ## 2. Tasarım kaynağı (kesin referans)
 `design/life-os-case-study.html` gezilebilir bir prototip. **Tasarım ve davranış için tek doğruluk kaynağı bu dosya.** Tarayıcıda aç, içindeki CSS ve JS'yi oku. Çıkarman gerekenler:
 - **Design tokens:** renkler (7 palet × koyu/açık; varsayılan **Buz Mavisi, koyu**), tipografi (**Inter**, ince ağırlıklı büyük başlıklar, sıkı letter-spacing), köşe yarıçapları (14–18px, telefon 40px), yatay kenar boşluğu 16px, durum renkleri (vurgu, su/ikincil, yaklaşıyor amber, tamamlandı yeşil, sonra sönük). Bunları `packages/design-tokens` altında tek kaynak yap; hem koyu hem açık tema desteklensin.
+- **Token kaynağı:** prototipteki JS paletleridir (`P` koyu, `L` açık dizileri; her biri ad, arka plan, telefon yüzeyi, vurgu ve su/ikincil renkleri, metin ve sönük metin değerlerini içerir). Prototipte kenarlıklar bir CSS kuralıyla kaldırılmıştır (`border:0!important`), kenarlıksız ilke buradan gelir.
+- **Çizgi v2:** çizgimiz korunur ve şu noktalarda geliştirilir: okunur "geçmiş" satırları (kontrast ≥ 4,5:1), üç kademeli metin rengi, tonal yüzey merdiveni, "Sırada" odak kartı, "Önerilen" durumu, 44 px dokunma hedefi. Ayrıntı ve sayılar `docs/DESIGN.md` içinde.
 - **Stil ilkeleri:** kenarlıksız, tonal yüzeyler (border yok); derinlik ton ve hafif gradyanla. Bugün satırları durum renginde soldan sağa sönen ışımayla. Liste, tarih bölümünün altına ve alt butonların altına kayarken solarak kaybolur (mask).
-- **Ekranlar:** Karşılama (3 soruluk akış), Bugün (header: avatar, isim, durum, ayar menüsü; gün daireleri; büyük tarih; "Senin için"; "Planlar"), Günlük akış (geçmiş sönük, şimdi çizgisi, sıradaki belirgin), Konuşma, Proaktif kontrol, Gün gezinmesi (**yatay kaydırılan tırtıklı cetvel**, seçili gün büyük rakam; liste tıklanamaz), Günlük geçmiş, Hızlı not, Hayat ritmi, Widget, tam ekran Menü çekmecesi, alt sayfalar (Rutinlerim, Önemli kişiler, Hatırlatma yoğunluğu, Bildirimler ve odak, Veri ve gizlilik, Profil, Yardım, etkinlik detayı, saat/sayı ayarlayıcı sayfaları, not yazma).
+- **Ekranlar:** Karşılama (3 soruluk akış), Bugün (header: avatar, isim, durum, ayar menüsü; gün daireleri; büyük tarih; "Senin için"; "Planlar"), Günlük akış (geçmiş sönük, şimdi çizgisi, sıradaki belirgin), Konuşma, Proaktif kontrol, Gün gezinmesi (**yatay kaydırılan tırtıklı cetvel**, seçili gün büyük rakam; liste tıklanamaz), Günlük geçmiş, Hızlı not, Hayat ritmi, Günü kapat (yeni, prototipte yok; bkz. `DECISIONS.md` D-006), Widget, tam ekran Menü çekmecesi, alt sayfalar (Rutinlerim, Önemli kişiler, Hatırlatma yoğunluğu, Bildirimler ve odak, Veri ve gizlilik, Profil, Yardım, etkinlik detayı, saat/sayı ayarlayıcı sayfaları, not yazma).
 - **Bileşenler:** iki tonlu çizgi ikon seti (su, koşu, kitap, toplantı, kontrol, uyku, kahve), yazı yok/dalga yok/mikrofon yok **konuşma balonu butonu** (imleç yanıp söner), toggle, radyo seçenekleri, stepper, durum chip'leri.
 - Prototipteki tüm **dokunma bağlantıları ve geri akışı** (‹ butonu, alt çubukla Bugün'e dönüş) gerçek navigasyona çevrilecek.
 
@@ -70,14 +87,26 @@ User, Profile (uyanma/uyku saati, çalışma düzeni, durum: Müsait/Odakta/Dinl
 ## 6. Proaktif kontrol ve bildirimler
 Sunucuda zamanlanmış işler (BullMQ) + cihazda yerel bildirimler. Örnek: "Bugün hâlâ koşmayı düşünüyor musun?" → **Yaptım / Bu akşam daha geç / Bugünü atla**. "Daha geç" seçilirse boş aralıklardan saat öner (20:00?), tek dokunuşla onaylanır. Hatırlatma yoğunluğu Sakin/Dengeli/Sık ve sessiz saatler tüm zamanlamaya uyar. Baskı dili kullanma.
 
+Bildirim kuralları (rakip yorumlarından, bkz. `docs/RESEARCH.md`):
+- Metin neyi hatırlattığını söyler ("Koşu hâlâ planında mı?"). Genel "rutinin başladı" bildirimi yok.
+- Aynı öğe için aynı gün en fazla bir bildirim. Kullanıcı yanıtladığında ya da eylemi yaptığında o öğenin bekleyen bildirimleri iptal edilir.
+- Her bildirimde en fazla üç eylem: Yaptım / Daha geç / Dinleniyorum.
+- Bildirimin gerçekten planlandığını doğrulayan test bulunur (yerel bildirimler için cihaz izni, pil tasarrufu ve sessiz saat senaryoları dahil). Sessiz kalan alarm kritik hatadır.
+
 ## 7. Geçmiş ve ritim
 Gün sonunda DayLog üret: tamamlanan/atlanan öğeler ve tek cümlelik sakin gözlem ("5 rutininden 4'ünü tamamladın"). **Skor yok.** Hayat ritmi: son 7 gün, 7 kategori (hareket, okuma, uyku, su, odak, sosyal, kişisel) için yoğunluk değerleri; görsel, analitik grafik değil.
+
+**Günü kapat (öneri, onay bekliyor):** akşam isteğe bağlı, bir dakikalık kapanış ekranı. Bugün yapılanlar, yapılmayan öğeler için tek dokunuşla "Yarına al", yarının özeti ve, gün yoğunsa, bir taşıma **önerisi** (otomatik taşıma yok). Zorunlu değildir; atlanırsa hiçbir şey olmaz. Kaynak: Sunsama'nın en çok övülen özelliği akşam kapanış ritüeli.
 
 ## 8. Widget ve hızlı not
 iOS WidgetKit + Android App Widget (Expo development build / config plugin). Widget: sıradaki iki öğe, "Su?" gibi tek dokunuş, konuşma balonu ile hızlı nota derin bağlantı. Hedef: **3 saniyede bir şey eklemek.**
 
 ## 9. Sağlık verisi (Faz 2, MVP'den sonra)
 HealthKit ve Health Connect: uyku, antrenman, su. Veri türü bazında izin, cihazda işleme, açık rıza (KVKK özel nitelikli veri). Sağlık verisi "Geçmiş"i ve rutin tamamlanmasını otomatik besler. **Ekran süresi entegrasyonu MVP dışı** (iOS'ta özel entitlement ve kısıtlı veri erişimi gerektirir).
+
+### Faz 2 adayları (kullanıcı kararı gerekir, bkz. `DECISIONS.md`)
+- **Apple Watch:** rutinin o anki öğesini görme, onaylama ve erteleme. Rakip yorumlarında en çok istenen eksiklerden biri; aynı yorumlarda saat ve telefon arasındaki çökmeler de en sert şikâyetler arasında, bu yüzden sağlam bir senkron altyapısından sonra.
+- **Dış asistan bağlantısı (MCP):** kullanıcının kendi asistanından (ör. Claude, ChatGPT) rutin ve öğe eklemesi. Routinery bunu ücretsiz sunuyor. Değerlendirilecek, taahhüt değil.
 
 ## 10. Admin paneli (Next.js)
 Rol tabanlı erişim (superadmin, destek, analist), 2FA. Modüller:
@@ -93,10 +122,24 @@ Rol tabanlı erişim (superadmin, destek, analist), 2FA. Modüller:
 Erişilebilirlik (Dynamic Type, VoiceOver/TalkBack, koyu ve açık temada yeterli kontrast), animasyon azaltma desteği, birim + API + e2e testleri (Maestro), güvenlik (OWASP, girdi doğrulama), şifrelenmiş saklama, gizlilik politikasıyla uyumlu minimum log.
 
 ## 12. Milestone'lar (öneri)
-M0 repo, tokens, tasarım sistemi bileşenleri → M1 local-first Bugün, Akış, Geçmiş, Gün gezinmesi → M2 API, auth, senkronizasyon → M3 LLM katmanı, Konuşma ve Hızlı not → M4 Kontrol ve bildirimler → M5 Ritim, Menü ve tüm alt sayfalar → M6 Admin paneli → M7 Widget → M8 Sağlık (Faz 2) → M9 cilalama, test, mağaza hazırlığı.
+M0 repo, tokens (v2), tasarım sistemi bileşenleri → M1 local-first Bugün ("Sırada" kartı), Akış, Geçmiş, Gün gezinmesi → M2 API, auth, senkronizasyon, takvim içe aktarma (salt okunur) → M3 LLM katmanı, Konuşma ve Hızlı not → M4 Kontrol ve bildirimler → M5 Ritim, Günü kapat, Menü ve tüm alt sayfalar (rutinlere simge/renk, Plan ve fiyat) → M6 Admin paneli → M7 Widget → M8 Sağlık ve Apple Watch (Faz 2) → M9 cilalama, test, mağaza hazırlığı.
+
+Çıkış ölçütleri, bağımlılıklar ve riskler: `docs/ROADMAP.md`. Takvim içe aktarma kapsamı ve Apple Watch zamanı henüz karara bağlanmadı (`DECISIONS.md`).
 
 ## 13. Kapsam dışı (şimdilik)
-Üyelik seviyeleri (Light/Pro), ekran süresi entegrasyonu, sosyal/paylaşım özellikleri. Üyelik için yalnızca genişletilebilir policy hook'u bırak.
+Üyelik seviyeleri (Light/Pro), ekran süresi entegrasyonu, sosyal/paylaşım özellikleri, seri, rozet ve yarışma, not tuvali ve genel not alma, görev yönetimi (proje, alt görev hiyerarşisi). Üyelik için yalnızca genişletilebilir policy hook'u bırak.
+
+## 14. Belge haritası ve bakım kuralları
+| Dosya | Ne için | Kim günceller |
+|---|---|---|
+| `start.md` | Ürün tanımı ve değişmez ilkeler. Büyük değişiklik kullanıcı onayıyla. | Kullanıcı / onayla |
+| `CLAUDE.md` | Kısa çalışma kuralları. | Gerektiğinde |
+| `DECISIONS.md` | Karar günlüğü: karar, tarih, durum, gerekçe. Bekleyen sorular. | Her karar anında |
+| `docs/RESEARCH.md` | Araştırma bulguları, kaynaklar, sınırlar. | Yeni araştırma yapıldığında |
+| `docs/DESIGN.md` | Token'lar, bileşenler, ekran envanteri, ton rehberi. | Tasarım değiştiğinde |
+| `docs/ROADMAP.md` | Milestone durumu ve riskler. | Her milestone sonunda |
+
+Çelişki olursa öncelik sırası: `start.md` > `DECISIONS.md` > `docs/*` > prototip dışındaki her şey. Tasarım ve davranış için prototip (`design/life-os-case-study.html`) hâlâ tek doğruluk kaynağıdır; `docs/DESIGN.md` yalnızca onaylanmış v2 farklarını ekler.
 
 ## Başlarken
 Önce `design/life-os-case-study.html` dosyasını analiz et, ardından şunları sun: (1) mimari özeti, (2) design token çıkarımı, (3) milestone planı ve tahmini sıra, (4) bana soracağın açık sorular.
