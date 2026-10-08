@@ -76,7 +76,7 @@ Yeni kararlar en alta eklenir. Büyük ve geri dönüşü zor kararlar önce sor
 | Q13 | Konuşma sırasında ses dalgası olmadan "dinliyor" hali nasıl görünsün? | Konuşma balonu butonunun tasarımında dalga ve mikrofon yok. | **Kapandı (D-051):** İmleç yerine nefes alan halka. |
 | Q14 | Ritim öğrenme rızası karşılamada ayrı bir adım mı, Veri ve gizlilik'te anahtar mı? | KVKK açık rıza şartı. | **Kapandı (D-051):** Karşılamada kısa anlatım + Veri ve gizlilik'te anahtar. |
 | Q15 | Hassas sayaçlar ve tıbbi hatırlatmalar? | — | **Kapandı:** alkol ve sigara önerilmez (D-023); ilaç hatırlatılır. |
-| Q16 | Fiyat ve deneme süresi? | Plan ve fiyat sayfası. | Öneri D-021 ve D-022; onay bekliyor (Q17). |
+| Q16 | Fiyat ve deneme süresi? | Plan ve fiyat sayfası. | **Kapandı:** katmanlar ve fiyatlar onaylandı (D-021, D-022, Q17); TL fiyat noktaları ve komisyon/vergi doğrulaması yayın öncesi (Small Business ile birlikte, D-028). |
 | Q17 | Katmanlar ve fiyatlar onaylanıyor mu (D-021, D-022)? | Plan ve fiyat, paywall, bütçeler buna bağlı. | **Kapandı (D-051):** Öneri olarak ilerler, kodda yapılandırma değeri. |
 | Q18 | Deneme süresi? | — | **Kapandı:** 3 gün (D-026). |
 | Q19 | Normal katmanda 3 sayaçlı rutin ve 30 gün görünür geçmiş sınırı kabul mü? | Ücretsiz katmanın cömertliği. | **Kapandı (D-051):** Kabul varsayıldı. |
