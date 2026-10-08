@@ -4,10 +4,10 @@ Kişisel günlük işletim sistemi. Kullanıcı **söyler ya da yazar**, Ambient
 
 > Durum (8 Ekim 2026): **kod yok; ürün tanımı, tasarım (50 sayfa), kararlar ve kurulum planı hazır.** Sıradaki hedef: tam çalışır test ortamı (TestFlight + staging). Plan: [`docs/TEST-ENV.md`](docs/TEST-ENV.md). Kurulum: [`docs/SETUP.md`](docs/SETUP.md).
 
-## Arayüzleri web'de incele
+## Arayüzleri incele (indirip yerelde aç)
 - **Tıklanabilir prototip (yerelde):** `design/preview/app.html` dosyasını tarayıcıda aç. Yeni kullanıcı akışından (Giriş → Karşılama → Bugün), bildirim yoklamasından ya da menüden başlayıp sayfalar arasında gezebilirsin; geri düğmeleri çalışır.
 - **Galeri (yerelde):** `design/preview/index.html` (50 sayfa; karta tıklayınca prototipte açılır).
-- **GitHub Pages ile:** Settings → Pages → Source: GitHub Actions (iş akışı hazır); değişiklik `main`'e birleşince `…/app.html` yayınlanır. 404 görürsen nedeni ve çözümü: [`design/preview/README.md`](design/preview/README.md).
+- GitHub üzerinden yayın yoktur; depoyu indirip dosyayı açman yeterli. İnternet yalnız Inter yazı tipi içindir; yoksa sistem yazı tipi kullanılır.
 - **Tuval (düzenlenebilir, özel bağlantı):** https://claude.ai/artifact/CHcQgkvtgDe2JDoqGd1TX2
 
 ## Ürün ilkeleri (değişmez)

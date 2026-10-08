@@ -49,6 +49,7 @@ Yeni kararlar en alta eklenir. Büyük ve geri dönüşü zor kararlar önce sor
 | D-042 | 2026-10-08 | Kabul | **Önce iOS** (TestFlight). Android sonraki test. Q6 kapandı. | Kullanıcı kararı. |
 | D-043 | 2026-10-08 | Kabul | Web önizleme **tıklanabilir prototip** olarak hazırlanır: `design/preview/app.html`, sayfalar birbirine bağlı (gezinme, geri, anahtarlar, birkaç küçük etkileşim). Kaynak: `design/preview/screens`. | Kullanıcı isteği. |
 | D-044 | 2026-10-08 | Kabul | `affaan-m/ecc` (Claude Code için agent/skill/komut/kural koleksiyonu) **gerekirse seçici** kullanılır; şimdilik kurulmaz. Çoklu kurulum ve çok sayıda skill/hook bağlam ve maliyet artırır, çakışma riski taşır. | Kullanıcı önerisi, depo özeti incelendi. `docs/SETUP.md` §9. |
+| D-045 | 2026-10-08 | Kabul | **Önizleme GitHub üzerinden (Pages) yayınlanmaz.** Depo indirilip `design/preview/app.html` yerelde açılır. Pages iş akışı kaldırıldı. `main` dalı projenin en güncel halidir. | Kullanıcı kararı. |
 
 ## Bekleyen sorular
 
