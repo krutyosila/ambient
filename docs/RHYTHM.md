@@ -80,3 +80,17 @@ Kullanıcı seviyeyi kendi katmanının izin verdiği ölçüde seçer (Ritmin s
 | Gelişmiş | Pro | Tam + çapraz sinyal (takvim yoğunluğu ↔ su/koşu, uyku ↔ koşu), haftalık plan önerisi | Yoğunluğa göre | Faz 2'de sağlık verisi; isteğe bağlı kişisel açıklama (tek Haiku çağrısı) |
 
 Düşürme: üst seviyenin desenleri silinmez, pasifleşir; yükseltince yeniden etkinleşir. Tavan her zaman hatırlatma yoğunluğu ayarıyla birlikte sınırlanır (en düşük olan geçerli).
+
+## 12. Su planı: litreye göre yayma ve arka planda düzenleme (D-047)
+Su, ritim motorunun ilk ve en sık kullanılan "sayaç planı"dır. Tamamı **kod ve cihazda**, LLM yok ($0); her katmanda çalışır (Normal dahil).
+
+1. **Girdi:** günlük hedef (litre; ortalama ya da kullanıcının düzelttiği, `docs/PERSONALIZATION.md`), uyanık saat aralığı (uyku saatinden ya da son 14 günün ilk/son kaydından; yoksa 08:00–22:00), birim (bardak = 200 ml ya da kullanıcının söylediği).
+2. **Dilimler:** hedef ÷ birim = dilim sayısı (1,6 L → 8). Kalan hedef, kalan uyanık saate eşit aralıklarla dağıtılır. Takvimdeki toplantı ve sessiz saatler dilimi kaydırır, bastırmaz.
+3. **Yeniden dağıtım (arka plan, her kayıtta ve her yanıtta):**
+   - Erken içildi → sonraki dilimler seyrekleşir ya da düşer. Geç kaldı → kalan dilimler sıkışır, ama bir dilimde en fazla 2 birim ve bir saatte en fazla 500 ml önerilir.
+   - "Daha geç" / "Sonra" → dilim 60–90 dk kayar; üst üste 3 kez ertelenirse o saat penceresi öğrenilir (ritim deseni `forget_window`).
+   - Yatışa 2 saat kala yeni dilim eklenmez; gün sonunda eksik kalan **telafi edilmez**, ertesi gün sıfırdan başlar.
+   - Kullanıcı "bugün 3 litre içeceğim" ya da "hedefim 10 bardak" derse plan o gün/kalıcı yeniden kurulur.
+4. **Bildirim:** yalnız sıradaki dilimde, neyi hatırlattığını söyler ("Su içme vakti geldi mi?"), D-005 tavanları ve sessiz saatler geçerlidir; yanıt tek dokunuş (İçtim / Daha geç / Sonra). İçtim = `source=answer` kaydı.
+5. **Görünürlük:** Bugün'de yalnız "Sıradaki 16:00"; Su detayında "Günün dağılımı" (yapılan dolu, kalan kesikli ikincil renk). "Nasıl hesaplandı?" yanıtı sabit şablondur, skor ve yüzde yok.
+6. **Test:** yeniden dağıtım deterministik birim testleri (erken/geç/atlanan gün, sıfır kayıt, gece yarısı sınırı, saat dilimi/yaz saati), üst sınır testi, "telafi" ve yargı dilini doğrulayan metin testi.

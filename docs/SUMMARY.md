@@ -9,10 +9,10 @@ Kişisel günlük işletim sistemi. Kullanıcı **söyler ya da yazar**, sistem 
 Koyu, Buz Mavisi (`#8fbcff` vurgu, `#8ad6cc` ikincil, `#e6ecf2` metin, `#7f8894` sönük, `#07090c` zemin), Inter ağırlık 300, kenarlıksız tonal yüzeyler, 44 px dokunma, 45 ikon (`design/icons`). Tasarım kaynağı: `design/life-os-case-study.html`; v2 farkları `docs/DESIGN.md`. Tuval: https://claude.ai/artifact/CHcQgkvtgDe2JDoqGd1TX2 (özel).
 
 ## Değişmez ilkeler
-1. **Kayıt yalnız söz/yazıyla** (form, saat seçici yok); dokunuş = yanıt, onay (Olur), geri al (D-012).
+1. **Kayıt yalnız söz/yazıyla** (form, saat seçici yok); dokunuş = yanıt, onay (Olur), geri al; **istisna:** sayaçlı rutin kartına tek dokunuş = 1 birim kayıt, Geri al'lı (D-012, D-046). Bugün sade; öğeler içeriğe göre eylem sunar (Katıl, Başla, Olur).
 2. **Plan sabit:** yapay zekâ yalnız "Önerilen" sunar, nedeniyle; onaysız değişmez (D-004, D-013).
 3. **Bildirim:** neyi hatırlattığını söyler, aynı iş için günde 1, sessiz saatlere uyar (D-005).
-4. **Sayaçlı rutinler** (su, kahve, ilaç): her tekrar zaman damgalı `LogEntry` (D-014). Alkol/sigara öneri yok.
+4. **Sayaçlı rutinler** (su, kahve, ilaç): her tekrar zaman damgalı `LogEntry` (D-014). Alkol/sigara öneri yok. **Su:** litre hedefi uyanık saatlere yayılır, geri dönüşlere göre cihazda yeniden dağıtılır, $0 (D-047, RHYTHM §12).
 5. **Günü kapat** var; kapanmazsa akşam hatırlatması ve ertesi sabah "dün kapanmadı" bilgisi, baskısız (D-018).
 6. **Ritim öğrenme** cihazda; seviye katmana göre (Temel/Tam/Gelişmiş), kapatılabilir, unutturulabilir (D-013, D-019).
 7. **Kişiselleştirme (D-029…D-032):** doğum tarihi, cinsiyet, boy, kilo isteğe bağlı; **elle ya da yazıyla/sözle**, açık rızayla; kilo 6 ayda bir, kesin sayı ya da "biraz aldım" tahmini (kilo çizgisi); su/uyku önce insan ortalaması (kurum içi diyetisyen tabloları), kullanıcı düzeltir; hedef/skor/VKİ yok; kural tabanlı ($0). `docs/PERSONALIZATION.md`.

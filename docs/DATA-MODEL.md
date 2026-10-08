@@ -29,7 +29,7 @@ Her kayıt konuşmadan ya da yazıdan gelir (`DECISIONS.md` D-012). Yapay zekâ 
 | `occurredAt` | Gerçekleşme zamanı, UTC |
 | `amount` | Kanonik birimde miktar (su için ml, diğerleri için adet) |
 | `displayUnit` | Kullanıcının söylediği birim (bardak, litre, fincan) |
-| `source` | `voice`, `text`, `answer` (bildirim/widget yanıtı), `import` |
+| `source` | `voice`, `text`, `answer` (bildirim/widget yanıtı), `tap` (Bugün'deki sayaç kartına tek dokunuş, miktar = rutinin sabit birimi), `import` |
 | `timeInferred` | `true` ise saat söylenmemiş, tahmin edilmiş (kullanıcıya "Doğru mu?" sorulur) |
 | `messageId` | Kaydı doğuran konuşma |
 | `undoneAt` | Geri alındıysa zaman |

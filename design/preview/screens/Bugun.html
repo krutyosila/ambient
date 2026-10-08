@@ -10,6 +10,10 @@
 <style>
 body{margin:0;background:#07090c;font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
 button{font-family:inherit;cursor:pointer}
+#wbars i{flex:1;height:6px;border-radius:3px;background:#2A323B;display:block}
+#wbars i.on{background:#8fbcff}
+#water:active{background:rgba(143,188,255,.08)}
+#water:focus-visible,#join:focus-visible,#read:focus-visible{outline:2px solid #8fbcff;outline-offset:2px}
 </style>
 
 <style>.ambient-link{cursor:pointer}.ambient-link:hover{filter:brightness(1.15)}.ambient-link:focus-visible{outline:2px solid #8fbcff;outline-offset:2px}html.hint .ambient-link{outline:2px dashed rgba(143,188,255,.8);outline-offset:2px}html.embed .frame{margin:0;border-radius:0;box-shadow:none}html.embed{background:transparent}html{background:#0b0d10}body{margin:0;min-height:100vh}.frame{width:390px;height:844px;margin:24px auto;border-radius:36px;overflow:hidden;box-shadow:0 30px 80px -30px rgba(0,0,0,.6)}.wide{width:390px;margin:0 auto}</style>
@@ -34,51 +38,43 @@ button{font-family:inherit;cursor:pointer}
 <div style="margin-top:24px;font-size:12px;letter-spacing:.14em;color:#9ba5b0">PERŞEMBE · 8 EKİM</div>
 <div style="margin-top:8px;font-size:40px;line-height:1;font-weight:300;letter-spacing:-.03em">İyi günler, Ali</div>
 
-<div style="margin-top:20px;padding:20px 22px 22px;border-radius:24px;background:linear-gradient(135deg,rgba(143,188,255,.2),#14181D 72%)">
+<div id="next" style="margin-top:18px;padding:18px 20px;border-radius:24px;background:linear-gradient(135deg,rgba(143,188,255,.2),#14181D 72%);display:flex;align-items:center;gap:12px">
+<div style="flex:1;min-width:0">
 <div style="font-size:12px;letter-spacing:.12em;color:#8fbcff;font-weight:500">SIRADA · 42 DK SONRA</div>
-<div style="margin-top:10px;font-size:32px;line-height:1.05;font-weight:300;letter-spacing:-.025em">Ekip toplantısı</div>
-<div style="margin-top:6px;font-size:14px;color:#b3bcc4;font-weight:300">15:15 – 16:00 · Zoom</div>
-<div style="margin-top:16px;height:3px;border-radius:2px;background:#2A323B"><div style="width:68%;height:3px;border-radius:2px;background:#8fbcff"></div></div>
+<div style="margin-top:8px;font-size:28px;line-height:1.05;font-weight:300;letter-spacing:-.025em">Ekip toplantısı</div>
+<div style="margin-top:5px;font-size:14px;color:#b3bcc4;font-weight:300">15:15 – 16:00 · Zoom</div>
+</div>
+<button id="join" style="flex:none;height:44px;padding:0 18px;border:0;border-radius:14px;background:#e6ecf2;color:#07090c;font-size:14px;font-weight:500">Katıl</button>
 </div>
 
-<div style="margin-top:22px;font-size:13px;color:#9ba5b0">Senin için</div>
-
-<div style="margin-top:10px;padding:16px 18px;border-radius:20px;background:#14181D">
-<div style="display:flex;align-items:center;gap:14px">
-<div style="width:44px;height:44px;border-radius:14px;background:rgba(143,188,255,.14);display:grid;place-items:center">
-<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><g stroke="#e6ecf2"><path d="M12 3.5c3 3.6 5.5 6.6 5.5 9.6a5.5 5.5 0 0 1-11 0c0-3 2.5-6 5.5-9.6z"/></g><g stroke="#8fbcff"><path d="M9.2 14.2a3 3 0 0 0 2.3 2.7"/></g></svg>
-</div>
-<div style="flex:1">
-<div style="display:flex;align-items:baseline;gap:8px"><span style="font-size:24px;font-weight:300;letter-spacing:-.02em">3 bardak</span><span style="font-size:13px;color:#9ba5b0">su</span></div>
-<div style="margin-top:2px;font-size:12px;color:#9ba5b0;font-weight:300">Son 14:20 · hedefin 8</div>
-</div>
-</div>
-<div style="margin-top:14px;display:flex;gap:6px">
-<span style="flex:1;height:6px;border-radius:3px;background:#8fbcff"></span><span style="flex:1;height:6px;border-radius:3px;background:#8fbcff"></span><span style="flex:1;height:6px;border-radius:3px;background:#8fbcff"></span><span style="flex:1;height:6px;border-radius:3px;background:#2A323B"></span><span style="flex:1;height:6px;border-radius:3px;background:#2A323B"></span><span style="flex:1;height:6px;border-radius:3px;background:#2A323B"></span><span style="flex:1;height:6px;border-radius:3px;background:#2A323B"></span><span style="flex:1;height:6px;border-radius:3px;background:#2A323B"></span>
-</div>
-<div style="margin-top:12px;font-size:12px;color:#7f8894;font-weight:300">İçtikçe söyle: “bir bardak su içtim”</div>
+<div style="margin-top:12px;border-radius:24px;background:#14181D;position:relative">
+<button id="water" aria-label="Bir bardak su içtim" style="display:flex;align-items:center;gap:14px;width:100%;min-height:96px;padding:16px 18px;border:0;border-radius:24px;background:transparent;color:#e6ecf2;text-align:left">
+<span style="flex:none;width:52px;height:52px;border-radius:16px;background:rgba(143,188,255,.14);display:grid;place-items:center">
+<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><g stroke="#e6ecf2"><path d="M12 3.5c3 3.6 5.5 6.6 5.5 9.6a5.5 5.5 0 0 1-11 0c0-3 2.5-6 5.5-9.6z"/></g><g stroke="#8fbcff"><path d="M9.2 14.2a3 3 0 0 0 2.3 2.7"/></g></svg>
+</span>
+<span style="flex:1;min-width:0">
+<span style="display:flex;align-items:baseline;gap:8px"><span id="wcount" style="font-size:30px;font-weight:300;letter-spacing:-.02em">3</span><span style="font-size:14px;color:#9ba5b0">bardak su</span><span id="wl" style="margin-left:auto;font-size:13px;color:#9ba5b0;font-variant-numeric:tabular-nums">0,6 / 1,6 L</span></span>
+<span id="wbars" style="margin-top:10px;display:flex;gap:5px"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+<span id="wnext" style="display:block;margin-top:9px;font-size:12px;color:#9ba5b0;font-weight:300">Sıradaki 16:00</span>
+</span>
+<span style="flex:none;width:44px;height:44px;border-radius:14px;background:#e6ecf2;color:#07090c;display:grid;place-items:center;font-size:15px;font-weight:500">+1</span>
+</button>
+<div id="wdone" style="display:none;align-items:center;padding:0 18px 12px 84px;font-size:13px;color:#8fcf9f"><span id="wmsg" style="flex:1">Eklendi · 14:33</span><button id="wundo" style="height:44px;padding:0 4px;border:0;background:transparent;color:#8fbcff;font-size:13px">Geri al</button></div>
+<button aria-label="Su ayrıntısı" style="position:absolute;right:6px;top:2px;width:44px;height:30px;border:0;background:transparent;color:#7f8894;font-size:18px;line-height:1">›</button>
 </div>
 
-<div style="margin-top:8px;display:flex;gap:8px">
-<div style="flex:1;height:52px;border-radius:16px;background:#161B21;display:flex;align-items:center;justify-content:center;gap:8px;font-size:15px;font-weight:400">
-<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><g stroke="#e6ecf2"><circle cx="14" cy="5" r="1.6"/><path d="M8 21l3-6-2-3 3-3 3 3h3"/></g><g stroke="#8fbcff"><path d="M11 15l3 2v4"/></g></svg>Koşu</div>
-<div style="flex:1;height:52px;border-radius:16px;background:#161B21;display:flex;align-items:center;justify-content:center;gap:8px;font-size:15px;font-weight:400">
-<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><g stroke="#e6ecf2"><path d="M5 5a2 2 0 0 1 2-1h5v15H7a2 2 0 0 0-2 1V5z"/></g><g stroke="#8fbcff"><path d="M12 4h5a2 2 0 0 1 2 1v14a2 2 0 0 0-2-1h-5"/></g></svg>Okuma</div>
-</div>
-
-<div style="margin-top:22px;display:flex;justify-content:space-between;align-items:baseline">
+<div style="margin-top:20px;display:flex;justify-content:space-between;align-items:baseline">
 <div style="font-size:13px;color:#9ba5b0">Planlar</div>
-<div style="font-size:12px;color:#7f8894">2 plan geçti</div>
 </div>
 
-<div style="position:relative;margin-top:14px;padding-left:60px">
+<div style="position:relative;margin-top:12px;padding-left:60px">
 <div style="position:absolute;left:49px;top:6px;bottom:0;width:1px;background:linear-gradient(#2A323B,#4A5560 40%,#2A323B)"></div>
-<div style="position:relative;padding-bottom:22px">
+<div style="position:relative;padding-bottom:18px">
 <div style="position:absolute;left:-60px;top:3px;font-size:13px;color:#9ba5b0;font-variant-numeric:tabular-nums">17:30</div>
 <div style="position:absolute;left:-15px;top:8px;width:7px;height:7px;border-radius:50%;background:#07090c;box-shadow:0 0 0 1.5px #8ad6cc"></div>
 <div style="display:flex;align-items:center;gap:8px"><span style="font-size:21px;font-weight:300;letter-spacing:-.02em">Koşu</span><span style="font-size:11px;color:#8ad6cc;background:rgba(138,214,204,.12);padding:3px 8px;border-radius:8px">Önerilen</span></div>
 <div style="margin-top:3px;font-size:13px;color:#9ba5b0;font-weight:300">Perşembe akşamları genelde koşuyorsun. Yağmur yok, 19°.</div>
-<div style="margin-top:10px;display:flex;gap:8px">
+<div style="margin-top:8px;display:flex;gap:8px">
 <button style="height:44px;padding:0 18px;border:0;border-radius:12px;background:#e6ecf2;color:#07090c;font-size:13px;font-weight:500">Olur</button>
 <button style="height:44px;padding:0 18px;border:0;border-radius:12px;background:#1B2027;color:#c9d1d8;font-size:13px">Başka saat söyle</button>
 </div>
@@ -86,8 +82,9 @@ button{font-family:inherit;cursor:pointer}
 <div style="position:relative;padding-bottom:22px">
 <div style="position:absolute;left:-60px;top:3px;font-size:13px;color:#9ba5b0;font-variant-numeric:tabular-nums">20:00</div>
 <div style="position:absolute;left:-15px;top:8px;width:7px;height:7px;border-radius:50%;background:#9ba5b0"></div>
-<div style="font-size:21px;font-weight:300;letter-spacing:-.02em">Okuma</div>
-<div style="margin-top:3px;font-size:13px;color:#9ba5b0;font-weight:300">30 dk · Rutin</div>
+<div style="display:flex;align-items:center"><div style="flex:1"><div style="font-size:21px;font-weight:300;letter-spacing:-.02em">Okuma</div>
+<div id="readsub" style="margin-top:3px;font-size:13px;color:#9ba5b0;font-weight:300">30 dk · Rutin</div></div>
+<button id="read" style="flex:none;height:44px;padding:0 18px;border:0;border-radius:12px;background:#1B2027;color:#c9d1d8;font-size:13px">Başla</button></div>
 </div>
 </div>
 
@@ -101,7 +98,34 @@ button{font-family:inherit;cursor:pointer}
 </div>
 
 </div>
-<script>window.__NAV={"links": [{"a": "Menü", "to": "Menu"}, {"t": "Ekip toplantısı", "to": "Etkinlik", "up": 1, "all": false}, {"t": "bardak", "to": "SuDetay", "up": 3, "all": false}, {"t": "Koşu", "to": "Rutinlerim", "up": 0, "all": false}, {"t": "Okuma", "to": "Rutinlerim", "up": 0, "all": false}, {"t": "PERŞEMBE · 8 EKİM", "to": "Akis", "up": 0, "all": false}, {"t": "2 plan geçti", "to": "Akis", "up": 0, "all": false}, {"t": "Planlar", "to": "Akis", "up": 0, "all": false}, {"t": "Başka saat söyle", "to": "Konusma", "up": 0, "all": false}, {"t": "Bir şey söyle ya da yaz", "to": "Konusma", "up": 1, "all": false}], "actions": [{"t": "Olur", "do": "accept"}], "name": "Bugun"};</script>
+<script>window.__NAV={"links": [{"a": "Menü", "to": "Menu"}, {"t": "Ekip toplantısı", "to": "Etkinlik", "up": 0, "all": false}, {"a": "Su ayrıntısı", "to": "SuDetay"}, {"t": "Koşu", "to": "Rutinlerim", "up": 0, "all": false}, {"t": "Okuma", "to": "Rutinlerim", "up": 0, "all": false}, {"t": "PERŞEMBE · 8 EKİM", "to": "Akis", "up": 0, "all": false}, {"t": "Planlar", "to": "Akis", "up": 0, "all": false}, {"t": "Başka saat söyle", "to": "Konusma", "up": 0, "all": false}, {"t": "Bir şey söyle ya da yaz", "to": "Konusma", "up": 1, "all": false}], "actions": [{"t": "Olur", "do": "accept"}], "name": "Bugun"};</script>
+<script>
+(function(){
+  var n=3,per=0.2,max=8,times=['16:00','17:15','18:30','19:45','21:00','21:30'];
+  var c=document.getElementById('wcount'),l=document.getElementById('wl'),bars=document.querySelectorAll('#wbars i');
+  var nx=document.getElementById('wnext'),done=document.getElementById('wdone'),msg=document.getElementById('wmsg');
+  function fmt(x){return x.toFixed(1).replace('.',',');}
+  function draw(){
+    c.textContent=n; l.textContent=fmt(n*per)+' / 1,6 L';
+    bars.forEach(function(b,i){b.className=i<n?'on':'';});
+    var left=max-n;
+    nx.textContent=left>0?'Sıradaki '+times[Math.max(0,Math.min(times.length-1,n-3))]+'':'Bugünkü yol tamam';
+  }
+  document.getElementById('water').addEventListener('click',function(e){
+    e.stopPropagation(); n++; draw(); msg.textContent='Eklendi · 14:33'; done.style.display='flex';
+  });
+  document.getElementById('wundo').addEventListener('click',function(e){
+    e.stopPropagation(); if(n>3){n--;} draw(); done.style.display='none';
+  });
+  document.getElementById('join').addEventListener('click',function(e){
+    e.stopPropagation(); this.textContent='Açıldı'; this.style.background='rgba(143,207,159,.16)'; this.style.color='#8fcf9f';
+  });
+  document.getElementById('read').addEventListener('click',function(e){
+    e.stopPropagation(); this.hidden=true; document.getElementById('readsub').textContent='Başladı · 30 dk sonra sorarım';
+  });
+  draw();
+})();
+</script>
 <script src="../nav.js"></script>
 </body>
 </html>
