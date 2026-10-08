@@ -122,7 +122,7 @@ Karar: **bütçeleri plan B'ye göre başlatırız**; Small Business onayı geli
 - Düşme etkisi: 3'ten fazla sayaçlı rutin **duraklatılır** (silinmez; ilk 3 aktif kalır), geçmiş 30 gün görünür (sonrası gizli, silinmez), ritim Temel'e iner, ek takvim hesapları pasifleşir. Yeniden yükseltince hepsi geri gelir.
 
 ## 7. Doğrulanacaklar
-1. **Apple komisyonu:** Small Business Program'a **başvurulacak** (D-028). Abonelikte kaynaklar çelişiyor: bazıları programdakilere ilk günden %15, bazıları standart hesaplar için ilk yıl %30 sonra %15 diyor. App Store Connect'te doğrulanacak; o zamana dek plan B (%30) baz alınır.
+1. **Apple komisyonu:** Small Business Program'a **yayın hazırlığından sonra başvurulacak** (D-028). Abonelikte kaynaklar çelişiyor: bazıları programdakilere ilk günden %15, bazıları standart hesaplar için ilk yıl %30 sonra %15 diyor. App Store Connect'te doğrulanacak; o zamana dek plan B (%30) baz alınır.
 2. **Türkiye vergileri:** KDV (%20 varsayıldı) ve dijital hizmet vergisinin fiyata yansıması muhasebeyle doğrulanacak.
 3. **TL fiyat noktaları:** Apple'ın o dönemki fiyat tablosu; önerilen ₺99,99 ve ₺199,99 noktalarının mevcut olup olmadığı.
 4. **Token ve yönlendirme varsayımları:** gerçek kullanımla beta'da ölçülür (`COST-POLICY.md` §9). İlk 4 hafta veriye göre fiyat ve bütçe gözden geçirilir.

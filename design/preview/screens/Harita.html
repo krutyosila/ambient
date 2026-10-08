@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>6.2 · Kurgu haritası · Ambient</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#07090c;font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.g{padding:24px 26px;border-radius:22px;background:#12161b;display:flex;flex-direction:column;gap:12px}
+.g h3{margin:0;font-size:12px;letter-spacing:.14em;color:#8fbcff;font-weight:500}
+.g .r{font-size:14px;line-height:1.45;color:#c9d1d8;font-weight:300}
+.g .r b{display:block;font-size:16px;font-weight:400;color:#e6ecf2;margin-bottom:1px}
+.g .r i{font-style:normal;color:#7f8894}
+.t{display:grid;grid-template-columns:200px 1fr 1fr;gap:20px;padding:12px 0;font-size:14px;line-height:1.45;color:#c9d1d8;font-weight:300}
+.t b{font-weight:400;color:#e6ecf2}
+.t code{font-family:ui-monospace,monospace;font-size:13px;color:#8fbcff}
+</style>
+
+<style>.ambient-link{cursor:pointer}.ambient-link:hover{filter:brightness(1.15)}.ambient-link:focus-visible{outline:2px solid #8fbcff;outline-offset:2px}html.hint .ambient-link{outline:2px dashed rgba(143,188,255,.8);outline-offset:2px}html.embed .frame{margin:0;border-radius:0;box-shadow:none}html.embed{background:transparent}html{background:#0b0d10}body{margin:0;min-height:100vh}.frame{width:390px;height:844px;margin:24px auto;border-radius:36px;overflow:hidden;box-shadow:0 30px 80px -30px rgba(0,0,0,.6)}.wide{width:1700px;margin:0 auto}</style>
+</head>
+<body>
+<div class="wide">
+
+
+<div style="width:1700px;height:1380px;box-sizing:border-box;padding:56px 64px;background:#07090c;color:#e6ecf2;font-family:Inter,system-ui,sans-serif;display:flex;flex-direction:column;gap:28px">
+
+<div style="display:flex;flex-direction:column;gap:12px">
+<div style="font-size:13px;letter-spacing:.14em;color:#8fbcff;font-weight:500">KURGU HARİTASI</div>
+<h1 style="margin:0;font-size:48px;line-height:1.02;font-weight:300;letter-spacing:-.03em">Kayıt yalnızca söz ve yazıyla girer</h1>
+<p style="margin:0;font-size:16px;line-height:1.5;color:#9ba5b0;max-width:980px;font-weight:300">Form, saat seçici ve sayı ayarlayıcı yok. Dokunuş yalnızca üç iş görür: sistemin sorusunu yanıtlamak (Yaptım, Daha geç, Dinleniyorum), bir öneriyi onaylamak (Olur) ve son işlemi geri almak. Her sayfanın altındaki konuşma çubuğu o sayfaya özgü örnek cümleler önerir.</p>
+</div>
+
+<div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px">
+
+<div class="g"><h3>1 · BAŞLANGIÇ</h3>
+<div class="r"><b>Giriş</b>Apple, Google ya da e-posta (magic link). Fiyat ve iptal koşulu burada da görünür. <i>→ Karşılama</i></div>
+<div class="r"><b>Karşılama 1–3</b>Sabah ritmi, su alışkanlığı, hatırlatma yoğunluğu. Çipler ya da kendi cümlen. <i>→ İzinler</i></div>
+<div class="r"><b>İzinler</b>Bildirim, mikrofon, takvim; hepsi isteğe bağlı. Mikrofon reddedilirse yazarak devam. <i>→ Bugün (boş gün)</i></div>
+</div>
+
+<div class="g"><h3>2 · HER GÜN</h3>
+<div class="r"><b>Bugün</b>Sırada kartı, Senin için (su sayacı dahil), Planlar, konuşma çubuğu. <i>Karta dokun → detay · tarihe dokun → Günün akışı · cetvel → Gün gezinmesi</i></div>
+<div class="r"><b>Günün akışı</b>Tüm gün, şimdi çizgisi, su kayıtları saat saat. <i>← Bugün</i></div>
+<div class="r"><b>Konuşma</b>Cümle → çıkarım kartları (Planlı, Bugün beklenen, Rutin) + Geri al. Üç hali: yapı, su kaydı, tek soru. <i>Anlaşılmazsa → Anlaşılmadı</i></div>
+<div class="r"><b>Hızlı not</b>Widget, kilit ekranı ya da balon düğmesi. Yazarken anlaşılan canlı görünür; 3 saniyede biter.</div>
+</div>
+
+<div class="g"><h3>3 · YOKLAMA, GÜN, GEÇMİŞ</h3>
+<div class="r"><b>Kontrol</b>Bildirimden gelir: Yaptım, Bu akşam daha geç, Bugün dinleniyorum. “Daha geç” → ritme göre saat önerisi → Olur.</div>
+<div class="r"><b>Günü kapat</b>Akşam isteğe bağlı: bugün olanlar, Yarına al, yarın özeti, taşıma önerisi.</div>
+<div class="r"><b>Gün gezinmesi → Geçmiş</b>Cetvelde günler arası kaydır; geçmiş güne dokun → o günün özeti ve su kayıtları.</div>
+<div class="r"><b>Hayat ritmi → Ritmin</b>Son 7 gün, yedi kategori. Altında öğrendiklerim: neden bu saatte öneriyorum. Yanlışsa söylersin, unuturum.</div>
+</div>
+
+<div class="g"><h3>4 · DETAY SAYFALARI</h3>
+<div class="r"><b>Etkinlik detayı</b>Yer, kişi, hatırlatma, not salt okunur. Değiştirmek için söyle: “Saati 16:00 yap”, “Yarına al”, “İptal et”. Yapıldı ve Daha geç yanıt düğmeleridir.</div>
+<div class="r"><b>Rutin detayı (Su)</b>Bugünkü sayaç, saat saat kayıt listesi (sesle, yazıyla), son 7 gün, hedef ve birim. Son kayıt için Geri al.</div>
+<div class="r"><b>Kişi detayı</b>Sıradaki, notlar, geçmiş. “Her pazar akşamı ara.”</div>
+</div>
+
+<div class="g"><h3>5 · MENÜ VE AYARLAR</h3>
+<div class="r"><b>Menü</b>Rutinlerim, Önemli kişiler, Hatırlatma yoğunluğu, Uyku ve uyanma (Profil), Bildirimler ve odak, Takvim, Veri ve gizlilik, Plan ve fiyat, Yardım.</div>
+<div class="r"><b>Rutinlerim</b>İkonlu liste. Sayaçlı (Su, Kahve), günlük, haftalık, saatli rutinler. Ekleme yalnızca konuşarak.</div>
+<div class="r"><b>Önemli kişiler</b>Cümlede geçen kişiler otomatik tanınır; sen düzeltirsin.</div>
+<div class="r"><b>Yoğunluk · Bildirimler · Takvim · Profil</b>Seçim ve anahtarlar ayar sayılır; ayrıca her biri konuşmayla da değişir.</div>
+</div>
+
+<div class="g"><h3>6 · VERİ, PLAN, YARDIM VE DURUMLAR</h3>
+<div class="r"><b>Veri ve gizlilik</b>Ritmi öğren, Hafıza, destek paylaşımı. Dışa aktar ve Tüm verileri sil (onay sayfası, silinecekler listelenir).</div>
+<div class="r"><b>Plan ve fiyat</b>Deneme durumu, aylık ve yıllık fiyat, nelerin dahil olduğu, iptal ve iade yolu. Fiyatlar henüz belli değil, köşeli parantezle bırakıldı.</div>
+<div class="r"><b>Yardım</b>SSS, destek mesajı.</div>
+<div class="r"><b>Özel durumlar</b>Boş gün (örnek cümleler), Anlaşılmadı (tek soru, not olarak sakla), Çevrimdışı (cümleler kuyrukta, bağlanınca anlaşılır).</div>
+</div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:4px;padding:8px 0 0">
+<div style="font-size:13px;letter-spacing:.14em;color:#8fbcff;font-weight:500;margin-bottom:6px">CÜMLE → İŞLEM (YAPAY ZEKÂ ARAÇLARI)</div>
+<div class="t"><b>“Az önce iki bardak su içtim”</b><span><code>log_progress</code> rutin=su, miktar=2 bardak (400 ml), zaman=şimdi</span><span>Bugün 5 bardak; Su detayında yeni kayıt; Günün akışında saat işareti</span></div>
+<div class="t"><b>“Sabah da bir bardak içmiştim”</b><span><code>log_progress</code> zaman=sabah (saat yok → 09:00 varsayımı)</span><span>Tek soru: “Doğru mu?”; kullanıcı “Başka saat söyle” diyebilir</span></div>
+<div class="t"><b>“Yarın 15:15’te Elif’le kahve”</b><span><code>create_event</code> kişi=Elif, ikon=kahve</span><span>Planlı kart; çakışma kontrolü sonucu dilde</span></div>
+<div class="t"><b>“Bu akşam koşarım”</b><span><code>add_floating_item</code> ikon=koşu</span><span>Bugün beklenen; ritme göre saat <b style="font-weight:400">önerisi</b></span></div>
+<div class="t"><b>“Haftada 4 koşu olsun”</b><span><code>create_routine</code> sıklık=haftada 4, tür=günlük işaret</span><span>Rutinlerim’de yeni satır</span></div>
+<div class="t"><b>“Günde 8 bardak su içmek istiyorum”</b><span><code>create_routine</code> tür=sayaç, hedef=8, birim=bardak</span><span>Bugün’de su sayacı belirir</span></div>
+<div class="t"><b>“Saati 16:00 yap” · “Yarına al” · “İptal et”</b><span><code>update_item</code> · <code>reschedule</code> · <code>cancel_item</code></span><span>Etkinlik güncellenir; geri al mümkün</span></div>
+<div class="t"><b>“Sessiz saatler 22:30’da başlasın”</b><span><code>set_preference</code></span><span>Yoğunluk sayfası güncellenir</span></div>
+<div class="t"><b>“Koşu için bunu unut” · “Son suyu geri al”</b><span><code>forget_pattern</code> · <code>undo_last</code></span><span>Ritmin’den ilgili madde kalkar · son kayıt silinir</span></div>
+</div>
+</div>
+
+</div>
+<script>window.__NAV={"links": [], "name": "Harita"};</script>
+<script src="../nav.js"></script>
+</body>
+</html>

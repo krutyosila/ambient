@@ -32,7 +32,7 @@ Yeni kararlar en alta eklenir. Büyük ve geri dönüşü zor kararlar önce sor
 | D-025 | 2026-10-08 | Kabul | Proje **düzenli özetlenir**: `docs/SUMMARY.md` her oturumda önce okunur ve büyük karardan sonra güncellenir; uygulamada da kullanıcı bağlamı düzenli kısa "Hafıza" özetine indirgenir. Amaç tutarlılık ve maliyet. | Kullanıcı isteği. |
 | D-026 | 2026-10-08 | Kabul | **Deneme 3 gün.** Abone olmazsa kullanıcı Normal olarak devam eder; ara ara, baskısız ve sınırlı sıklıkta yükseltme hatırlatması görür (uygulama içi kart, bildirim yok; ilk 2 haftada 4 günde en fazla 1, sonra 10 günde en fazla 1, ayda en fazla 3; Kontrol, Günü kapat, Dinleniyorum ve sessiz saatte asla). | Kullanıcı kararı. `docs/PRICING.md` §6. Q18 kapandı. |
 | D-027 | 2026-10-08 | Kabul | Düşürme (Pro/Plus → Normal) veri silmez: 3'ten fazla sayaçlı rutin duraklatılır, geçmiş 30 gün görünür, ritim Temel'e iner; yükseltince geri gelir. | `docs/PRICING.md` §6. |
-| D-028 | 2026-10-08 | Kabul | **Apple Small Business Program'a başvurulacak**; onay ve abonelik komisyonu kuralı doğrulanana dek bütçeler **%30 komisyon (plan B)** baz alınarak başlatılır, onayla plan A değerlerine çıkılır. | Kullanıcı kararı. Q21 kapandı. |
+| D-028 | 2026-10-08 | Kabul | **Apple Small Business Program başvurusu uygulama yayına hazır olduktan sonra yapılacak; şimdilik kapsam dışı.** O zamana dek bütçeler ve fiyat analizi **%30 komisyon (plan B)** baz alınır; onayla plan A değerlerine çıkılır. | Kullanıcı kararı. Q21 kapandı. |
 | D-029 | 2026-10-08 | Kabul | Kullanıcıdan **doğum tarihi, cinsiyet, boy, kilo** isteğe bağlı, konuşarak ve açık rızayla alınır; planlama buna göre ayarlanır. Kilo "ara ara" sorulur (varsayılan 4 haftada bir, kullanıcı ayarlar). Hedef, skor, VKİ ve yargı yok; 18 yaş altına boy/kilo sorulmaz. Temel kişiselleştirme tüm katmanlarda. | Kullanıcı isteği. `docs/PERSONALIZATION.md`. |
 | D-030 | 2026-10-08 | Kabul | **Doğum tarihi, cinsiyet, boy ve kilo elle girilebilir**; aynı bilgi **yazı ya da söz** ile de verilebilir ve her iki durumda sistem ne istendiğini anlar. D-012'nin **tek istisnası** bu dört alandır. Diğer tüm kayıtlarda form yoktur. | Kullanıcı kararı. `docs/PERSONALIZATION.md`. |
 | D-031 | 2026-10-08 | Kabul | **Kilo güncellemesi 6 ayda bir** sorulur. Kullanıcı kesin sayı girebilir ya da kesin bilmiyorsa tahmini değişim verir (aynı kaldı, biraz aldım/verdim, çok aldım/verdim, bilmiyorum); sistem bunu nötr bir **kilo çizgisi** olarak izler (tahminler kesikli). | Kullanıcı kararı. Q23 kapandı. |
@@ -43,6 +43,12 @@ Yeni kararlar en alta eklenir. Büyük ve geri dönüşü zor kararlar önce sor
 | D-036 | 2026-10-08 | Kabul | Rapor gruplarında en küçük grup **50 kullanıcı**; altındaki gruplar gizlenir ya da üst bantla birleştirilir. | Kullanıcı kararı. Q27'nin eşik kısmı kapandı. |
 | D-037 | 2026-10-08 | Kabul | **18 yaş altı** kullanıcıya cinsiyet, boy ve kilo **sorulmaz**; su/uyku yaşa göre ortalamayla devam eder; kullanıcı dilerse kendi hedef değerlerini ("programını") kendisi ekleyebilir. **13 yaş altı kullanamaz.** Kullanıcıya göre hukuken sakınca yok; yine de yayın öncesi hukuk hazırlığında teyit edilir. | Kullanıcı kararı. Q24 kapandı. |
 | D-038 | 2026-10-08 | Kabul | **Önce tam çalışır bir test ortamı:** uygulama TestFlight + staging ile test edilir; diyetisyenin adı/unvan ifadesi, hukuk ve mağaza hazırlıkları yayından önce, bu sürede tamamlanır. | Kullanıcı kararı. Plan: `docs/TEST-ENV.md`. Q27'nin kalan kısmı yayın öncesi hazırlanır. |
+| D-039 | 2026-10-08 | Kabul | **Yapay zekâ sağlayıcısı Anthropic:** varsayılan Haiku 5.5, zor cümlelerde (Plus/Pro) Sonnet 5.5. Sağlayıcıdan bağımsız arayüz korunur. | Kullanıcı kararı. Q3 kapandı. |
+| D-040 | 2026-10-08 | Kabul | **Hosting kullanıcıya aittir;** şu aşamada kararlaştırılmaz. Kod ortam değişkenleriyle taşınabilir kalır (Docker). Q5 kapandı. | Kullanıcı kararı. |
+| D-041 | 2026-10-08 | Kabul | **Hata izleme en düşük maliyetle başlar:** Sentry'nin ücretsiz katmanı (güncel limitler doğrulanır); alternatif kendi sunucuda GlitchTip. `SENTRY_DSN` boşsa izleme kapalıdır; kodda soyut arayüz. | Kullanıcı kararı. |
+| D-042 | 2026-10-08 | Kabul | **Önce iOS** (TestFlight). Android sonraki test. Q6 kapandı. | Kullanıcı kararı. |
+| D-043 | 2026-10-08 | Kabul | Web önizleme **tıklanabilir prototip** olarak hazırlanır: `design/preview/app.html`, sayfalar birbirine bağlı (gezinme, geri, anahtarlar, birkaç küçük etkileşim). Kaynak: `design/preview/screens`. | Kullanıcı isteği. |
+| D-044 | 2026-10-08 | Kabul | `affaan-m/ecc` (Claude Code için agent/skill/komut/kural koleksiyonu) **gerekirse seçici** kullanılır; şimdilik kurulmaz. Çoklu kurulum ve çok sayıda skill/hook bağlam ve maliyet artırır, çakışma riski taşır. | Kullanıcı önerisi, depo özeti incelendi. `docs/SETUP.md` §9. |
 
 ## Bekleyen sorular
 
@@ -50,10 +56,10 @@ Yeni kararlar en alta eklenir. Büyük ve geri dönüşü zor kararlar önce sor
 |---|---|---|---|
 | Q1 | "Günü kapat" ekranı ürüne girsin mi? | — | **Kapandı:** evet (D-018). |
 | Q2 | Yoğun bir günde taşıma önerisini yapay zekâ sunsun mu, yoksa hiç sunmasın mı? | Plan güveni ilkesiyle çakışabilir. | Yalnızca öneri, onaysız hareket yok. |
-| Q3 | Başlangıç LLM sağlayıcısı ve modeli? | Değerlendirme seti ve maliyet buna bağlı. | Sağlayıcıdan bağımsız arayüz; ilk adaptör ikisi birden. |
+| Q3 | LLM sağlayıcısı? | — | **Kapandı:** Anthropic (D-039). |
 | Q4 | Senkron: "son yazan kazanır" mı, alan bazında birleştirme mi? | En pahalı geri dönüşsüz karar. | Alan bazında birleştirme (öğe başına `updatedAt`). |
-| Q5 | Barındırma ve bütçe hedefi? | Altyapı seçimi. | Docker Compose ile yerel; üretim sonra. |
-| Q6 | Mobilde önce hangi platform? | Widget, giriş seçenekleri, test cihazları. | iOS önce. |
+| Q5 | Barındırma ve bütçe? | — | **Kapandı:** kullanıcıya ait (D-040). |
+| Q6 | İlk platform? | — | **Kapandı:** iOS (D-042). |
 | Q7 | "Önerilen" durumunun rengi: ikincil renk (`--w`) + kesikli çizgi mi, başka bir şey mi? | Anlam çakışması (prototipte amber "yaklaşıyor"). | D-016 olarak uygulandı; itiraz yoksa kapanır. |
 | Q8 | Takvim içe aktarma kapsamı: yalnızca Apple Takvim mi, Google da mı? Salt okunur mu, iki yönlü mü? | Senkron karmaşıklığı. | Apple Takvim, salt okunur. |
 | Q9 | Apple Watch Faz 2'de mi, MVP'de mi? | Rakip yorumlarında hem istek hem çökme şikâyeti. | Faz 2. |
@@ -68,7 +74,7 @@ Yeni kararlar en alta eklenir. Büyük ve geri dönüşü zor kararlar önce sor
 | Q18 | Deneme süresi? | — | **Kapandı:** 3 gün (D-026). |
 | Q19 | Normal katmanda 3 sayaçlı rutin ve 30 gün görünür geçmiş sınırı kabul mü? | Ücretsiz katmanın cömertliği. | Kabul varsayıldı. |
 | Q20 | Anlama bütçesi net gelirin %30'u mu? | — | **Kapandı:** evet, kendini ayarlayan sistemle (D-033). |
-| Q21 | Apple Small Business Program? | Net gelir. | **Kapandı:** başvurulacak (D-028); plan B baz. |
+| Q21 | Apple Small Business Program? | Net gelir. | **Ertelendi:** yayına hazır olunca (D-028). |
 | Q22 | Kişiselleştirme aralıkları kim gözden geçirsin? | — | **Kapandı:** kurum içi diyetisyen (D-032). Henüz kimin olacağı belirsiz (Q25). |
 | Q23 | Kilo sorma sıklığı? | — | **Kapandı:** 6 ayda bir (D-031). |
 | Q24 | Yaş eşikleri? | — | **Kapandı:** 18 yaş altına cinsiyet/boy/kilo sorulmaz, 13 altı kullanamaz (D-037). |

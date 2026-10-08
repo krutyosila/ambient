@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ambient prototip</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#07090c;--t:#e6ecf2;--d:#9ba5b0;--a:#8fbcff;--s:#12161b}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--t);font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased;display:flex}
+aside{width:300px;flex:none;height:100%;overflow:auto;padding:24px 16px;background:#0a0d11;display:flex;flex-direction:column;gap:18px}
+aside h1{margin:0;font-size:22px;font-weight:300;letter-spacing:-.02em}
+aside p{margin:6px 0 0;font-size:12px;line-height:1.5;color:var(--d);font-weight:300}
+.start{display:flex;flex-direction:column;gap:6px}
+.btn{display:block;width:100%;text-align:left;border:0;border-radius:12px;padding:11px 14px;background:var(--s);color:var(--t);font:300 14px Inter,sans-serif;cursor:pointer}
+.btn:hover{background:#1b2027}
+.btn.primary{background:var(--t);color:#07090c;font-weight:500}
+.btn:focus-visible,.item:focus-visible{outline:2px solid var(--a);outline-offset:2px}
+.grp{margin-top:8px}.grp h2{margin:0 0 6px;font-size:11px;letter-spacing:.14em;color:#7f8894;font-weight:500;text-transform:uppercase}
+.item{display:block;width:100%;text-align:left;border:0;background:transparent;color:var(--d);font:300 13px Inter,sans-serif;padding:7px 10px;border-radius:9px;cursor:pointer}
+.item:hover{background:#12161b;color:var(--t)}
+.item.on{background:rgba(143,188,255,.16);color:var(--t)}
+.hintrow{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--d);font-weight:300}
+main{flex:1;min-width:0;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:16px;overflow:auto}
+.stage{position:relative;border-radius:36px;overflow:hidden;box-shadow:0 30px 80px -30px rgba(0,0,0,.7);background:#0b0d10;flex:none}
+.stage.wide{border-radius:14px}
+.stage iframe{border:0;display:block;transform-origin:0 0;background:#07090c}
+.cap{font-size:13px;color:var(--d);font-weight:300;display:flex;gap:14px;align-items:center;flex-wrap:wrap;justify-content:center}
+.cap a{color:var(--a);text-decoration:none}
+.cap a:hover{text-decoration:underline}
+@media(max-width:820px){body{flex-direction:column}aside{width:100%;height:auto;max-height:42vh}main{height:auto;flex:1}}
+</style>
+</head>
+<body>
+<aside>
+<div><h1>Ambient prototip</h1><p>Ekrandaki düğmelere, satırlara ve çubuğa tıkla; sayfalar birbirine bağlı. Geri düğmesi bir önceki sayfaya döner.</p></div>
+<div class="start" role="group" aria-label="Başlangıç noktaları">
+<button class="btn primary" data-go="Giris">Yeni kullanıcı olarak başla</button>
+<button class="btn" data-go="Bugun">Günlük kullanım: Bugün</button>
+<button class="btn" data-go="Kontrol">Bildirimden gelen yoklama</button>
+<button class="btn" data-go="Widget">Kilit ekranı ve widget</button>
+</div>
+<label class="hintrow"><input type="checkbox" id="hint"> Tıklanabilir alanları göster</label>
+<div id="list"></div>
+</aside>
+<main>
+<div class="stage" id="stage"><iframe id="frame" title="Ambient prototip ekranı"></iframe></div>
+<div class="cap"><span id="title"></span><a id="solo" href="#" target="_blank" rel="noopener">Tek başına aç</a><a href="index.html">Galeri</a></div>
+</main>
+<script>
+var PAGES = [{"name": "Main", "title": "Araştırma özeti", "w": 1440, "h": 2265, "g": "0"}, {"name": "Bugun", "title": "1.1 · Bugün", "w": 390, "h": 844, "g": "1"}, {"name": "Akis", "title": "1.2 · Günün akışı", "w": 390, "h": 844, "g": "1"}, {"name": "Konusma", "title": "1.3 · Konuşma yapıya dönüşür", "w": 390, "h": 844, "g": "1"}, {"name": "KonusmaSu", "title": "1.4 · Su kaydı (gün içinde çok kez)", "w": 390, "h": 844, "g": "1"}, {"name": "KonusmaSoru", "title": "1.5 · Tek soru", "w": 390, "h": 844, "g": "1"}, {"name": "HizliNot", "title": "1.6 · Hızlı not", "w": 390, "h": 844, "g": "1"}, {"name": "Widget", "title": "1.7 · Kilit ekranı ve widget", "w": 390, "h": 844, "g": "1"}, {"name": "Kontrol", "title": "2.1 · Proaktif kontrol", "w": 390, "h": 844, "g": "2"}, {"name": "GunSonu", "title": "2.2 · Günü kapat", "w": 390, "h": 844, "g": "2"}, {"name": "Gezinme", "title": "2.3 · Gün gezinmesi", "w": 390, "h": 844, "g": "2"}, {"name": "Gecmis", "title": "2.4 · Günlük geçmiş", "w": 390, "h": 844, "g": "2"}, {"name": "Ritim", "title": "2.5 · Hayat ritmi", "w": 390, "h": 844, "g": "2"}, {"name": "Etkinlik", "title": "2.6 · Etkinlik detayı", "w": 390, "h": 844, "g": "2"}, {"name": "SuDetay", "title": "2.7 · Rutin detayı: Su", "w": 390, "h": 844, "g": "2"}, {"name": "Menu", "title": "3.1 · Menü", "w": 390, "h": 844, "g": "3"}, {"name": "Profil", "title": "3.2 · Profil", "w": 390, "h": 844, "g": "3"}, {"name": "Rutinlerim", "title": "3.3 · Rutinlerim", "w": 390, "h": 844, "g": "3"}, {"name": "Kisiler", "title": "3.4 · Önemli kişiler", "w": 390, "h": 844, "g": "3"}, {"name": "KisiDetay", "title": "3.5 · Kişi detayı", "w": 390, "h": 844, "g": "3"}, {"name": "Yogunluk", "title": "3.6 · Hatırlatma yoğunluğu", "w": 390, "h": 844, "g": "3"}, {"name": "Bildirimler", "title": "3.7 · Bildirimler ve odak", "w": 390, "h": 844, "g": "3"}, {"name": "Ritmin", "title": "3.8 · Ritmin (öğrendiklerim)", "w": 390, "h": 844, "g": "3"}, {"name": "Gizlilik", "title": "4.1 · Veri ve gizlilik", "w": 390, "h": 844, "g": "4"}, {"name": "SilOnay", "title": "4.2 · Tüm verileri sil", "w": 390, "h": 844, "g": "4"}, {"name": "PlanFiyat", "title": "4.3 · Plan ve fiyat", "w": 390, "h": 844, "g": "4"}, {"name": "Yardim", "title": "4.4 · Yardım", "w": 390, "h": 844, "g": "4"}, {"name": "Takvim", "title": "4.5 · Takvim", "w": 390, "h": 844, "g": "4"}, {"name": "Giris", "title": "5.1 · Giriş", "w": 390, "h": 844, "g": "5"}, {"name": "Karsilama1", "title": "5.2 · Karşılama 1", "w": 390, "h": 844, "g": "5"}, {"name": "Karsilama2", "title": "5.3 · Karşılama 2", "w": 390, "h": 844, "g": "5"}, {"name": "Karsilama3", "title": "5.4 · Karşılama 3", "w": 390, "h": 844, "g": "5"}, {"name": "Izinler", "title": "5.6 · İzinler", "w": 390, "h": 844, "g": "5"}, {"name": "BosGun", "title": "5.7 · Boş gün", "w": 390, "h": 844, "g": "5"}, {"name": "Anlasilmadi", "title": "5.8 · Anlaşılmadı", "w": 390, "h": 844, "g": "5"}, {"name": "Cevrimdisi", "title": "5.9 · Çevrimdışı", "w": 390, "h": 844, "g": "5"}, {"name": "Ikonlar", "title": "6.1 · İkon kütüphanesi", "w": 1320, "h": 1180, "g": "6"}, {"name": "Harita", "title": "6.2 · Kurgu haritası", "w": 1700, "h": 1380, "g": "6"}, {"name": "GunKapanmadi", "title": "2.8 · Gün kapanmadı", "w": 390, "h": 844, "g": "2"}, {"name": "PlanKarsilastir", "title": "4.6 · Planları karşılaştır", "w": 390, "h": 844, "g": "4"}, {"name": "LimitDoldu", "title": "4.7 · Anlama hakkı doldu", "w": 390, "h": 844, "g": "4"}, {"name": "AdminMaliyet", "title": "6.3 · Admin: maliyet ve politika", "w": 1440, "h": 960, "g": "6"}, {"name": "Karsilama4", "title": "5.5 · Seni tanıyayım", "w": 390, "h": 844, "g": "5"}, {"name": "KiloSor", "title": "2.9 · Kilo güncelleme sorusu", "w": 390, "h": 844, "g": "2"}, {"name": "DenemeBitti", "title": "4.8 · Deneme bitti", "w": 390, "h": 844, "g": "4"}, {"name": "YukseltKarti", "title": "4.9 · Yükseltme kartı (Bugün)", "w": 390, "h": 844, "g": "4"}, {"name": "KisiselBilgi", "title": "3.9 · Kişisel bilgilerim (elle giriş)", "w": 390, "h": 844, "g": "3"}, {"name": "KiloCizgisi", "title": "3.10 · Kilo çizgisi", "w": 390, "h": 844, "g": "3"}, {"name": "AdminReferans", "title": "6.4 · Admin: referans aralıkları (diyetisyen)", "w": 1440, "h": 960, "g": "6"}, {"name": "AdminDiyetisyen", "title": "6.5 · Admin: diyetisyen alanı (raporlar)", "w": 1440, "h": 960, "g": "6"}];
+var GROUPS = [{"id": "0", "title": "Araştırma"}, {"id": "1", "title": "Her gün"}, {"id": "2", "title": "Yoklama, gün ve geçmiş"}, {"id": "3", "title": "Menü ve ayarlar"}, {"id": "4", "title": "Veri, plan ve yardım"}, {"id": "5", "title": "Başlangıç ve özel durumlar"}, {"id": "6", "title": "Kütüphane, kurgu ve admin"}];
+var byName = {}; PAGES.forEach(function (p) { byName[p.name] = p; });
+var frame = document.getElementById('frame'), stage = document.getElementById('stage');
+var list = document.getElementById('list'), cur = null;
+
+GROUPS.forEach(function (g) {
+  var d = document.createElement('div'); d.className = 'grp';
+  d.innerHTML = '<h2></h2>'; d.firstChild.textContent = g.title;
+  PAGES.filter(function (p) { return p.g === g.id; }).forEach(function (p) {
+    var b = document.createElement('button'); b.className = 'item'; b.dataset.go = p.name; b.textContent = p.title.replace(/^[\d.]+\s·\s/, '');
+    d.appendChild(b);
+  });
+  list.appendChild(d);
+});
+
+function fit() {
+  if (!cur) return;
+  var p = byName[cur];
+  var m = document.querySelector('main');
+  var availW = m.clientWidth - 32, availH = m.clientHeight - 80;
+  var s = Math.min(1, availW / p.w, availH / p.h);
+  stage.style.width = Math.round(p.w * s) + 'px'; stage.style.height = Math.round(p.h * s) + 'px';
+  stage.classList.toggle('wide', p.w !== 390);
+  frame.style.width = p.w + 'px'; frame.style.height = p.h + 'px'; frame.style.transform = 'scale(' + s + ')';
+}
+function show(name, fromFrame) {
+  if (!byName[name]) name = 'Bugun';
+  cur = name;
+  if (!fromFrame) frame.src = 'screens/' + name + '.html';
+  document.getElementById('title').textContent = byName[name].title;
+  document.getElementById('solo').href = 'screens/' + name + '.html';
+  document.querySelectorAll('.item').forEach(function (i) { i.classList.toggle('on', i.dataset.go === name); });
+  var on = document.querySelector('.item.on'); if (on && on.scrollIntoView) on.scrollIntoView({ block: 'nearest' });
+  if (location.hash.slice(1) !== name) history.replaceState(null, '', '#' + name);
+  fit();
+}
+document.addEventListener('click', function (e) {
+  var t = e.target.closest('[data-go]'); if (t) show(t.dataset.go);
+});
+window.addEventListener('message', function (e) {
+  if (e.data && e.data.ambient === 'page' && byName[e.data.name]) show(e.data.name, true);
+});
+frame.addEventListener('load', function () {
+  try { frame.contentWindow.postMessage({ ambient: 'hint', on: document.getElementById('hint').checked }, '*'); } catch (x) {}
+});
+document.getElementById('hint').addEventListener('change', function () {
+  frame.contentWindow.postMessage({ ambient: 'hint', on: this.checked }, '*');
+});
+window.addEventListener('resize', fit);
+window.addEventListener('hashchange', function () { show(location.hash.slice(1)); });
+show(location.hash.slice(1) || 'Giris');
+</script>
+</body>
+</html>

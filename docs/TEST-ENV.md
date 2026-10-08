@@ -68,12 +68,12 @@ Toplam **yaklaşık 24–26 hafta** (tek geliştirici). Bağımsız işler (admi
 ## 7. Sizden gereken (test ortamı için)
 | İhtiyaç | Neden | Durum |
 |---|---|---|
-| Apple Developer hesabı (kurumsal), Small Business başvurusu | TestFlight, StoreKit, komisyon | Başvuru yapılacak (D-028) |
-| LLM sağlayıcı hesabı ve **harcama limiti** | Gerçek çağrılar; önerim: Anthropic (Haiku 5.5 / Sonnet 5.5) | Onay (Q3) |
-| Hosting kararı ve hesap | Staging | Q5: bulut ve bütçe |
+| Apple Developer hesabı | TestFlight, StoreKit sandbox | Gerekli (Small Business başvurusu bu aşamada kapsam dışı, D-028) |
+| Anthropic API anahtarı ve **harcama limiti** | Gerçek çağrılar (D-039) | Gerekli |
+| Hosting | Staging | Kullanıcıya ait, şu aşamada gerek yok (D-040) |
 | Alan adı + e-posta gönderim hizmeti | Magic link, destek | Gerekli |
 | Apple ve Google ile giriş yapılandırması | Giriş | Gerekli |
-| Sentry (ya da benzeri) hesabı | Hata izleme | Gerekli |
+| Hata izleme (Sentry ücretsiz katman ya da GlitchTip) | Hata izleme (D-041) | Gerekli, ücretsiz başlanır |
 | Test kullanıcıları ve cihaz listesi | Beta | Gerekli |
 | Diyetisyen: ad, unvan ifadesi, hukuki hazırlık, referans taslağı | Yayın öncesi (D-034, Q27) | Yayından önce hazırlanır |
 | Hukuk: KVKK aydınlatma/rıza metinleri, kullanım koşulları | Yayın öncesi | Yayından önce hazırlanır |

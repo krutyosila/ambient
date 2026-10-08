@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>6.4 · Admin: referans aralıkları (diyetisyen) · Ambient</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#07090c;font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.k{padding:22px 24px;border-radius:18px;background:#12161b}
+.t{display:grid;gap:12px;padding:12px 0;font-size:14px;color:#c9d1d8;font-weight:300;align-items:center}
+.t b{font-weight:400;color:#e6ecf2}
+.n{display:flex;align-items:center;height:40px;padding:0 14px;border-radius:12px;font-size:14px;color:#9ba5b0}
+.h{font-size:12px;letter-spacing:.14em;color:#8fbcff;font-weight:500}
+.th{color:#7f8894;font-size:12px}
+.p{display:inline-flex;align-items:center;height:26px;padding:0 10px;border-radius:9px;font-size:12px}
+</style>
+
+<style>.ambient-link{cursor:pointer}.ambient-link:hover{filter:brightness(1.15)}.ambient-link:focus-visible{outline:2px solid #8fbcff;outline-offset:2px}html.hint .ambient-link{outline:2px dashed rgba(143,188,255,.8);outline-offset:2px}html.embed .frame{margin:0;border-radius:0;box-shadow:none}html.embed{background:transparent}html{background:#0b0d10}body{margin:0;min-height:100vh}.frame{width:390px;height:844px;margin:24px auto;border-radius:36px;overflow:hidden;box-shadow:0 30px 80px -30px rgba(0,0,0,.6)}.wide{width:1440px;margin:0 auto}</style>
+</head>
+<body>
+<div class="wide">
+
+
+<div style="width:1440px;height:960px;box-sizing:border-box;display:flex;background:#07090c;color:#e6ecf2;font-family:Inter,system-ui,sans-serif">
+
+<div style="width:240px;flex:none;padding:32px 20px;background:#0a0d11;display:flex;flex-direction:column;gap:4px">
+<div style="font-size:22px;font-weight:300;letter-spacing:-.03em;padding:0 14px 20px">Ambient · Admin</div>
+<div class="n">Kullanıcılar</div><div class="n">LLM yönetimi</div><div class="n">Maliyet ve politika</div>
+<div class="n" style="background:rgba(143,188,255,.14);color:#e6ecf2">Referans aralıkları</div>
+<div class="n">İçerik</div><div class="n">Değerlendirme</div><div class="n">Audit log</div>
+</div>
+
+<div style="flex:1;padding:32px 40px;display:flex;flex-direction:column;gap:20px;min-width:0">
+<div style="display:flex;align-items:center;justify-content:space-between">
+<div><div style="font-size:34px;font-weight:300;letter-spacing:-.03em">Referans aralıkları</div><div style="margin-top:4px;font-size:14px;color:#9ba5b0;font-weight:300">Su ve uyku için ortalama değerler. Yalnız diyetisyen rolü düzenler ve onaylar.</div></div>
+<div style="display:flex;gap:10px;align-items:center"><span class="p" style="background:rgba(242,180,92,.14);color:#f2b45c">v0 · Taslak</span><span style="height:40px;padding:0 18px;border-radius:12px;background:#1B2027;font-size:14px;color:#7f8894;display:inline-flex;align-items:center">Yayına al (onay gerekli)</span></div>
+</div>
+
+<div style="padding:14px 18px;border-radius:14px;background:rgba(242,180,92,.1);font-size:14px;line-height:1.5;color:#e6ecf2;font-weight:300">Aşağıdaki değerler <b style="font-weight:500">yer tutucudur</b>. Diyetisyen onaylayıp kaynaklarını girmeden yayına alınamaz. Kullanıcının kendi girdiği değerler tablo değişse de değişmez.</div>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;min-width:0">
+<div class="k">
+<div class="h">SU (BARDAK / GÜN, 200 ML)</div>
+<div class="t th" style="grid-template-columns:1.3fr 1fr 1fr 1fr;margin-top:8px"><span>Yaş bandı</span><span>Kadın</span><span>Erkek</span><span>Belirtmedi</span></div>
+<div class="t" style="grid-template-columns:1.3fr 1fr 1fr 1fr"><b>14–17</b><span>[DEĞER]</span><span>[DEĞER]</span><span>[DEĞER]</span></div>
+<div class="t" style="grid-template-columns:1.3fr 1fr 1fr 1fr"><b>18–64</b><span>[DEĞER]</span><span>[DEĞER]</span><span>8 (genel)</span></div>
+<div class="t" style="grid-template-columns:1.3fr 1fr 1fr 1fr"><b>65+</b><span>[DEĞER]</span><span>[DEĞER]</span><span>[DEĞER]</span></div>
+<div style="margin-top:8px;font-size:13px;color:#9ba5b0;font-weight:300">Kilo bandı (isteğe bağlı çarpan): [DİYETİSYEN TANIMLAR]</div>
+</div>
+<div class="k">
+<div class="h">UYKU (SAAT / GÜN)</div>
+<div class="t th" style="grid-template-columns:1.3fr 1fr 1fr 1fr;margin-top:8px"><span>Yaş bandı</span><span>Aralık</span><span>Hedef</span><span>Durum</span></div>
+<div class="t" style="grid-template-columns:1.3fr 1fr 1fr 1fr"><b>14–17</b><span>[DEĞER]</span><span>[DEĞER]</span><span class="p" style="background:#1B2027">Boş</span></div>
+<div class="t" style="grid-template-columns:1.3fr 1fr 1fr 1fr"><b>18–64</b><span>7–9</span><span>8</span><span class="p" style="background:rgba(242,180,92,.14);color:#f2b45c">Yer tutucu</span></div>
+<div class="t" style="grid-template-columns:1.3fr 1fr 1fr 1fr"><b>65+</b><span>[DEĞER]</span><span>[DEĞER]</span><span class="p" style="background:#1B2027">Boş</span></div>
+<div style="margin-top:8px;font-size:13px;color:#9ba5b0;font-weight:300">Kaynak ve atıf: [KAYNAK]</div>
+</div>
+</div>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;min-width:0">
+<div class="k">
+<div class="h">SÜRÜM GEÇMİŞİ</div>
+<div class="t" style="grid-template-columns:90px 1fr 120px;margin-top:8px"><b>v0</b><span>İlk taslak, yer tutucu değerler</span><span class="p" style="background:#1B2027">Taslak</span></div>
+<div style="margin-top:6px;font-size:13px;color:#7f8894;font-weight:300">Her yayın: yürürlük tarihi, değişiklik notu, onaylayan, denetim kaydı.</div>
+</div>
+<div class="k">
+<div class="h">ETKİ ÖNİZLEMESİ</div>
+<div style="margin-top:10px;font-size:14px;line-height:1.6;color:#c9d1d8;font-weight:300">Yayına alınınca yalnız <b style="font-weight:400">kendi değerini girmemiş</b> kullanıcılar etkilenir. Onlara tek cümlelik sakin bir bilgi gider: “Ortalamayı güncelledim.” Kendi değerini girenlere dokunulmaz.</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<script>window.__NAV={"links": [{"t": "Maliyet ve politika", "to": "AdminMaliyet", "up": 0, "all": false}, {"t": "Referans aralıkları", "to": "AdminReferans", "up": 0, "all": false}], "name": "AdminReferans"};</script>
+<script src="../nav.js"></script>
+</body>
+</html>

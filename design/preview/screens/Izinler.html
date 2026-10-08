@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>5.6 · İzinler · Ambient</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#07090c;font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+button{font-family:inherit;cursor:pointer}
+.i{padding:16px 18px;border-radius:20px;background:#14181D;display:flex;align-items:center;gap:14px}
+.i .t{width:44px;height:44px;border-radius:14px;background:rgba(143,188,255,.14);display:grid;place-items:center;flex:none}
+.i b{display:block;font-size:17px;font-weight:400}
+.i small{display:block;margin-top:2px;font-size:12px;line-height:1.4;color:#9ba5b0;font-weight:300}
+.i button{margin-left:auto;height:44px;padding:0 16px;border:0;border-radius:12px;background:#e6ecf2;color:#07090c;font-size:14px;font-weight:500;flex:none}
+</style>
+
+<style>.ambient-link{cursor:pointer}.ambient-link:hover{filter:brightness(1.15)}.ambient-link:focus-visible{outline:2px solid #8fbcff;outline-offset:2px}html.hint .ambient-link{outline:2px dashed rgba(143,188,255,.8);outline-offset:2px}html.embed .frame{margin:0;border-radius:0;box-shadow:none}html.embed{background:transparent}html{background:#0b0d10}body{margin:0;min-height:100vh}.frame{width:390px;height:844px;margin:24px auto;border-radius:36px;overflow:hidden;box-shadow:0 30px 80px -30px rgba(0,0,0,.6)}.wide{width:390px;margin:0 auto}</style>
+</head>
+<body>
+<div class="frame">
+
+
+<div style="position:relative;width:390px;height:844px;overflow:hidden;box-sizing:border-box;padding:56px 16px 0;background:radial-gradient(120% 50% at 15% -5%,rgba(143,188,255,.13),transparent 60%),#07090c;color:#e6ecf2;font-family:Inter,system-ui,sans-serif">
+
+<div style="margin-top:60px;font-size:36px;line-height:1.04;font-weight:300;letter-spacing:-.03em">Sana yardım edebilmem için</div>
+<div style="margin-top:10px;font-size:15px;line-height:1.45;color:#9ba5b0;font-weight:300">Hepsi isteğe bağlı. İstediğini sonra Ayarlar’dan değiştirebilirsin.</div>
+
+<div style="margin-top:28px;display:flex;flex-direction:column;gap:10px">
+<div class="i"><div class="t"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><g stroke="#e6ecf2"><path d="M18 8a6 6 0 0 0-12 0c0 6-2 7.500-2 7.500h16S18 14 18 8z"/></g><g stroke="#8fbcff"><path d="M10 19a2 2 0 0 0 4 0"/></g></svg></div><div><b>Bildirimler</b><small>Yalnızca sorduğum şeyler için</small></div><button>İzin ver</button></div>
+<div class="i"><div class="t"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><g stroke="#e6ecf2"><path d="M5 6h14v9h-8l-4 4v-4H5z"/></g><g stroke="#8fbcff"><path d="M8.500 9.500h7M8.500 12h4"/></g></svg></div><div><b>Mikrofon</b><small>Söyleyerek eklemek için. Olmazsa yazarsın.</small></div><button>İzin ver</button></div>
+<div class="i"><div class="t"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><g stroke="#e6ecf2"><path d="M4 6h16v14H4z"/></g><g stroke="#8fbcff"><path d="M4 10h16M8 3.500v4M16 3.500v4"/></g></svg></div><div><b>Takvim</b><small>Yalnızca okurum, takvimine yazmam</small></div><button>İzin ver</button></div>
+</div>
+
+<div style="position:absolute;left:16px;right:16px;bottom:34px;display:flex;flex-direction:column;gap:8px">
+<button style="height:56px;border:0;border-radius:18px;background:#1B2027;color:#e6ecf2;font-size:16px">Şimdilik geç</button>
+</div>
+</div>
+
+</div>
+<script>window.__NAV={"back": "Karsilama4", "links": [{"t": "Şimdilik geç", "to": "BosGun", "up": 0, "all": false}], "actions": [{"t": "İzin ver", "do": "granted", "all": true}], "name": "Izinler"};</script>
+<script src="../nav.js"></script>
+</body>
+</html>

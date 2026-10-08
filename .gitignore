@@ -1,0 +1,26 @@
+# dependencies and builds
+node_modules/
+.pnpm-store/
+dist/
+build/
+.expo/
+.next/
+ios/Pods/
+*.tsbuildinfo
+# env and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.p8
+*.p12
+*.mobileprovision
+# local data
+*.sqlite
+*.db
+pgdata/
+# os and editor
+.DS_Store
+.idea/
+.vscode/
+coverage/

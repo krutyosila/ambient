@@ -27,8 +27,8 @@ En yakını D-Plan (aynı vaat, seri+istatistik, Türkçe var; Pro ₺249,99/ay)
 ## Belgeler (ihtiyaca göre aç)
 `start.md` (tam tanım) · `DECISIONS.md` (kararlar, bekleyen sorular) · `docs/DESIGN.md` (token, bileşen) · `docs/FLOWS.md` (ekran/akış, cümle→araç) · `docs/DATA-MODEL.md` · `docs/RHYTHM.md` · `docs/ICONS.md` · `docs/PRICING.md` · `docs/COST-POLICY.md` · `docs/MARKETING.md` · `docs/ROADMAP.md` · `docs/RESEARCH.md`.
 
-## Durum
-Kod yok; tasarım ve belgeler hazır. **Sıradaki hedef: tam çalışır test ortamı (TestFlight + staging), plan `docs/TEST-ENV.md`, onay bekliyor (D-038).** Tuvalde 50 sayfa. Sıradaki: açık soruların kapanması (`DECISIONS.md` Q'lar), mimari özet ve milestone onayı (`start.md` §0), spike'lar (widget, bildirim, senkron, Türkçe çözümleyici).
+## Durum (8 Ekim 2026)
+Kod yok; tasarım ve belgeler hazır. **Sıradaki hedef: tam çalışır test ortamı (TestFlight + staging), plan `docs/TEST-ENV.md`, onay bekliyor (D-038). Kararlar: Anthropic, önce iOS, hosting kullanıcıda, hata izleme ücretsiz katmanla, Small Business sonra. Kurulum: `docs/SETUP.md`. Tıklanabilir prototip: `design/preview/app.html`.** Tuvalde ve `design/preview` içinde 50 sayfa. Sıradaki: açık soruların kapanması (`DECISIONS.md` Q'lar), mimari özet ve milestone onayı (`start.md` §0), spike'lar (widget, bildirim, senkron, Türkçe çözümleyici).
 
 ## Açık kararlar (kısa)
 Diyetisyen adı ve hukuk hazırlığı (yayın öncesi) · LLM sağlayıcı (Haiku/Sonnet 5.5 varsayım) · senkron stratejisi · fiyat/komisyon/vergi doğrulaması · platform sırası (iOS önce) · barındırma/bütçe.
