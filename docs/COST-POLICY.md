@@ -25,7 +25,17 @@ Ayarlar: Haiku 5.5'te `effort` varsayılanı `medium`; araç çıkarma için **a
 - Özetler cihazda ve sunucuda kullanıcıya açıktır ve silinir ("Hafıza" anahtarı, Veri ve gizlilik).
 
 ## 4. Bütçe ve kademeli düşürme
-Kullanıcı başına aylık bütçe (LLM + bulut ses, USD): **başlangıçta plan B (Small Business onaysız, %30 komisyon):** Normal 0,04 · Plus 0,16 · Pro 0,32; onay ve komisyon doğrulanınca plan A: Plus 0,19 · Pro 0,38. Kural: bütçe ≤ en düşük net gelirli planın %30'u (`PRICING.md` §5). Her çağrının gerçek maliyeti (token ve ses dakikası) kullanıcıya yazılır.
+
+### 4.1 Bütçe kuralı ve otomatik ayarlama (D-033)
+- **Her ücretli abonenin aylık bütçesi = kendi net aylık gelirinin %30'u.** Net gelir = fiyat ÷ KDV oranı × (1 − komisyon) ÷ kur, kullanıcının **planı ve mağazası** için (TL fiyatla Türkiye aboneliği ile $ ile ABD aboneliği farklı bütçe alır). Aylık plan yıllıktan yüksek net verir, bütçesi de yüksektir.
+- **Taban ve tavan** (katman başına): bütçe en az tabana, en çok tavana sabitlenir. Başlangıç: Plus taban $0,12 · tavan $0,40; Pro taban $0,25 · tavan $0,80 (ölçümle ayarlanır). Taban, çok ucuz pazarlarda hizmetin kullanılamaz hale gelmesini; tavan, pahalı planda aşırı harcamayı önler.
+- **Ücretsiz katman:** kullanıcı başına sabit $0,04; ancak toplam ücretsiz harcama, toplam net gelirin **%15'ini** aşmaz (ya da lansman döneminde pazarlama bütçesinin belirlenen tutarı). Aşılırsa ücretsiz bütçe orantılı küçülür (en az $0,01).
+- **Kendini ayarlama:** günlük bir iş şunları okur ve bütçeleri yeniden hesaplar: (a) kur (günlük ortalama), (b) komisyon oranı (Small Business onay durumu; onaylanana dek %30), (c) gerçek net gelir (App Store sunucu bildirimleri ve satış raporları), (d) gerçek maliyet telemetrisi. Değişiklikler **haftada en çok ±%10** ile yumuşatılır; admin onayı olmadan tavan/tabanı aşmaz; her değişiklik denetim kaydına yazılır ve uyarı üretir.
+- **Örnek (kur 55, KDV %20):** Plus yıllık TL: net $0,53 (komisyon %30) → bütçe $0,16 ≈ 14 cümle/gün; Small Business onayında net $0,64 → bütçe $0,19 ≈ 17. ABD'de Plus aylık $3,99 → net $2,79 → %30 = $0,84 → tavan $0,40 uygulanır.
+- Kullanıcıya gösterilen "günde yaklaşık N cümle" değeri bu bütçeden türetilir, yaklaşıktır ve plan sayfasında "yaklaşık" yazar.
+
+### 4.2 Kademeli düşürme
+Her çağrının gerçek maliyeti (token ve ses dakikası) kullanıcıya yazılır.
 
 | Bütçe kullanımı | Davranış |
 |---|---|

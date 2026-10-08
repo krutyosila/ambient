@@ -93,7 +93,7 @@ Bir ücretli kullanıcıdan, KDV ve Apple komisyonu düştükten sonra elimize g
 2. Apple komisyonu: **A (%15):** ₺35,42 = **$0,64**; **B (%30):** ₺29,17 = **$0,53**
 3. %30'u: **A: $0,19**, **B: $0,16**. Bu, o kullanıcının aylık anlama bütçesidir. Tipik Plus kullanıcısının gerçek harcaması yaklaşık $0,06'dır.
 
-Neden yıllık planın neti? Kullanıcı hangi planda olursa olsun bütçe en düşük net gelirli planı baz aldığı için, hiçbir plan zarar etmez. Neden %30? Pazarlama, altyapı ve kâr için yeterli pay bırakırken kullanıcıya yeterli anlama hakkı verir. %20 daha güvenli ama kullanıcıya daha az hak; %40 daha cömert ama marjin ince. Oran ilk 4 hafta ölçümle gözden geçirilir (Q20).
+Neden yıllık planın neti? Kullanıcı hangi planda olursa olsun bütçe en düşük net gelirli planı baz aldığı için, hiçbir plan zarar etmez. Neden %30? Pazarlama, altyapı ve kâr için yeterli pay bırakırken kullanıcıya yeterli anlama hakkı verir. %20 daha güvenli ama kullanıcıya daha az hak; %40 daha cömert ama marjin ince. Oran kabul edildi (D-033); ilk 4 hafta ölçümle gözden geçirilir.
 
 **Başvuru senaryolarına göre bütçeler** (referans kur 55):
 
@@ -103,7 +103,7 @@ Neden yıllık planın neti? Kullanıcı hangi planda olursa olsun bütçe en d�
 | Plan A (Small Business onaylı, %15) | $0,04 | $0,19 (≈ 17/gün) | $0,38 (≈ 24/gün) |
 
 Karar: **bütçeleri plan B'ye göre başlatırız**; Small Business onayı gelince ve komisyon kuralı App Store Connect'te doğrulanınca plan A değerlerine çıkarız (kullanıcılara cömertlik artışı olarak). Böylece onay gecikse bile zarar etmeyiz. Normal katmanın bütçesi gelire bağlı değildir; pazarlama bütçesinden karşılanan sabit bir tavandır.
-Kur ya da komisyon değişince bütçeler admin panelinden yeniden hesaplanır (`COST-POLICY.md` §4).
+**Kendini ayarlayan sistem (D-033):** bütçe tek bir sabit sayı değil, her abonenin kendi net gelirinin %30'udur (katman tabanı/tavanıyla); kur, komisyon ve gerçek gelir değiştikçe günlük yeniden hesaplanır (`COST-POLICY.md` §4.1). Yukarıdaki tablo referans değerlerdir.
 
 ## 6. Paywall ve deneme kuralları
 - Satış baskısı yok: paywall yalnızca (a) kullanıcı bir Plus/Pro özelliğine dokunduğunda, (b) anlama bütçesi dolduğunda, (c) Plan ve fiyat sayfasında gösterilir. Açılışta paywall yok.

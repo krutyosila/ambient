@@ -3,7 +3,7 @@
 Görsel kaynak: tuvaldeki 38 sayfa (https://claude.ai/artifact/CHcQgkvtgDe2JDoqGd1TX2, özel bağlantı). Numaralar tuvaldeki başlıklarla aynıdır. Prototip `design/life-os-case-study.html` davranış için hâlâ kaynaktır; farklar `docs/DESIGN.md` içinde.
 
 ## 1. Etkileşim kuralları
-1. **Kayıt yalnızca söz ve yazıyla girer** (D-012). Form, saat seçici, sayı ayarlayıcı yok.
+1. **Kayıt yalnızca söz ya da yazıyla girer** (D-012; yazı ve söz eşit). Form, saat seçici, sayı ayarlayıcı yok. **İstisna:** doğum tarihi, cinsiyet, boy, kilo elle de girilir (D-030).
 2. **Dokunuş üç iş görür:** sistemin sorusunu yanıtlamak (Yaptım, Daha geç, Dinleniyorum, Doğru), bir öneriyi onaylamak (Olur) ve son işlemi geri almak (Geri al). Gezinmek ve salt okunur ayrıntıya girmek de dokunuştur.
 3. **Konuşma çubuğu** her sayfada altta durur ve o sayfaya özgü ipuçları gösterir. Balon düğmesine dokunmak yazmayı, basılı tutmak sesle söylemeyi açar. Mikrofon izni yoksa yalnızca yazma kalır.
 4. **Tek soru kuralı:** belirsizlikte tek kısa soru; çipler yalnızca olası yanıtlardır. Anlaşılmazsa söylenen not olarak saklanır.
@@ -40,7 +40,10 @@ Görsel kaynak: tuvaldeki 38 sayfa (https://claude.ai/artifact/CHcQgkvtgDe2JDoqG
 | 4.3 | Plan ve fiyat | 3.1, 5.1 | Devam et | — | Abonelik |
 | 4.4 | Yardım | 3.1 | — | Destek mesajı | — |
 | 4.5 | Takvim | 3.1, 5.5 | — | "Kişisel takvimi gizle" | Setting |
-| 2.9 | Kilo güncelleme sorusu | Bugün kartı (4 haftada bir) | Söyle / Daha sonra / Bir daha sorma | "Kilom 73" | Measurement |
+| 2.9 | Kilo güncelleme sorusu | Bugün kartı (6 ayda bir) | Sayı gir / Tahmini seç / Daha sonra / Bir daha sorma | "Kilom 73", "biraz kilo aldım sanırım" | Measurement |
+| 3.9 | Kişisel bilgilerim | Profil | Kaydet | Elle ya da yazıyla/sözle | Profile, Measurement |
+| 3.10 | Kilo çizgisi | Kişisel bilgilerim | — | — | Measurement |
+| 6.4 | Admin: Referans aralıkları | Admin (diyetisyen rolü) | — | — | ReferenceTable |
 | 2.8 | Gün kapanmadı | Sabah, Bugün üstü | Kapat → 2.2; Geç → Bugün | — | DayLog (açık gün) |
 | 4.6 | Plan karşılaştırma | 4.3 | Seç → Plan ve fiyat | — | Abonelik |
 | 4.8 | Deneme bitti | Deneme sonu | Tamam | — | Abonelik |

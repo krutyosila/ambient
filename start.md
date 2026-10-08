@@ -48,8 +48,9 @@ Ambient, kullanıcının hayatını sessizce organize eden kişisel bir günlük
 
 Ton: sakin, insani. **Skor, streak, suçluluk, rozet, yüzdeli baskı yok.** Robot, parıltı, "AI" dekorasyonu yok. Yapay zekâ davranışla görünür: anlar, önerir, sorar.
 
-### Girdi kuralı: kayıt yalnızca söz ve yazıyla girer
+### Girdi kuralı: kayıt yalnızca söz ya da yazıyla girer (tek istisna: kişisel bilgiler)
 - Kullanıcı hiçbir kaydı (etkinlik, rutin, su, not, kişi, ayar değişikliği) form, saat seçici ya da sayı ayarlayıcıyla girmez. Prototipteki ayarlayıcı sayfaları (saat ve sayı stepper'ları) kaldırılır.
+- **İstisna (D-030):** doğum tarihi, cinsiyet, boy ve kilo elle girilebilir; aynı bilgi yazı ya da söz ile de verilebilir.
 - Dokunuş yalnızca üç iş görür: sistemin sorusunu yanıtlamak (Yaptım, Daha geç, Dinleniyorum), bir öneriyi onaylamak (Olur) ve son işlemi geri almak. Seçenek ve anahtar ayarları (yoğunluk, durum, bildirim anahtarları) yalnızca seçimdir, kayıt değildir; yine de aynı ayarlar konuşmayla da değişir.
 - Her sayfanın altındaki konuşma çubuğu o sayfaya özgü örnek cümleler önerir ("Saati 16:00 yap", "Hedefim 10 bardak olsun").
 - Sistem anlamazsa tek kısa soru sorar; yine anlamazsa söyleneni not olarak saklar, hiçbir şeyi sessizce atmaz.
@@ -59,7 +60,7 @@ Ton: sakin, insani. **Skor, streak, suçluluk, rozet, yüzdeli baskı yok.** Rob
 Su, kahve, ilaç, mola gibi aynı gün içinde birden çok kez yapılan şeyler **sayaçlı rutin**dir ve her tekrar zaman damgasıyla ayrı bir **kayıt** olarak saklanır ("bir bardak su içtim", "yarım litre", "sabah da bir bardak içmiştim"). Hedef "en az" (su) ya da "en fazla" (kahve) olabilir. Gün toplamı, saatler ve son 7 gün her zaman kayıtlardan türetilir. Birim kanonik tutulur (su için ml), kullanıcının diliyle gösterilir (bardak). Skor, yüzde ya da halka yok; sayı ve sakin bir hedef çizgisi. Veri modeli: `docs/DATA-MODEL.md`.
 
 ### Kişiselleştirme (D-029)
-Doğum tarihi, cinsiyet, boy ve kilo isteğe bağlı, konuşarak ve açık rızayla alınır; planlama (su hedefi başlangıcı, uyku aralığı vb.) buna göre kural tabanlı ayarlanır. Kilo ara ara (varsayılan 4 haftada bir) sorulur; hedef, skor, VKİ yok. Ayrıntı ve KVKK: `docs/PERSONALIZATION.md`.
+Doğum tarihi, cinsiyet, boy ve kilo isteğe bağlı, konuşarak ve açık rızayla alınır; planlama (su hedefi başlangıcı, uyku aralığı vb.) buna göre kural tabanlı ayarlanır. Kilo 6 ayda bir sorulur; kesin sayı ya da tahmini değişim ("biraz aldım") verilebilir ve nötr bir kilo çizgisi olarak izlenir; hedef, skor, VKİ yok. Su ve uyku önce insan ortalamasıyla başlar (kurum içi diyetisyen referansları), kullanıcı kendi değerini söyleyerek düzeltir. Ayrıntı ve KVKK: `docs/PERSONALIZATION.md`.
 
 ### Üyelik ve maliyet (öneri, D-020…D-028)
 Üç katman: **Normal** (süresiz ücretsiz), **Plus**, **Pro**. Katmanlar özellik ve **maliyet bütçesiyle** ayrılır; sistem bütçeye göre ucuz yoldan çalışır: yerel Türkçe çözümleyici → Haiku 5.5 → (Plus/Pro) Sonnet 5.5, kullanıcı başına aylık bütçe, kademeli düşürme. Ritim öğrenme seviyesi katmana göre seçilir. Ayrıntı: `docs/PRICING.md` (katmanlar, fiyatlar, birim ekonomi), `docs/COST-POLICY.md` (yönlendirme, bütçe, telemetri), `docs/MARKETING.md`. Proje ve kullanıcı bağlamı düzenli özetlenir (`docs/SUMMARY.md`, kullanıcı "Hafıza" özeti).
@@ -138,13 +139,15 @@ HealthKit ve Health Connect: uyku, antrenman, su. Veri türü bazında izin, cih
 - **Dış asistan bağlantısı (MCP):** kullanıcının kendi asistanından (ör. Claude, ChatGPT) rutin ve öğe eklemesi. Routinery bunu ücretsiz sunuyor. Değerlendirilecek, taahhüt değil.
 
 ## 10. Admin paneli (Next.js)
-Rol tabanlı erişim (superadmin, destek, analist), 2FA. Modüller:
+Rol tabanlı erişim (superadmin, destek, analist, **diyetisyen**), 2FA. Modüller:
 - **Kullanıcılar:** liste, detay, devre dışı bırak, KVKK dışa aktarma ve silme.
 - **LLM yönetimi:** sağlayıcı/model seçimi, yedek sağlayıcı, sistem prompt'u **sürümleri** (geri alma), araç tanımlarını görüntüleme, test alanı (playground).
 - **Kullanım ve maliyet:** günlük token, maliyet, gecikme, hata oranı, sağlayıcı bazında.
 - **Konuşma kayıtları:** yalnızca kullanıcı rızasıyla, PII maskeli, arama ve filtre.
 - **Değerlendirme:** örnek cümle seti, başarı oranı, sürümler arası karşılaştırma.
 - **İçerik:** yardım SSS, karşılama soruları, AI gözlem şablonları, bildirim şablonları.
+- **Maliyet ve politika:** katman bütçeleri, otomatik ayarlama, yönlendirme, kill-switch (`docs/COST-POLICY.md`).
+- **Referans aralıkları (diyetisyen rolü):** su/uyku ortalama tabloları, sürümleme, denetim (`docs/PERSONALIZATION.md`).
 - **Feature flag'ler, audit log, sistem sağlığı** (kuyruk, işler, hatalar).
 
 ## 11. Kalite

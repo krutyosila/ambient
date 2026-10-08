@@ -72,3 +72,5 @@ Durum: ☐ başlamadı · ◐ sürüyor · ☑ bitti
 ## Kişiselleştirme (D-029)
 - Kişisel bilgi alma ve kullanma kuralları: `docs/PERSONALIZATION.md`. M2 (veri) ve M5 (Karşılama adımı, Profil, kilo sorusu); aralıklar uzman gözden geçirmesinden sonra (Q22).
 - Deneme sonrası yükseltme kartı ve düşürme davranışı: M5.
+- Diyetisyen: referans tablolarını (su, uyku) hazırlayıp onaylar; admin'de "Referans aralıkları" modülü (M6). Yayın önkoşulu (D-032, Q25).
+- Bütçe otomatik ayarlama işi: kur/komisyon/gelir verisi, günlük hesap, haftalık ±%10 sınırı (M3–M6, D-033).

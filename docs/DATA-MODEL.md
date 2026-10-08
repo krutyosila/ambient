@@ -102,10 +102,12 @@ Hayat ritmi ekranının yedi kategorisi (hareket, okuma, uyku, su, odak, sosyal,
 - `undo_last` yalnızca son işlemi geri alır; geri alınan kayıt toplamdan düşer, geçmişte kalır.
 - Aynı cümlenin iki kez gönderilmesi tek kayıt üretir (idempotency).
 
-## 9. Kişisel bilgiler ve ölçümler (`docs/PERSONALIZATION.md`)
-- **Profile:** `birthDate?`, `gender? (female|male|undisclosed|other)`, `consents[]` (`kind: health_data|personalization`, `grantedAt`, `withdrawnAt?`), `askCadence (never|monthly|quarterly)`, `personalizationEnabled`.
-- **Measurement** (yalnız eklenir): `id, userId, type (weight|height), value, unit (kg|cm), measuredAt, source (voice|text), createdAt, deletedAt`. Kilo zaman serisidir; son değer ve tarih türetilir.
-- **PersonalAsk** (soru ritmi): `field, lastAskedAt, snoozedUntil?, dismissedForever`.
-- **Türetilen (LLM bağlamına giden):** `ageGroup`, `waterTargetSuggestion (bardak)`, `hasConsent` — ham ölçümler gitmez.
+## 9. Kişisel bilgiler, ölçümler, referanslar (`docs/PERSONALIZATION.md`)
+- **Profile:** `birthDate?`, `gender? (female|male|undisclosed|other)`, `consents[]` (`kind: health_data|personalization`, `grantedAt`, `withdrawnAt?`), `askCadenceMonths (0|3|6)`, `personalizationEnabled`.
+- **Measurement** (yalnız eklenir): `id, userId, type (weight|height), kind (exact|estimated), value?, unit (kg|cm), estimate? (same|slight_up|slight_down|much_up|much_down), measuredAt, source (form|text|voice), createdAt, deletedAt`. `estimated` kayıtta `value` önceki kesin değere göre türetilir (biraz ±2, çok ±5 kg; Q26) ve çizgide kesiktir; `unknown` yanıtı kayıt oluşturmaz, yalnız `PersonalAsk.lastAskedAt` günceller.
+- **PersonalAsk:** `field, lastAskedAt, snoozedUntil?, dismissedForever`.
+- **ReferenceTable** (admin, diyetisyen): `id, kind (water|sleep|...), version, effectiveFrom, rows[{ageBand, gender?, weightBand?, value, unit, range?}], source, changeNote, approvedBy, status (draft|approved|retired)`. Sürümlüdür, denetlenir.
+- **UserOverride:** `userId, kind (water|sleep|...), value, unit, setAt`. Kullanıcı değeri her zaman referanstan önceliklidir.
+- **Türetilen (LLM bağlamına giden):** `ageGroup`, `waterTarget`, `sleepTarget`, `hasConsent` — ham ölçümler gitmez.
 - 18 yaş altı: `weight/height` kayıtları oluşturulmaz, soru çıkmaz.
 - Silme/dışa aktarma bu varlıkları kapsar; rıza geri çekilince kullanım durur.

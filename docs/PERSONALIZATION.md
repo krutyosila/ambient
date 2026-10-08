@@ -1,58 +1,75 @@
 # Kişisel bilgiler ve kişiselleştirme
 
-Durum: öneri (`DECISIONS.md` D-029). Kullanıcıdan doğum tarihi, cinsiyet, boy ve kilo gibi bilgileri **isteğe bağlı** alır, planlamayı buna göre ayarlarız. Kayıt yalnız söz ve yazıyla girer (D-012). Bu bilgilerin bir kısmı sağlık verisidir; KVKK'da özel nitelikli kişisel veri sayılır, bu yüzden **açık rıza** gerekir.
+Durum: kabul (`DECISIONS.md` D-029…D-032). Kullanıcıdan doğum tarihi, cinsiyet, boy ve kilo alınır; planlama bunlara göre ayarlanır. Bu bilgilerin bir kısmı sağlık verisidir; KVKK'da özel nitelikli kişisel veri sayılır, bu yüzden **açık rıza** gerekir.
 
 ## 1. İlkeler
 1. **İsteğe bağlı ve atlanabilir.** Hiçbir alan zorunlu değil; atlamak hiçbir özelliği kapatmaz (öneriler daha genel olur).
-2. **Konuşarak girilir:** "14 Mart 1992 doğumluyum", "Kilom 74", "Boyum 178". Form ya da kaydırıcı yok.
-3. **Hedef koymaz, yargılamaz.** Kilo için hedef, skor, VKİ, "fazla/az" dili, kıyas yok. Kilo bir sayı ve zaman serisidir; hedefi yalnız kullanıcı kendisi söylerse tutarız.
+2. **Elle girilir, yazıyla ya da sözle de anlatılabilir** (D-030). Bu dört alan için formda alanlar vardır (tarih, seçim, sayı); aynı bilgiyi konuşma çubuğuna **yazarak ya da söyleyerek** de verebilir ("14 Mart 1992 doğumluyum", "kilom 74", "biraz kilo aldım sanırım"). Her iki yolda da sistem ne istendiğini anlar. Bu, "kayıt yalnız söz/yazıyla girer" kuralının (D-012) **tek istisnasıdır**; diğer kayıtlarda (etkinlik, rutin, su) form yoktur.
+3. **Hedef koymaz, yargılamaz.** Kilo için hedef, skor, VKİ, "fazla/az" dili, kıyas yok. Hedefi yalnız kullanıcı kendisi söylerse tutarız.
 4. **Cihazda.** Bu bilgiler cihazda saklanır; senkron açıksa şifreli. Yapay zekâ sağlayıcısına ham gönderilmez, yalnız türetilmiş küçük alanlar gider (ör. "yaş grubu 30–39", "su hedefi 10 bardak").
-5. **Tıbbi tavsiye değil.** Önerilen su, uyku ve hareket değerleri genel başlangıç noktalarıdır; kullanıcı her zaman değiştirebilir; sağlık sorunu varsa uzmana yönlendirilir.
-6. **Hassasiyet koruması:** kilo sorusu her an kapatılabilir; kilo verme ya da alma hedefi, kalori ve ekstrem plan önerilmez; 18 yaş altı kullanıcıya boy ve kilo sorulmaz.
+5. **Önce ortalama, sonra kişiye göre.** Su ve uyku önerileri başlangıçta bir **insan ortalamasına** göre sunulur; kullanıcı "benim için uygun olan şu" diyerek düzeltir ve düzeltmesi her zaman önceliklidir (§3).
+6. **Tıbbi tavsiye değil.** Değerler genel başlangıç noktalarıdır; sağlık sorunu varsa uzmana yönlendirilir.
+7. **Hassasiyet koruması:** kilo sorusu her an kapatılabilir; kilo verme/alma hedefi, kalori ve ekstrem plan önerilmez; 18 yaş altına boy ve kilo sorulmaz.
 
 ## 2. Alanlar
-| Alan | Girdi | Saklama | Kullanım |
+| Alan | Giriş | Saklama | Kullanım |
 |---|---|---|---|
-| Doğum tarihi | Söyleyerek, bir kez | Tarih (yaş türetilir); isteğe bağlı yalnız yıl | Yaş grubu, genel uyku aralığı, kendi doğum gününde sakin selam, 18 yaş altı korumaları |
-| Cinsiyet | Söyleyerek: kadın, erkek, belirtmek istemiyorum, ya da kendi sözüyle | Seçilen değer; yazı ile verilen serbest metin saklanmaz, yalnız eşlenen seçenek | Yalnız genel aralıkların kaynağı cinsiyete göre ayırıyorsa; belirtmezse nötr aralık. Sistem hiçbir zaman tahmin etmez. Metinlerde varsayılan hitap tarafsızdır |
-| Boy | Söyleyerek, bir kez (yetişkinde değişmez) | Ölçüm kaydı | Su ve hareket başlangıç önerileri |
-| Kilo | Söyleyerek, düzenli | **Ölçüm kayıtları** (zaman damgalı, yalnız eklenir) | Su hedefi başlangıcı, hareket başlangıcı; nötr "son güncelleme" |
-| (İsteğe bağlı) Hareket düzeyi | Söyleyerek | Seçenek | Başlangıç önerileri |
+| Doğum tarihi | Elle (gün/ay/yıl) ya da yazı/söz, bir kez | Tarih (yaş türetilir) | Yaş grubu, ortalama aralıkların seçimi, kendi doğum gününde sakin selam, 18 yaş altı korumaları |
+| Cinsiyet | Seçim: kadın, erkek, belirtmek istemiyorum, diğer (ya da yazı/söz) | Seçilen değer | Yalnız referans tablosu cinsiyete göre ayırıyorsa; belirtmezse nötr aralık. Sistem hiçbir zaman tahmin etmez. Hitap tarafsızdır |
+| Boy | Elle (cm) ya da yazı/söz, bir kez | Ölçüm kaydı | Referans bandının seçimi |
+| Kilo | Elle (kg) **ya da tahmini çizgi** (§4) | Ölçüm kayıtları (zaman damgalı, yalnız eklenir) | Referans bandının seçimi, nötr "son güncelleme" |
+| (İsteğe bağlı) Hareket düzeyi | Seçim | Seçenek | Başlangıç önerileri |
 
-## 3. Nasıl kullanılır (kural tabanlı, LLM yok)
-Tüm hesaplar cihazdaki deterministik kurallardır (**maliyeti $0**, `docs/COST-POLICY.md`). Aşağıdaki aralıklar **uzman gözden geçirmesinden önce yayına girmez** (Q22).
+## 3. Ortalamalar ve diyetisyen
+**Başlangıç değeri bir insan ortalamasıdır.** Su ve uyku için varsayılanlar, kurum içi **diyetisyen** tarafından yönetilen **referans tablolarından** gelir (admin panelinde "Referans aralıkları", tasarım 6.4). Tablo yaş grubu, cinsiyet ve kilo bandına göre ortalama değerleri tutar. Bilgi eksikse genel yetişkin ortalaması kullanılır.
 
-| Girdi | Çıktı |
+| Girdi | Başlangıç davranışı |
 |---|---|
-| Kilo (+ boy, yaş grubu) | Su hedefi başlangıcı. Yaygın bir genel kural kilo başına günde yaklaşık 30–35 ml'dir; örnek: 70 kg → yaklaşık 2,1–2,5 L ≈ 10–12 bardak (200 ml). Sistem "Hedefini 10 bardak yapayım mı?" diye **önerir**; kullanıcı kendi hedefini söyleyebilir (D-004) |
-| Yaş grubu | Genel uyku aralığı önerisi (yetişkinler için yaygın 7–9 saat); uyku saatine göre "Uykuya hazırlık" önerisi |
-| Kilo trendi | Yalnız "Son güncelleme 3 hafta önce: 74 kg" gibi nötr bilgi. Grafik, hedef çizgisi ve yorum yok (kullanıcı isterse özel ekran, Faz 2) |
-| Hareket düzeyi | Başlangıç yoğunluğu: "Haftada 3 gün, 20 dakikayla başlayalım" gibi yalnız kullanıcı isterse |
-| Doğum tarihi | Kendi doğum gününde tek sakin cümle |
+| Hiç bilgi yok | Genel yetişkin ortalaması. Yer tutucu: su yaklaşık 8 bardak (200 ml), uyku 7–9 saat (hedef 8). **Diyetisyen onaylayana dek yer tutucudur** |
+| Bilgi var | Tablodaki ilgili bant. Kullanıcıya "Ortalama bir yetişkine göre başladım; sana uygun olan başka bir değer varsa söyle" gibi önerilir |
+| Kullanıcı düzeltti | "Benim için 10 bardak uygun": kullanıcı değeri **kalıcı olarak** geçerlidir; tablo değişse bile bu kullanıcıya dokunulmaz |
 
-## 4. Ne sıklıkla sorulur
-- **İlk kez:** Karşılamada isteğe bağlı bir adım ("Seni biraz tanıyayım"), atlanabilir. Atlanırsa 2 hafta sonra bir kez daha sorulur, sonra bir daha sorulmaz (Profil'den söylenebilir).
-- **Kilo güncellemesi ("ara ara"):** varsayılan **4 haftada bir**, kullanıcı sıklığı söyleyerek değiştirir: hiç / ayda bir / 3 ayda bir. Soru Bugün'de uygulama içi bir kart olarak gelir (bildirim varsayılan değil). Günde en fazla bir kişisel soru; Dinleniyorum durumunda ve sessiz saatlerde sorulmaz; "Daha sonra" 1 hafta erteler; "Bir daha sorma" kalıcı kapatır.
-- **Diğer alanlar:** boy ve doğum tarihi yalnız bir kez. Yaşam değişikliği (ör. uyku saati değişimi) ayrı sorulmaz, ritimden öğrenilir.
-- Soru metni baskısız ve kısadır: "Kilonu güncellemek ister misin? Son kayıt 4 hafta önce: 74 kg. Yalnız planlarını ayarlamak için."
+- Sistem kullanıcıyı ortalamaya zorlamaz; ortalamadan sapmayı yargılamaz.
+- Referans tablosu güncellenirse, **kendi değerini girmemiş** kullanıcılar için "Ortalamayı güncelledim" sakin bir bilgi olarak gösterilir.
+- Tablolar sürümlüdür (yürürlük tarihi, değişiklik notu, denetim kaydı). Diyetisyen rolü yalnız referans modülünü düzenler. Kaynak/atıf bilgisi tabloda tutulur.
+- Hareket başlangıcı ("Haftada 3 gün, 20 dakikayla başlayalım") yalnız kullanıcı isterse ve tabloya göre önerilir.
 
-## 5. Rıza, KVKK ve güvenlik
-- **Ayrı açık rıza:** kilo ve boy için Karşılama 5.5'te kısa, anlaşılır ve geri çekilebilir rıza. Doğum tarihi ve cinsiyet için rıza metni aynı sayfada ama ayrı satır.
+## 4. Kilo: elle girilen sayı ya da tahmini çizgi
+Kullanıcı kilosunu iki biçimde verebilir:
+1. **Kesin sayı:** "74 kg". Çizgide dolu nokta.
+2. **Tahmini değişim**, kesin sayıyı bilmiyorsa: *aynı kaldı · biraz aldım · biraz verdim · çok aldım · çok verdim · bilmiyorum*. Yazı/söz de olur: "bilmiyorum, kilo aldım sanırım", "biraz kilo verdim".
+   - Sistem bunu önceki kayda göre **tahmini** bir nokta olarak işler (biraz ≈ ±2 kg, çok ≈ ±5 kg, kesin değerlerle değiştirilebilir; "bilmiyorum" bir nokta eklemez, yalnız "güncelleme atlandı" işaretler).
+   - Tahmini noktalar çizgide **kesikli** gösterilir; kesin sayı girilince tahminler üzerine yazılmaz, sıralı kalır.
+
+**Kilo çizgisi** (tasarım 3.10): zaman içinde nötr bir çizgi; hedef çizgisi, renk yargısı ve yorum yok. Ölçek sayı ve tarih, "arttı/azaldı" yerine yalnız değerler.
+
+## 5. Ne sıklıkla sorulur
+- **İlk kez:** Karşılamada isteğe bağlı bir adım ("Seni biraz tanıyayım"), atlanabilir. Atlanırsa 2 hafta sonra bir kez daha sorulur, sonra bir daha sorulmaz (Profil'den girilir).
+- **Kilo güncellemesi: 6 ayda bir** (D-031). Kullanıcı sıklığı değiştirebilir: hiç / 3 ayda bir / 6 ayda bir. Soru Bugün'de uygulama içi kart olarak gelir (bildirim yok). Günde en fazla bir kişisel soru; Dinleniyorum ve sessiz saatte sorulmaz; "Daha sonra" 1 ay erteler; "Bir daha sorma" kalıcı kapatır.
+- **Diğer alanlar:** boy ve doğum tarihi yalnız bir kez.
+- Soru metni baskısız ve kısadır: "Kilonu güncellemek ister misin? Son kayıt 6 ay önce. Yalnızca önerilerimi ayarlamak için."
+
+## 6. Rıza, KVKK ve güvenlik
+- **Ayrı açık rıza:** kilo ve boy için Karşılama 5.5'te kısa, anlaşılır ve geri çekilebilir rıza. Doğum tarihi ve cinsiyet için aynı sayfada ayrı satır.
 - **Geri çekme:** Veri ve gizlilik'te "Kişisel bilgilerimi planlamada kullan" anahtarı; kapatılınca kayıtlar silinir mi saklanır mı sorulur (varsayılan: saklanır, kullanılmaz).
 - **Dışa aktarma ve silme** bu verileri de kapsar.
-- **Yaş koruması:** doğum tarihine göre 18 yaş altı için boy ve kilo istenmez, kilo trendi yoktur, öneriler nötr. 13 yaş altı kullanım bu sürümde desteklenmez (Q24: yaş eşiği hukuk görüşüyle).
+- **Yaş koruması:** doğum tarihine göre 18 yaş altı için boy ve kilo istenmez, kilo çizgisi yoktur, öneriler nötr. 13 yaş altı bu sürümde desteklenmez (Q24: hukuk görüşü).
 - **LLM'e gidenler:** yalnız türetilmiş alanlar; kimlik ve ham ölçüm gitmez (`DATA-MODEL.md` §9).
-- **Hassasiyet:** yeme bozukluğu ya da tıbbi risk belirtisi sinyalinde (ör. kullanıcı aşırı kısıtlamadan söz ederse) kilo isteği durdurulur, nazik bir yönlendirme gösterilir; ayrıntı uzman girdisiyle yazılacak (Q22).
+- **Hassasiyet:** yeme bozukluğu ya da tıbbi risk belirtisi sinyalinde kilo isteği durdurulur, nazik bir yönlendirme gösterilir; metin diyetisyenle yazılır.
 
-## 6. Ekranlar (tuval)
-5.5 Seni tanıyayım (karşılama), 3.2 Profil (yeni alanlar), 2.9 Kilo güncelleme sorusu, 4.1 Veri ve gizlilik (kişisel bilgi anahtarı).
+## 7. Ekranlar (tuval)
+5.5 Seni tanıyayım (elle ya da yazıyla), 3.2 Profil (satırlara dokununca düzenleme), 3.9 Kişisel bilgilerim (elle giriş), 3.10 Kilo çizgisi, 2.9 Kilo güncelleme sorusu, 4.1 Veri ve gizlilik (anahtar), 6.4 Admin: Referans aralıkları (diyetisyen).
 
-## 7. Katmanlar
-Temel kişiselleştirme **her katmanda** (sağlıkla ilgili bir veriyi ücret duvarının arkasına koymayız). Pro'da Faz 2'de sağlık verisi (uyku, adım, antrenman) ve çapraz sinyaller eklenir.
+## 8. Katmanlar
+Kişiselleştirme **her katmanda** (sağlıkla ilgili bir veriyi ücret duvarının arkasına koymayız). Pro'da Faz 2'de sağlık verisi (uyku, adım, antrenman) eklenir.
 
-## 8. Test
-- Birim: su hedefi hesabı sınır değerleri (çok düşük/yüksek kilo, eksik veri), yaş grubu geçişleri.
+## 9. Maliyet
+Kurallar deterministik ve cihazdadır: LLM maliyeti $0. Diyetisyen emeği sabit gider olarak `PRICING.md` varsayımlarına eklenir.
+
+## 10. Test
+- Birim: referans bandı seçimi (eksik veri, bant sınırları), kullanıcı değerinin tablodan öncelikli olması, tablo güncellemesinin kullanıcı değerine dokunmaması.
+- Kilo: kesin sayı, tahmini değişim, "bilmiyorum", yazı ile verme ("biraz kilo aldım") doğru işleniyor; tahmini noktalar kesikli.
 - Rıza: rıza yokken hiçbir kayıt kullanılmaz; geri çekince kullanım durur.
-- Soru ritmi: sıklık, erteleme, sessiz saat, Dinleniyorum ve günlük tavan.
-- 18 yaş altı: boy/kilo sorusu ve kilo trendi hiç çıkmaz.
+- Soru ritmi: 6 aylık sıklık, erteleme, sessiz saat, Dinleniyorum, günlük tavan.
+- 18 yaş altı: boy/kilo sorusu ve kilo çizgisi hiç çıkmaz.
 - Metin: "fazla", "az", "hedef", "VKİ" gibi sözcüklerin kullanıcıya gösterilmediğini doğrulayan test.
