@@ -40,6 +40,10 @@ Görsel kaynak: tuvaldeki 38 sayfa (https://claude.ai/artifact/CHcQgkvtgDe2JDoqG
 | 4.3 | Plan ve fiyat | 3.1, 5.1 | Devam et | — | Abonelik |
 | 4.4 | Yardım | 3.1 | — | Destek mesajı | — |
 | 4.5 | Takvim | 3.1, 5.5 | — | "Kişisel takvimi gizle" | Setting |
+| 2.8 | Gün kapanmadı | Sabah, Bugün üstü | Kapat → 2.2; Geç → Bugün | — | DayLog (açık gün) |
+| 4.6 | Plan karşılaştırma | 4.3 | Seç → Plan ve fiyat | — | Abonelik |
+| 4.7 | Anlama hakkı doldu | Bütçe %100 | Sıraya al / Plus'a geç / Tamam | — | OutboxUtterance |
+| 6.3 | Admin: maliyet ve politika | Admin paneli | — | — | Politika yapılandırması |
 | 5.1 | Giriş | İlk açılış | → 5.2 | — | User |
 | 5.2–5.4 | Karşılama 1–3 | 5.1 | → 5.5 | Çipler ya da kendi cümlen | Profile, Setting |
 | 5.5 | İzinler | 5.4 | → 5.6 | — | İzin durumları |

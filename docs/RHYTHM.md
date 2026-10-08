@@ -68,3 +68,15 @@ Sistem kullanıcının geçmişine bakarak günlük ritmini öğrenir ve öneril
 - Ritmin için gerekli en düşük geçmiş süresi 4 hafta mı, yoksa sorarak daha erken mi başlayalım? (Varsayım: sorarak başla, 4 haftada öner.)
 - Ritim senkronu açık olan kullanıcılarda cihazlar arası paylaşılsın mı? (Varsayım: yalnızca özet, şifreli.)
 - Hafta sonu ve tatil günleri için ayrı desenler (varsayım: evet, `weekend_shift` ayrı tutulur).
+
+## 11. Üyeliğe göre ritim seviyeleri (D-019)
+Kullanıcı seviyeyi kendi katmanının izin verdiği ölçüde seçer (Ritmin sayfası, Veri ve gizlilik). Hesap cihazda yapıldığı için seviyeler sunucu maliyeti doğurmaz; fark desen sayısı, öneri tavanı ve sinyal çeşididir.
+
+| Seviye | Katman | Desenler | Öneri tavanı (günlük) | Ek |
+|---|---|---|---|---|
+| Kapalı | Hepsi | Yok | 0 | Hiçbir öğrenme yapılmaz, mevcut desenler silinir (sorarak) |
+| Temel | Normal | `weekday_time`, `forget_window` | 3 | Gerekçe cümlesi şablon |
+| Tam | Plus | Beş desenin hepsi | Yoğunluğa göre 6–10 | Ritmin sayfası, hafta sonu ve uyku |
+| Gelişmiş | Pro | Tam + çapraz sinyal (takvim yoğunluğu ↔ su/koşu, uyku ↔ koşu), haftalık plan önerisi | Yoğunluğa göre | Faz 2'de sağlık verisi; isteğe bağlı kişisel açıklama (tek Haiku çağrısı) |
+
+Düşürme: üst seviyenin desenleri silinmez, pasifleşir; yükseltince yeniden etkinleşir. Tavan her zaman hatırlatma yoğunluğu ayarıyla birlikte sınırlanır (en düşük olan geçerli).

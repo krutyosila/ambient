@@ -54,3 +54,17 @@ Durum: ☐ başlamadı · ◐ sürüyor · ☑ bitti
 | KVKK: konuşma kayıtları, sağlık verisi | Hukuki risk | Açık rıza, PII maskeleme, silme uçları M2 ve M5'te baştan |
 | Kanıt zayıflığı (küçük yorum örneği) | Yanlış ürün kararı | `docs/RESEARCH.md` §5: Türkiye mağazası ve kullanıcı testi |
 | Açık temada düşük kontrast | Erişilebilirlik | M0 çıkış ölçütü |
+
+## Üyelik, maliyet ve pazarlama işleri (D-018…D-025)
+| İş | Milestone | Not |
+|---|---|---|
+| Yerel Türkçe çözümleyici (su, yaptım, saat, göreli tarih) | M1–M3 | Maliyetin ana kaldıracı; hedef yerel çözüm oranı ≥ %55 |
+| Maliyet politikası katmanı: yönlendirme, bütçe, telemetri, kill-switch | M3 | `docs/COST-POLICY.md` |
+| Kullanıcı "Hafıza" özeti (haftalık toplu işleme) | M3–M4 | Bağlamı küçültür |
+| Ritim seviyeleri (Temel/Tam/Gelişmiş) | M4 | `docs/RHYTHM.md` §11 |
+| Günü kapat hatırlatma ve otomatik kapanış | M4–M5 | D-018 |
+| Plan ve fiyat, karşılaştırma, anlama hakkı sayfası, StoreKit abonelik, deneme | M5 | `docs/PRICING.md`; fiyatlar yapılandırma |
+| Admin: Maliyet ve politika modülü | M6 | Tasarım 6.3 |
+| Beta ölçümü: maliyet/net gelir, yerel çözüm oranı, escalation | M9 öncesi beta | Fiyat ve bütçe 4. haftada gözden geçirilir |
+| Pazarlama: ASO, ekran görüntüleri, video, içerik üretici programı | M9 | `docs/MARKETING.md` |
+| Proje özeti güncel tutma | Sürekli | `docs/SUMMARY.md` |

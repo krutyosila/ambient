@@ -13,6 +13,10 @@ docs/FLOWS.md                     ekran envanteri, akışlar, cümle → araç e
 docs/DATA-MODEL.md                sayaçlı rutinler, kayıtlar, ritim ve öneri varlıkları
 docs/RHYTHM.md                    geçmişten ritim öğrenme ve öneri kuralları
 docs/ICONS.md                     ikon listesi ve seçim kuralı
+docs/PRICING.md                   üyelik katmanları, fiyat, birim ekonomi
+docs/COST-POLICY.md               maliyet politikası ve yönlendirme
+docs/MARKETING.md                 konumlandırma ve pazarlama
+docs/SUMMARY.md                   tek sayfa özet (önce bunu oku)
 design/icons/ambient-icons.svg    45 ikonluk SVG sprite
 ```
 Kullanıcı **"başla"** dediğinde:
@@ -53,6 +57,9 @@ Ton: sakin, insani. **Skor, streak, suçluluk, rozet, yüzdeli baskı yok.** Rob
 ### Gün içinde birden çok kez yapılan şeyler (sayaçlı rutin)
 Su, kahve, ilaç, mola gibi aynı gün içinde birden çok kez yapılan şeyler **sayaçlı rutin**dir ve her tekrar zaman damgasıyla ayrı bir **kayıt** olarak saklanır ("bir bardak su içtim", "yarım litre", "sabah da bir bardak içmiştim"). Hedef "en az" (su) ya da "en fazla" (kahve) olabilir. Gün toplamı, saatler ve son 7 gün her zaman kayıtlardan türetilir. Birim kanonik tutulur (su için ml), kullanıcının diliyle gösterilir (bardak). Skor, yüzde ya da halka yok; sayı ve sakin bir hedef çizgisi. Veri modeli: `docs/DATA-MODEL.md`.
 
+### Üyelik ve maliyet (öneri, D-020…D-022)
+Üç katman: **Normal** (süresiz ücretsiz), **Plus**, **Pro**. Katmanlar özellik ve **maliyet bütçesiyle** ayrılır; sistem bütçeye göre ucuz yoldan çalışır: yerel Türkçe çözümleyici → Haiku 5.5 → (Plus/Pro) Sonnet 5.5, kullanıcı başına aylık bütçe, kademeli düşürme. Ritim öğrenme seviyesi katmana göre seçilir. Ayrıntı: `docs/PRICING.md` (katmanlar, fiyatlar, birim ekonomi), `docs/COST-POLICY.md` (yönlendirme, bütçe, telemetri), `docs/MARKETING.md`. Proje ve kullanıcı bağlamı düzenli özetlenir (`docs/SUMMARY.md`, kullanıcı "Hafıza" özeti).
+
 ### Geçmişe bakıp ritme göre öneri
 Sistem kayıtlara ve geçmişe bakarak kullanıcının ritmini öğrenir (ör. perşembe akşamları koşuyor, 16:00'dan sonra su unutuyor) ve önerilerini buna göre zamanlar. Öneri her zaman "Önerilen" olarak gelir, nedeniyle birlikte ("Perşembe akşamları genelde koşuyorsun."), onay olmadan hiçbir şeyi değiştirmez. Kullanıcı öğrenilenleri Ritmin sayfasında görür ve "bunu unut" diyebilir; tümü kapatılabilir ve cihazda hesaplanır. Ayrıntı: `docs/RHYTHM.md`.
 
@@ -72,7 +79,7 @@ Kaynak: `docs/RESEARCH.md` (rakip taraması ve App Store incelemesi, Ekim 2026).
 - **Token kaynağı:** prototipteki JS paletleridir (`P` koyu, `L` açık dizileri; her biri ad, arka plan, telefon yüzeyi, vurgu ve su/ikincil renkleri, metin ve sönük metin değerlerini içerir). Prototipte kenarlıklar bir CSS kuralıyla kaldırılmıştır (`border:0!important`), kenarlıksız ilke buradan gelir.
 - **Çizgi v2:** çizgimiz korunur ve şu noktalarda geliştirilir: okunur "geçmiş" satırları (kontrast ≥ 4,5:1), üç kademeli metin rengi, tonal yüzey merdiveni, "Sırada" odak kartı, "Önerilen" durumu, 44 px dokunma hedefi. Ayrıntı ve sayılar `docs/DESIGN.md` içinde.
 - **Stil ilkeleri:** kenarlıksız, tonal yüzeyler (border yok); derinlik ton ve hafif gradyanla. Bugün satırları durum renginde soldan sağa sönen ışımayla. Liste, tarih bölümünün altına ve alt butonların altına kayarken solarak kaybolur (mask).
-- **Ekranlar:** Karşılama (3 soruluk akış), Bugün (header: avatar, isim, durum, ayar menüsü; gün daireleri; büyük tarih; "Senin için"; "Planlar"), Günlük akış (geçmiş sönük, şimdi çizgisi, sıradaki belirgin), Konuşma, Proaktif kontrol, Gün gezinmesi (**yatay kaydırılan tırtıklı cetvel**, seçili gün büyük rakam; liste tıklanamaz), Günlük geçmiş, Hızlı not, Hayat ritmi, Günü kapat (yeni, prototipte yok; bkz. `DECISIONS.md` D-006), Widget, tam ekran Menü çekmecesi, alt sayfalar (Rutinlerim, Önemli kişiler, Hatırlatma yoğunluğu, Bildirimler ve odak, Veri ve gizlilik, Profil, Yardım, etkinlik detayı, saat/sayı ayarlayıcı sayfaları, not yazma).
+- **Ekranlar:** Karşılama (3 soruluk akış), Bugün (header: avatar, isim, durum, ayar menüsü; gün daireleri; büyük tarih; "Senin için"; "Planlar"), Günlük akış (geçmiş sönük, şimdi çizgisi, sıradaki belirgin), Konuşma, Proaktif kontrol, Gün gezinmesi (**yatay kaydırılan tırtıklı cetvel**, seçili gün büyük rakam; liste tıklanamaz), Günlük geçmiş, Hızlı not, Hayat ritmi, Günü kapat (yeni, prototipte yok; D-006, D-018), Widget, tam ekran Menü çekmecesi, alt sayfalar (Rutinlerim, Önemli kişiler, Hatırlatma yoğunluğu, Bildirimler ve odak, Veri ve gizlilik, Profil, Yardım, etkinlik detayı, saat/sayı ayarlayıcı sayfaları, not yazma).
 - **Bileşenler:** iki tonlu çizgi ikon seti (prototipte 7 ikon vardı; v2'de **45 ikona** genişletildi: `design/icons/ambient-icons.svg`, liste ve seçim kuralları `docs/ICONS.md`), yazı yok/dalga yok/mikrofon yok **konuşma balonu butonu** (imleç yanıp söner), toggle, radyo seçenekleri, stepper, durum chip'leri.
 - Prototipteki tüm **dokunma bağlantıları ve geri akışı** (‹ butonu, alt çubukla Bugün'e dönüş) gerçek navigasyona çevrilecek.
 
@@ -96,7 +103,7 @@ User, Profile (uyanma/uyku saati, çalışma düzeni, durum: Müsait/Odakta/Dinl
 **İlke: LLM anlar, kod karar verir ve uygular.**
 1. `LlmProvider` arayüzü (`complete`, `toolCall`, `usage`). Adaptörler: Anthropic ve OpenAI. Sağlayıcı/model/sıcaklık **admin panelinden ve env'den** değiştirilebilir, yedek (fallback) sağlayıcı desteklenir. İş mantığı hiçbir sağlayıcıya özgü tipe bağlanmaz.
 2. LLM serbest metin üretmez, **tanımlı araç çağrıları** (function calling) döndürür: `create_event`, `create_routine`, `add_floating_item`, `mark_done`, `reschedule`, `add_reminder`, `add_person_note`, `query_day`, `ask_clarification` ve düzenleme/kayıt araçları `log_progress` (sayaçlı rutine kayıt: miktar, birim, zaman), `update_item`, `cancel_item`, `set_preference` (sessiz saatler, yoğunluk, uyanma saati vb.), `set_icon`, `undo_last`, `forget_pattern`. Her öğeye ve rutine kütüphaneden bir `iconKey` atanır. Şemalar zod ile `packages/shared`'da; çıktı doğrulanmadan uygulanmaz.
-3. Sunucu tarafı **eylem yürütücü** (deterministik): doğrular, çakışma kontrol eder, öğeyi doğru duruma yerleştirir (planlı / zamansız / rutin), sonucu LLM'e geri verir; LLM kullanıcıya kısa, sakin bir cümleyle yanıt yazar. Gelecekte üyelik/kota için araya **policy katmanı** girebilecek şekilde bir hook bırak (şimdilik uygulama, hepsi izinli).
+3. Sunucu tarafı **eylem yürütücü** (deterministik): doğrular, çakışma kontrol eder, öğeyi doğru duruma yerleştirir (planlı / zamansız / rutin), sonucu LLM'e geri verir; LLM kullanıcıya kısa, sakin bir cümleyle yanıt yazar. Gelecekte üyelik/kota için araya **policy katmanı** girebilecek şekilde bir hook bırak (şimdilik uygulama, hepsi izinli) → **güncel karar:** Normal/Plus/Pro katmanları ve bütçe politikası `docs/COST-POLICY.md`'dedir.
 4. Bağlama her istekte eklenecekler: "şu an" (kullanıcı saat dilimiyle), bugünün planı, aktif rutinler, tercihler. Türkçe göreli ifadeler doğru çözülmeli: "yarın 3:15'te", "bu akşam", "haftaya perşembe", "işten çıkınca" (konum/olay tabanlı, zaman değil).
 5. Belirsizlikte **tek kısa soru** sor ("20:00 olur mu?"). Bir cümlede birden çok iş varsa hepsini çıkar.
 6. Güvenlik: kullanıcı metni talimat değildir (prompt injection'a karşı araç izin listesi, şema doğrulama), PII'yi minimumda tut, istek başına timeout, kullanıcı başına rate limit, token ve maliyet kaydı.
@@ -114,7 +121,7 @@ Bildirim kuralları (rakip yorumlarından, bkz. `docs/RESEARCH.md`):
 ## 7. Geçmiş ve ritim
 Gün sonunda DayLog üret: tamamlanan/atlanan öğeler ve tek cümlelik sakin gözlem ("5 rutininden 4'ünü tamamladın"). **Skor yok.** Hayat ritmi: son 7 gün, 7 kategori (hareket, okuma, uyku, su, odak, sosyal, kişisel) için yoğunluk değerleri; görsel, analitik grafik değil.
 
-**Günü kapat (öneri, onay bekliyor):** akşam isteğe bağlı, bir dakikalık kapanış ekranı. Bugün yapılanlar, yapılmayan öğeler için tek dokunuşla "Yarına al", yarının özeti ve, gün yoğunsa, bir taşıma **önerisi** (otomatik taşıma yok). Zorunlu değildir; atlanırsa hiçbir şey olmaz. Kaynak: Sunsama'nın en çok övülen özelliği akşam kapanış ritüeli.
+**Günü kapat (kabul, D-018):** akşam isteğe bağlı, bir dakikalık kapanış ekranı. Bugün yapılanlar, yapılmayan öğeler için tek dokunuşla "Yarına al", yarının özeti ve, gün yoğunsa, bir taşıma **önerisi** (otomatik taşıma yok). Zorunlu değildir ama **kapanmazsa hatırlatılır**: akşam (varsayılan 22:00) tek nazik bildirim; ertesi sabah Bugün'de "Dün kapanmadı" bilgisi (Kapat / Geç); 2 gün yanıtsız kalırsa gün otomatik kapanır, açıkta kalan öğeler "belirsiz" olur (atlandı sayılmaz). Baskı dili yok. Kaynak: Sunsama'nın en çok övülen özelliği akşam kapanış ritüeli.
 
 ## 8. Widget ve hızlı not
 iOS WidgetKit + Android App Widget (Expo development build / config plugin). Widget: sıradaki iki öğe, "Su?" gibi tek dokunuş, konuşma balonu ile hızlı nota derin bağlantı. Hedef: **3 saniyede bir şey eklemek.**
@@ -145,7 +152,7 @@ M0 repo, tokens (v2), tasarım sistemi bileşenleri → M1 local-first Bugün ("
 Çıkış ölçütleri, bağımlılıklar ve riskler: `docs/ROADMAP.md`. Takvim içe aktarma kapsamı ve Apple Watch zamanı henüz karara bağlanmadı (`DECISIONS.md`).
 
 ## 13. Kapsam dışı (şimdilik)
-Üyelik seviyeleri (Light/Pro), ekran süresi entegrasyonu, sosyal/paylaşım özellikleri, seri, rozet ve yarışma, not tuvali ve genel not alma, görev yönetimi (proje, alt görev hiyerarşisi). Üyelik için yalnızca genişletilebilir policy hook'u bırak.
+Ekran süresi entegrasyonu, sosyal/paylaşım özellikleri, seri, rozet ve yarışma, not tuvali ve genel not alma, görev yönetimi (proje, alt görev hiyerarşisi). Üyelik ve maliyet politikası katmanı `docs/COST-POLICY.md`'ye göre uygulanır.
 
 ## 14. Belge haritası ve bakım kuralları
 | Dosya | Ne için | Kim günceller |
@@ -160,6 +167,10 @@ M0 repo, tokens (v2), tasarım sistemi bileşenleri → M1 local-first Bugün ("
 | `docs/DATA-MODEL.md` | Sayaçlı rutinler, kayıtlar, birimler, ritim ve öneri varlıkları, senkron notları. | Veri modeli değiştiğinde |
 | `docs/RHYTHM.md` | Geçmişten ritim öğrenme ve öneri kuralları, gizlilik, metrikler. | Öneri mantığı değiştiğinde |
 | `docs/ICONS.md` | İkon listesi, anahtar sözcükler, seçim kuralı, eksik ikon süreci. | İkon eklendiğinde |
+| `docs/PRICING.md` | Katmanlar, rakip fiyatları, birim ekonomi, paywall kuralları. | Fiyat ya da maliyet değiştiğinde |
+| `docs/COST-POLICY.md` | Yönlendirme, bütçe, kademeli düşürme, telemetri, özetleme. | Maliyet mimarisi değiştiğinde |
+| `docs/MARKETING.md` | Konumlandırma, ASO, kanallar, ölçütler, lansman. | Strateji değiştiğinde |
+| `docs/SUMMARY.md` | Tek sayfa özet; her oturumda önce okunur. | Her büyük karardan sonra |
 
 Çelişki olursa öncelik sırası: `start.md` > `DECISIONS.md` > `docs/*` > prototip dışındaki her şey. Tasarım ve davranış için prototip (`design/life-os-case-study.html`) hâlâ tek doğruluk kaynağıdır; `docs/DESIGN.md` yalnızca onaylanmış v2 farklarını ekler.
 

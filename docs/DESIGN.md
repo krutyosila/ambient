@@ -89,7 +89,7 @@ v2 ile eklenenler:
 - **Rutin simge ve renk seçici** (M5; Habit Tracker kullanıcılarının sevdiği özelleştirme).
 
 ## 5. Ekran envanteri
-Tam envanter, giriş ve çıkışlar, cümle → araç eşlemesi: `docs/FLOWS.md`. Tuvalde 38 sayfa var (36 ekran + ikon kütüphanesi + kurgu haritası); prototipte olmayıp eklenenler:
+Tam envanter, giriş ve çıkışlar, cümle → araç eşlemesi: `docs/FLOWS.md`. Tuvalde 42 sayfa var (38 ekran + ikon kütüphanesi + kurgu haritası + admin maliyet paneli); prototipte olmayıp eklenenler:
 
 | Yeni | Neden |
 |---|---|
@@ -98,7 +98,9 @@ Tam envanter, giriş ve çıkışlar, cümle → araç eşlemesi: `docs/FLOWS.md
 | Rutin detayı: Su | Gün içi çok kayıtlı rutin |
 | Ritmin | Geçmişten öğrenme (D-013) |
 | Plan ve fiyat, Takvim, İzinler, Giriş | Fiyat şeffaflığı, takvim içe aktarma, izin akışı |
-| Anlaşılmadı, Çevrimdışı, Boş gün | Özel durumlar |
+| Anlaşılmadı, Çevrimdışı, Boş gün, Anlama hakkı doldu | Özel durumlar |
+| Gün kapanmadı, Planları karşılaştır, Plan ve fiyat (3 katman), Ritim seviyesi seçici | Üyelik (D-021), Günü kapat hatırlatması (D-018), ritim seviyeleri (D-019) |
+| Admin: Maliyet ve politika | Maliyet duyarlı sistem (D-020) |
 | Tüm verileri sil onayı, Kişi detayı, Etkinlik detayı, Günün akışı, Günlük geçmiş, Menü, Profil ve alt sayfalar | Prototipteki gezilebilir sayfaların v2 hali |
 
 Prototipteki **saat ve sayı ayarlayıcı sayfaları kaldırıldı** (D-012). Karşılama, Gün gezinmesi, Hayat ritmi ve Widget prototip düzenini korur.
