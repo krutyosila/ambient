@@ -10,12 +10,13 @@
 <style>
 body{margin:0;background:#07090c;font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
 .k{padding:18px 20px;border-radius:18px;background:#12161b}
-.k small{display:block;font-size:12px;color:#9ba5b0;font-weight:300}
-.k b{display:block;margin-top:6px;font-size:28px;font-weight:300;letter-spacing:-.02em}
-.k i{display:block;margin-top:2px;font-style:normal;font-size:12px;color:#7f8894}
+.k>small{display:block;font-size:12px;color:#9ba5b0;font-weight:300}
+.k>b{display:block;margin-top:6px;font-size:28px;font-weight:300;letter-spacing:-.02em}
+.k>i{display:block;margin-top:2px;font-style:normal;font-size:12px;color:#7f8894}
 .t{display:grid;gap:12px;padding:12px 0;font-size:14px;color:#c9d1d8;font-weight:300;align-items:center}
 .t b{font-weight:400;color:#e6ecf2}
-.n{display:flex;align-items:center;height:40px;padding:0 14px;border-radius:12px;font-size:14px;color:#9ba5b0}
+.n{display:flex;align-items:center;height:36px;padding:0 14px;border-radius:12px;font-size:14px;color:#9ba5b0}
+.h{font-size:12px;letter-spacing:.14em;color:#8fbcff;font-weight:500}.g{font-size:11px;letter-spacing:.14em;color:#7f8894;padding:14px 14px 4px;font-weight:500}.d{width:8px;height:8px;border-radius:50%;flex:none}.chip{font-size:12px;padding:4px 10px;border-radius:10px;background:rgba(143,188,255,.12);color:#8fbcff}.chip.w{background:rgba(242,180,92,.14);color:#f2b45c}
 </style>
 
 <style>.ambient-link{cursor:pointer}.ambient-link:hover{filter:brightness(1.15)}.ambient-link:focus-visible{outline:2px solid #8fbcff;outline-offset:2px}html.hint .ambient-link{outline:2px dashed rgba(143,188,255,.8);outline-offset:2px}html.embed .frame{margin:0;border-radius:0;box-shadow:none}html.embed{background:transparent}html{background:#0b0d10}body{margin:0;min-height:100vh}.frame{width:390px;height:844px;margin:24px auto;border-radius:36px;overflow:hidden;box-shadow:0 30px 80px -30px rgba(0,0,0,.6)}.wide{width:1440px;margin:0 auto}</style>
@@ -26,19 +27,18 @@ body{margin:0;background:#07090c;font-family:Inter,system-ui,sans-serif;-webkit-
 
 <div style="width:1440px;height:960px;box-sizing:border-box;display:flex;background:#07090c;color:#e6ecf2;font-family:Inter,system-ui,sans-serif">
 
-<div style="width:240px;flex:none;padding:32px 20px;background:#0a0d11;display:flex;flex-direction:column;gap:4px">
-<div style="font-size:22px;font-weight:300;letter-spacing:-.03em;padding:0 14px 20px">Ambient · Admin</div>
-<div class="n">Kullanıcılar</div><div class="n">LLM yönetimi</div>
-<div class="n" style="background:rgba(143,188,255,.14);color:#e6ecf2">Maliyet ve politika</div>
-<div class="n">Konuşma kayıtları</div><div class="n">Değerlendirme</div><div class="n">İçerik</div><div class="n">Feature flag’ler</div><div class="n">Sistem sağlığı</div><div class="n">Audit log</div>
+<div style="width:248px;flex:none;padding:24px 16px;background:#0a0d11;display:flex;flex-direction:column;gap:2px;overflow:hidden">
+<div style="font-size:22px;font-weight:300;letter-spacing:-.03em;padding:0 14px 8px">Ambient · Admin</div>
+<div style="margin:0 14px 6px;font-size:12px;color:#f2b45c;display:flex;align-items:center;gap:8px"><i class="d" style="background:#f2b45c"></i>STAGING</div>
+<div class="g">GENEL BAKIŞ</div><div class="n">Pano</div><div class="g">KULLANICILAR</div><div class="n">Kullanıcılar</div><div class="n">KVKK talepleri</div><div class="g">GELİR</div><div class="n">Abonelikler</div><div class="g">YAPAY ZEKÂ</div><div class="n">Modeller ve yönlendirme</div><div class="n">İstem sürümleri</div><div class="n">Değerlendirme</div><div class="g">MALİYET</div><div class="n" style="background:rgba(143,188,255,.14);color:#e6ecf2">Maliyet ve politika</div><div class="g">ÜRÜN</div><div class="n">Ürün kuralları</div><div class="n">Feature flag’ler</div><div class="g">İÇERİK</div><div class="n">Metinler ve şablonlar</div><div class="g">BESLENME</div><div class="n">Referans aralıkları</div><div class="g">OPERASYON</div><div class="n">Sistem sağlığı</div><div class="g">GÜVENLİK</div><div class="n">Yöneticiler ve roller</div><div class="n">Audit log</div><div class="g">AYARLAR</div><div class="n">Yapılandırma merkezi</div><div class="n">Entegrasyonlar</div>
 </div>
-
-<div style="flex:1;padding:32px 40px;display:flex;flex-direction:column;gap:22px;min-width:0">
+<div style="flex:1;padding:24px 40px;display:flex;flex-direction:column;gap:16px;min-width:0;overflow:hidden">
 <div style="display:flex;align-items:center;justify-content:space-between">
-<div><div style="font-size:34px;font-weight:300;letter-spacing:-.03em">Maliyet ve politika</div><div style="margin-top:4px;font-size:14px;color:#9ba5b0;font-weight:300">Son 30 gün · Türkiye · referans kur 55 · komisyon senaryosu: %30 (başvuru onaysız)</div></div>
+<div><div style="font-size:34px;font-weight:300;letter-spacing:-.03em">Maliyet ve politika</div><div style="margin-top:4px;font-size:14px;color:#9ba5b0;font-weight:300">Son 30 gün · Türkiye · referans kur 55 · komisyon senaryosu: %30 (başvuru onaysız) · örnek veri</div></div>
 <div style="display:flex;align-items:center;gap:10px"><span style="font-size:13px;color:#9ba5b0">Acil durdurma</span><span style="width:52px;height:30px;border-radius:15px;background:#2A323B;position:relative"><i style="position:absolute;left:3px;top:3px;width:24px;height:24px;border-radius:50%;background:#9ba5b0"></i></span></div>
 </div>
 
+<div style="display:flex;align-items:center;gap:14px;padding:10px 20px;border-radius:14px;background:rgba(242,180,92,.12);font-size:14px;min-height:44px"><i class="d" style="background:#f2b45c"></i><span style="flex:1;color:#e6ecf2;font-weight:300">Taslak: Plus tavanı $0,40 → $0,50 · etki aşağıda · seviye 2: onay bekler</span><span class="chip">Farkı incele</span></div>
 <div style="display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px">
 <div class="k"><small>Kullanıcı başına maliyet (ort.)</small><b>$0,09</b><i>Normal $0,03 · Plus $0,11 · Pro $0,23</i></div>
 <div class="k"><small>Maliyet / net gelir (ücretli)</small><b>%14</b><i>Uyarı eşiği %35</i></div>
@@ -46,7 +46,6 @@ body{margin:0;background:#07090c;font-family:Inter,system-ui,sans-serif;-webkit-
 <div class="k"><small>Sonnet oranı (Plus/Pro)</small><b>%1,8</b><i>Hedef ≤ %2</i></div>
 <div class="k"><small>Önbellek isabeti</small><b>%41</b><i>Ölçülüyor</i></div>
 </div>
-<div style="font-size:12px;color:#7f8894">Örnek veri: tasarım göstermek içindir, gerçek ölçüm değildir.</div>
 
 <div style="display:grid;grid-template-columns:1.1fr 1fr;gap:16px;min-width:0">
 <div class="k" style="padding:22px 24px">
@@ -57,8 +56,8 @@ body{margin:0;background:#07090c;font-family:Inter,system-ui,sans-serif;-webkit-
 <div class="t" style="grid-template-columns:1.1fr 1fr 1fr 1fr"><b>Pro</b><span>$0,32</span><span>$0,16</span><span>%50</span></div>
 <div style="margin-top:14px;font-size:13px;line-height:1.5;color:#9ba5b0;font-weight:300">Kural: her abonenin bütçesi kendi net gelirinin %30’u (taban/tavan: Plus $0,12–0,40, Pro $0,25–0,80). Kur, komisyon ve gelirle günlük otomatik ayarlanır; haftalık değişim en çok %10.</div>
 <div style="margin-top:14px;display:flex;gap:10px">
-<span style="height:40px;padding:0 18px;border-radius:12px;background:#e6ecf2;color:#07090c;font-size:14px;font-weight:500;display:inline-flex;align-items:center">Bütçeyi güncelle</span>
-<span style="height:40px;padding:0 18px;border-radius:12px;background:#1B2027;font-size:14px;display:inline-flex;align-items:center">Kur ve komisyon</span>
+<span style="height:44px;padding:0 18px;border-radius:12px;background:#e6ecf2;color:#07090c;font-size:14px;font-weight:500;display:inline-flex;align-items:center">Taslağa kaydet</span>
+<span style="height:44px;padding:0 18px;border-radius:12px;background:#1B2027;font-size:14px;display:inline-flex;align-items:center">Kur ve komisyon</span>
 </div>
 </div>
 
@@ -72,19 +71,26 @@ body{margin:0;background:#07090c;font-family:Inter,system-ui,sans-serif;-webkit-
 </div>
 </div>
 
+<div class="k" style="padding:22px 24px"><div class="h">SİMÜLATÖR · YALNIZ HESAPLAR, YAYINLAMAZ</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr 1.4fr;gap:14px;margin-top:12px;align-items:center;font-size:14px;font-weight:300;color:#c9d1d8">
+<span>Komisyon <b style="font-weight:400;color:#e6ecf2">%15</b><br><span style="font-size:12px;color:#7f8894">Small Business onayı senaryosu</span></span>
+<span>Kur <b style="font-weight:400;color:#e6ecf2">60</b><br><span style="font-size:12px;color:#7f8894">şimdi 55</span></span>
+<span>Plus yıllık <b style="font-weight:400;color:#e6ecf2">₺599,99</b><br><span style="font-size:12px;color:#7f8894">fiyat değişmedi</span></span>
+<span><b style="font-weight:400;color:#e6ecf2">Plus TL yıllık: bütçe $0,16 → $0,17 (≈ günde 14 → 15 cümle)</b><br><span style="font-size:12px;color:#7f8894">Pro $0,32 → $0,34 · tahmini aylık maliyet +$1,10 (38 kullanıcı)</span></span>
+</div></div>
 <div class="k" style="padding:22px 24px">
 <div style="font-size:12px;letter-spacing:.14em;color:#8fbcff;font-weight:500">UYARILAR</div>
-<div style="margin-top:12px;display:flex;flex-direction:column;gap:8px;font-size:14px;font-weight:300;color:#c9d1d8">
+<div style="margin-top:12px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;font-size:14px;font-weight:300;color:#c9d1d8">
 <div style="display:flex;gap:10px;align-items:center"><span style="width:8px;height:8px;border-radius:50%;background:#8fcf9f"></span>Katman maliyeti net gelirin %35’ini aşarsa</div>
 <div style="display:flex;gap:10px;align-items:center"><span style="width:8px;height:8px;border-radius:50%;background:#8fcf9f"></span>Yerel çözüm oranı %40’ın altına düşerse</div>
-<div style="display:flex;gap:10px;align-items:center"><span style="width:8px;height:8px;border-radius:50%;background:#f2b45c"></span>Günlük toplam harcama tavanının %80’ine ulaşılırsa: önce Normal katman yerel moda alınır</div>
+<div style="display:flex;gap:10px;align-items:center"><span style="width:8px;height:8px;border-radius:50%;background:#f2b45c"></span>Günlük tavanın %80’ine ulaşılırsa Normal katman yerel moda alınır</div>
 </div>
 </div>
 </div>
 </div>
 
 </div>
-<script>window.__NAV={"links": [], "name": "AdminMaliyet"};</script>
+<script>window.__NAV={"links": [{"t": "Pano", "to": "AdminGenel", "up": 0, "all": false}, {"t": "Yapılandırma merkezi", "to": "AdminAyarlar", "up": 0, "all": false}, {"t": "Referans aralıkları", "to": "AdminReferans", "up": 0, "all": false}], "name": "AdminMaliyet"};</script>
 <script src="../nav.js"></script>
 </body>
 </html>

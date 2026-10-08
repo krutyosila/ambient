@@ -111,3 +111,12 @@ Hayat ritmi ekranının yedi kategorisi (hareket, okuma, uyku, su, odak, sosyal,
 - **Türetilen (LLM bağlamına giden):** `ageGroup`, `waterTarget`, `sleepTarget`, `hasConsent` — ham ölçümler gitmez.
 - 18 yaş altı: `weight/height` kayıtları oluşturulmaz, soru çıkmaz.
 - Silme/dışa aktarma bu varlıkları kapsar; rıza geri çekilince kullanım durur.
+
+## 10. Yönetim ve yapılandırma varlıkları (`docs/ADMIN.md`)
+- **Setting:** `key, scope (global|tier:*|platform:*), value (json), version, updatedBy, reason, updatedAt`. **SettingVersion** (salt eklenir): `key, scope, oldValue, newValue, by, reason, changeRequestId, at`.
+- **Secret:** `key, ciphertext, wrappedDataKey, keyId, lastRotatedAt, lastTestAt, lastTestResult`. Değer hiçbir yanıtta, logda ya da denetimde yer almaz.
+- **ChangeRequest:** `id, items[], status (draft|validated|pending|published|rolledBack|rejected), level (0|1|2), reason, impactPreview, requestedBy, approvedBy?, cooldownUntil?, publishAt?`.
+- **AdminUser, AdminRole, AdminSession:** kullanıcı hesabından ayrıdır; `mfa, lastLoginAt, ipAllowlist?`. İzinler `modül:eylem`.
+- **AuditLog:** `id, at, actor, role, env, target, before?, after?, reason, requestId, prevHash, hash` (salt eklenir, zincirli).
+- **PromptVersion:** `id, body, status (candidate|live|archived), evalRunId?, createdBy`. **FeatureFlag:** `key, owner, targeting, rollout, expiresAt`. **ContentItem:** `key, locale, version, status`.
+- **AlertRule/AlertEvent, CostRollupDaily, EvalSet/EvalRun, UnparsedUtterance (kısa saklama), DataRequest (KVKK, 30 gün SLA).**

@@ -50,6 +50,8 @@ Yeni kararlar en alta eklenir. Büyük ve geri dönüşü zor kararlar önce sor
 | D-043 | 2026-10-08 | Kabul | Web önizleme **tıklanabilir prototip** olarak hazırlanır: `design/preview/app.html`, sayfalar birbirine bağlı (gezinme, geri, anahtarlar, birkaç küçük etkileşim). Kaynak: `design/preview/screens`. | Kullanıcı isteği. |
 | D-044 | 2026-10-08 | Kabul | `affaan-m/ecc` (Claude Code için agent/skill/komut/kural koleksiyonu) **gerekirse seçici** kullanılır; şimdilik kurulmaz. Çoklu kurulum ve çok sayıda skill/hook bağlam ve maliyet artırır, çakışma riski taşır. | Kullanıcı önerisi, depo özeti incelendi. `docs/SETUP.md` §9. |
 | D-045 | 2026-10-08 | Kabul | **Önizleme GitHub üzerinden (Pages) yayınlanmaz.** Depo indirilip `design/preview/app.html` yerelde açılır. Pages iş akışı kaldırıldı. `main` dalı projenin en güncel halidir. | Kullanıcı kararı. |
+| D-046 | 2026-10-08 | Önerildi | **`.env` yalnız önyükleme içindir (6 değişken); her ayar yönetim panelinden değişir.** Politika, model, bütçe, kur, komisyon, eşik, metin, bayrak ve entegrasyon anahtarları veritabanında: tek bir tipli ayar kayıt defteri, sürümlü, denetli, taslak → yayın → geri al. Sırlar zarf şifrelemeyle saklanır, panelde yazma-yalnızdır. JWT/oturum sırları kalktı (anahtar halkası). | Kullanıcı isteği. `docs/ADMIN.md` §2–4. Ayar altyapısı M2'de, panel M6'da. |
+| D-047 | 2026-10-08 | Önerildi | **Yönetim paneli yeniden tasarlandı:** 11 gruplu bilgi mimarisi, risk seviyeleri (anında / önizlemeli / onaylı / kilitli), etki önizlemeli bütçe simülatörü, Otomatik/Sabit bütçe kipi, zincirli audit log, yönetici için içeriksiz kullanıcı görünümü ve "kullanıcı olarak gir" yok, uzak mobil yapılandırma, beş rol. Kilitli ilkeler (13/18 yaş, rıza, alkol/sigara) panelden değişmez. M6 4 → 5 hafta. | Kullanıcı isteği ("detaylı ve kullanışlı"). `docs/ADMIN.md`. |
 
 ## Bekleyen sorular
 
@@ -82,3 +84,6 @@ Yeni kararlar en alta eklenir. Büyük ve geri dönüşü zor kararlar önce sor
 | Q25 | Diyetisyen kim ve nasıl çalışacak? | — | **Kapandı:** danışman (D-034). Kişi ve sözleşme henüz belirlenmedi (Q27). |
 | Q26 | Tahmini kilo karşılıkları? | — | **Kapandı:** uygun (D-035). |
 | Q27 | Diyetisyenin adı ve unvan ifadesinin hukuki uygunluğu. | Sorumluluk. | **Yayın öncesi hazırlanır** (D-038); rapor eşiği 50 kabul (D-036). |
+| Q28 | Sırlar nerede saklansın? | Barındırma kararı sizde (D-040). | Veritabanında zarf şifreli, ana anahtar `.env`'de; `SecretStore` soyutlaması, sonra harici yönetici takılabilir. |
+| Q29 | Tek yöneticiyle seviye 2 (onaylı) değişiklikler nasıl onaylansın? | Dört göz ilkesi ekip yokken uygulanamaz. | Yazılı gerekçe + etkiyi yazarak onay + 15 dk bekleme; ikinci yönetici gelince ikinci kişi zorunlu. |
+| Q30 | Panele erişim sınırı: genel internet + 2FA mı, IP izin listesi/VPN mi? | Panel en yüksek yetkili yüzey. | Genel adres + zorunlu 2FA (passkey/TOTP) + isteğe bağlı IP listesi; production'da IP listesi önerilir. |

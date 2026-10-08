@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>6.7 · Admin: yapılandırma merkezi · Ambient</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#07090c;font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.k{padding:18px 20px;border-radius:18px;background:#12161b}
+.k>small{display:block;font-size:12px;color:#9ba5b0;font-weight:300}
+.k>b{display:block;margin-top:6px;font-size:28px;font-weight:300;letter-spacing:-.02em}
+.k>i{display:block;margin-top:2px;font-style:normal;font-size:12px;color:#7f8894}
+.h{font-size:12px;letter-spacing:.14em;color:#8fbcff;font-weight:500}
+.t{display:grid;gap:12px;padding:10px 0;font-size:14px;color:#c9d1d8;font-weight:300;align-items:center}
+.t b{font-weight:400;color:#e6ecf2}
+.n{display:flex;align-items:center;height:36px;padding:0 14px;border-radius:12px;font-size:14px;color:#9ba5b0}
+.g{font-size:11px;letter-spacing:.14em;color:#7f8894;padding:14px 14px 4px;font-weight:500}
+.b{height:44px;padding:0 18px;border-radius:12px;background:#1B2027;font-size:14px;display:inline-flex;align-items:center;color:#e6ecf2}
+.b.p{background:#e6ecf2;color:#07090c;font-weight:500}
+.d{width:8px;height:8px;border-radius:50%;flex:none}
+.tg{width:52px;height:30px;border-radius:15px;background:#2A323B;position:relative;display:inline-block;flex:none}
+.tg i{position:absolute;left:3px;top:3px;width:24px;height:24px;border-radius:50%;background:#9ba5b0;transition:.2s}
+.tg.on{background:#8fbcff}.tg.on i{left:25px;background:#07090c}
+.in{height:44px;padding:0 14px;border-radius:12px;background:#0a0d11;display:flex;align-items:center;font-size:14px;color:#e6ecf2;font-weight:300}
+.chip{font-size:12px;padding:4px 10px;border-radius:10px;background:rgba(143,188,255,.12);color:#8fbcff}
+.chip.w{background:rgba(242,180,92,.14);color:#f2b45c}
+.chip.o{background:rgba(143,207,159,.14);color:#8fcf9f}
+.chip.l{background:#1B2027;color:#9ba5b0}
+</style>
+<style>.ambient-link{cursor:pointer}.ambient-link:hover{filter:brightness(1.15)}.ambient-link:focus-visible{outline:2px solid #8fbcff;outline-offset:2px}html.hint .ambient-link{outline:2px dashed rgba(143,188,255,.8);outline-offset:2px}html.embed .frame{margin:0;border-radius:0;box-shadow:none}html.embed{background:transparent}html{background:#0b0d10}body{margin:0;min-height:100vh}.frame{width:390px;height:844px;margin:24px auto;border-radius:36px;overflow:hidden;box-shadow:0 30px 80px -30px rgba(0,0,0,.6)}.wide{width:1440px;margin:0 auto}</style>
+</head>
+<body>
+<div class="wide">
+
+<div style="width:1440px;height:960px;box-sizing:border-box;display:flex;background:#07090c;color:#e6ecf2;font-family:Inter,system-ui,sans-serif">
+<div style="width:248px;flex:none;padding:24px 16px;background:#0a0d11;display:flex;flex-direction:column;gap:2px;overflow:hidden">
+<div style="font-size:22px;font-weight:300;letter-spacing:-.03em;padding:0 14px 8px">Ambient · Admin</div>
+<div style="margin:0 14px 6px;font-size:12px;color:#f2b45c;display:flex;align-items:center;gap:8px"><i class="d" style="background:#f2b45c"></i>STAGING</div>
+<div class="g">GENEL BAKIŞ</div><div class="n">Pano</div><div class="g">KULLANICILAR</div><div class="n">Kullanıcılar</div><div class="n">KVKK talepleri</div><div class="g">GELİR</div><div class="n">Abonelikler</div><div class="g">YAPAY ZEKÂ</div><div class="n">Modeller ve yönlendirme</div><div class="n">İstem sürümleri</div><div class="n">Değerlendirme</div><div class="g">MALİYET</div><div class="n">Maliyet ve politika</div><div class="g">ÜRÜN</div><div class="n">Ürün kuralları</div><div class="n">Feature flag’ler</div><div class="g">İÇERİK</div><div class="n">Metinler ve şablonlar</div><div class="g">BESLENME</div><div class="n">Referans aralıkları</div><div class="g">OPERASYON</div><div class="n">Sistem sağlığı</div><div class="g">GÜVENLİK</div><div class="n">Yöneticiler ve roller</div><div class="n">Audit log</div><div class="g">AYARLAR</div><div class="n" style="background:rgba(143,188,255,.14);color:#e6ecf2">Yapılandırma merkezi</div><div class="n">Entegrasyonlar</div>
+</div>
+<div style="flex:1;padding:24px 40px;display:flex;flex-direction:column;gap:18px;min-width:0;overflow:hidden">
+<div style="display:flex;align-items:center;justify-content:space-between;gap:20px">
+<div><div style="font-size:34px;font-weight:300;letter-spacing:-.03em">Yapılandırma merkezi</div><div style="margin-top:4px;font-size:14px;color:#9ba5b0;font-weight:300">Tüm ayarların tek yeri · değişiklik taslak olur, yayınlayana dek canlı değildir</div></div>
+<div style="display:flex;align-items:center;gap:12px"><span class="in" style="width:260px;color:#7f8894;justify-content:space-between">Ara: sayfa, kullanıcı, ayar<span style="font-size:12px">⌘K</span></span></div></div>
+<div style="display:flex;align-items:center;gap:14px;padding:12px 20px;border-radius:14px;background:rgba(242,180,92,.12);color:#f2b45c;font-size:14px;min-height:44px">
+<i class="d" style="background:#f2b45c"></i><span style="flex:1;color:#e6ecf2;font-weight:300">3 değişiklik taslakta · 1 tanesi onay gerektirir (seviye 2)</span><span class="b" style="background:#1B2027">Farkı incele</span><span class="b p">Yayınla</span></div>
+<div style="display:flex;gap:8px"><span class="chip" style="padding:8px 14px;background:rgba(143,188,255,.2)">Tümü</span><span class="chip l" style="padding:8px 14px">Yapay zekâ</span><span class="chip l" style="padding:8px 14px">Maliyet</span><span class="chip l" style="padding:8px 14px">Ürün</span><span class="chip l" style="padding:8px 14px">Giriş ve e-posta</span><span class="chip l" style="padding:8px 14px">Güvenlik</span><span class="chip l" style="padding:8px 14px">Genel</span></div>
+<div style="display:grid;grid-template-columns:1.5fr 1fr;gap:16px;min-width:0">
+<div class="k" style="padding:20px 24px">
+<div class="h">AYARLAR</div>
+<div style="display:grid;grid-template-columns:1.1fr 1fr 150px;gap:16px;align-items:center;padding:10px 0"><div><div style="font-size:14px;color:#e6ecf2">Yedek model (Sonnet’e ulaşılamazsa)</div><div style="font-size:12px;color:#7f8894;margin-top:2px;font-weight:300">llm.fallback.model · seviye 1</div></div><div class="in">claude-haiku-5-5</div><div><span class="chip">Değişti</span></div></div><div style="display:grid;grid-template-columns:1.1fr 1fr 150px;gap:16px;align-items:center;padding:10px 0"><div><div style="font-size:14px;color:#e6ecf2">Birincil model çabası</div><div style="font-size:12px;color:#7f8894;margin-top:2px;font-weight:300">llm.primary.effort · varsayılan low</div></div><div class="in">low</div><div><span class="chip l">Varsayılan</span></div></div><div style="display:grid;grid-template-columns:1.1fr 1fr 150px;gap:16px;align-items:center;padding:10px 0"><div><div style="font-size:14px;color:#e6ecf2">Plus bütçe tavanı (USD)</div><div style="font-size:12px;color:#7f8894;margin-top:2px;font-weight:300">budget.plus.max · 0,10–1,00 · seviye 2</div></div><div class="in">$0,50</div><div><span class="chip w">Onay bekler</span></div></div><div style="display:grid;grid-template-columns:1.1fr 1fr 150px;gap:16px;align-items:center;padding:10px 0"><div><div style="font-size:14px;color:#e6ecf2">Günlük toplam harcama tavanı (USD)</div><div style="font-size:12px;color:#7f8894;margin-top:2px;font-weight:300">budget.global.dailyCap · staging’de düşük</div></div><div class="in">$5,00</div><div><span class="chip l">Varsayılan</span></div></div><div style="display:grid;grid-template-columns:1.1fr 1fr 150px;gap:16px;align-items:center;padding:10px 0"><div><div style="font-size:14px;color:#e6ecf2">Aynı iş için günlük bildirim</div><div style="font-size:12px;color:#7f8894;margin-top:2px;font-weight:300">notify.perItemPerDay · 1–2</div></div><div class="in">1</div><div><span class="chip l">Varsayılan</span></div></div><div style="display:grid;grid-template-columns:1.1fr 1fr 150px;gap:16px;align-items:center;padding:10px 0"><div><div style="font-size:14px;color:#e6ecf2">13 yaş alt sınırı</div><div style="font-size:12px;color:#7f8894;margin-top:2px;font-weight:300">age.minimum · kilitli (D-037)</div></div><div class="in">13</div><div><span class="chip">Kilitli</span></div></div>
+</div>
+<div style="display:flex;flex-direction:column;gap:16px;min-width:0">
+<div class="k" style="padding:20px 24px"><div class="h">ENTEGRASYONLAR</div>
+<div class="t" style="grid-template-columns:1fr auto auto;margin-top:6px"><span><b>Anthropic</b><br><span style="font-size:12px;color:#7f8894">••••3f9a · 40 gün önce</span></span><span class="chip o">Bağlı</span><span class="b" style="height:44px">Test et</span></div>
+<div class="t" style="grid-template-columns:1fr auto auto"><span><b>E-posta (SMTP)</b><br><span style="font-size:12px;color:#7f8894">Test gönderimi yavaş: 4,1 sn</span></span><span class="chip w">Yavaş</span><span class="b">Test et</span></div>
+<div class="t" style="grid-template-columns:1fr auto auto"><span><b>Apple ile giriş</b><br><span style="font-size:12px;color:#7f8894">Kimlik tanımlı</span></span><span class="chip o">Bağlı</span><span class="b">Aç</span></div>
+<div class="t" style="grid-template-columns:1fr auto auto"><span><b>Hata izleme</b><br><span style="font-size:12px;color:#7f8894">Yapılandırılmadı (kapalı)</span></span><span class="chip l">Kapalı</span><span class="b">Kur</span></div>
+<div style="margin-top:6px;font-size:12px;line-height:1.5;color:#7f8894;font-weight:300">Sırlar şifreli saklanır ve geri gösterilmez; yalnız değiştirilir ve test edilir.</div>
+</div>
+<div class="k" style="padding:20px 24px"><div class="h">ORTAM</div>
+<div class="t" style="grid-template-columns:1fr 1fr;margin-top:6px"><span style="color:#7f8894">APP_ENV</span><b>staging</b><span style="color:#7f8894">.env anahtarları</span><b>6 / 6 mevcut</b><span style="color:#7f8894">Migrasyon</span><b>güncel</b><span style="color:#7f8894">Ayar önbelleği</span><b>v212</b></div>
+<div style="display:flex;gap:10px;margin-top:8px"><span class="b">Yapılandırmayı indir</span><span class="b">Production’a aktar…</span></div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+<script>window.__NAV={"links": [{"t": "Pano", "to": "AdminGenel", "up": 0, "all": false}, {"t": "Maliyet ve politika", "to": "AdminMaliyet", "up": 0, "all": false}, {"t": "Referans aralıkları", "to": "AdminReferans", "up": 0, "all": false}], "name": "AdminAyarlar"};</script>
+<script src="../nav.js"></script>
+</body>
+</html>

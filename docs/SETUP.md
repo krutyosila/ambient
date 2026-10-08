@@ -17,12 +17,12 @@ Amaç: kuruluma ve ilk satır koda başlayabilecek hale gelmek. Kapsam ve sıra:
 | Hesap | Kimin | Nereye girer |
 |---|---|---|
 | Apple Developer | Sizin | EAS, App Store Connect, "Apple ile giriş" |
-| Anthropic | Sizin | `ANTHROPIC_API_KEY` (yalnız `.env` / gizli yönetim) |
-| Google (OAuth) | Sizin | `GOOGLE_CLIENT_ID` |
-| E-posta gönderimi (magic link) | Sizin | `SMTP_URL`, `MAIL_FROM`; yerelde Mailpit gibi bir test sunucusu yeter |
-| Hata izleme | Sizin | `SENTRY_DSN` (boş bırakılırsa kapalı); Sentry ücretsiz katman ya da GlitchTip (D-041) |
+| Anthropic | Sizin | Panel → Ayarlar → Entegrasyonlar → Yapay zekâ (şifreli saklanır) |
+| Google (OAuth) | Sizin | Panel → Entegrasyonlar → Giriş sağlayıcıları |
+| E-posta gönderimi (magic link) | Sizin | Panel → Entegrasyonlar → E-posta; yerelde Mailpit gibi bir test sunucusu yeter |
+| Hata izleme | Sizin | Panel → Entegrasyonlar → Hata izleme (boşsa kapalı); Sentry ücretsiz katman ya da GlitchTip (D-041) |
 | Hosting | Sizin (D-040) | Staging için sonra |
-Gizli anahtarlar repoya **girmez** (`.gitignore`); örnek: `.env.example`.
+Gizli anahtarlar repoya **girmez** (`.gitignore`) ve `.env`'de de durmaz; panelde zarf şifrelemeyle saklanır.
 
 ## 3. Hedef repo yapısı
 ```
@@ -40,15 +40,15 @@ docker-compose.yml  PostgreSQL, Redis, (Mailpit)
 
 ## 4. Kurulum adımları (T1 sonunda çalışır hale gelir)
 1. `git clone` ve dal: `claude/sweet-bardeen-575uyo` (ya da yeni çalışma dalı).
-2. `cp .env.example .env` ve değerleri doldur (§2).
+2. `cp .env.example .env`; `SETTINGS_MASTER_KEY` üret, `ADMIN_BOOTSTRAP_EMAIL` yaz. Sırlar sonra panelden (§2).
 3. `pnpm install`.
 4. `docker compose up -d` (PostgreSQL, Redis, Mailpit).
 5. `pnpm --filter api prisma migrate dev` ve `pnpm --filter api seed` (test verisi).
 6. `pnpm dev` (API + admin) ve `pnpm --filter mobile ios` (simülatör).
-7. İlk sağlık kontrolü: `GET /health` 200, admin giriş sayfası açılıyor, mobil "Giriş" ekranı görünüyor.
+7. İlk sağlık kontrolü: `GET /health` 200, admin giriş sayfası açılıyor (bootstrap e-postasına bağlantı gelir), panelde Entegrasyonlar'dan Anthropic anahtarı girilip "Test et" başarılı, mobil "Giriş" ekranı görünüyor.
 
 ## 5. Ortam değişkenleri
-Tüm liste ve varsayılanlar: `.env.example`. Maliyet politikası değişkenleri (`COMMISSION_RATE`, `BUDGET_*`, `FX_TRY_PER_USD`, `LLM_KILL_SWITCH`) `docs/COST-POLICY.md` ile birebir eşleşir. Staging'de `GLOBAL_DAILY_SPEND_CAP_USD` düşük tutulur.
+`.env` yalnız 6 önyükleme değişkenidir (`.env.example`; D-046). API anahtarı, model, bütçe, kur, komisyon, SMTP, OAuth ve Sentry **ilk girişten sonra yönetim panelinden** girilir (`docs/ADMIN.md` §2). Staging'de panelden günlük harcama tavanı düşük tutulur. `SETTINGS_MASTER_KEY` üretimi: `openssl rand -base64 32`; kaybolursa yalnız sırlar yeniden girilir.
 
 ## 6. İlk görevler
 **T0 (hazırlık, spike'lar; her biri ≤ 1–2 gün, sonuçlar `DECISIONS.md`'ye not edilir)**

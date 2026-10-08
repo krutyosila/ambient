@@ -51,6 +51,8 @@ Görsel kaynak: tuvaldeki 38 sayfa (https://claude.ai/artifact/CHcQgkvtgDe2JDoqG
 | 4.9 | Yükseltme kartı (Bugün) | Seyrek, kurallı | Sonra / 30 gün gösterme / planlar | — | UpsellState |
 | 4.7 | Anlama hakkı doldu | Bütçe %100 | Sıraya al / Plus'a geç / Tamam | — | OutboxUtterance |
 | 6.3 | Admin: maliyet ve politika | Admin paneli | — | — | Politika yapılandırması |
+| 6.6 | Admin: pano | Admin girişi | — | — | Özet tablolar |
+| 6.7 | Admin: yapılandırma merkezi | Admin → Ayarlar | Taslak → yayın → geri al | — | Setting, SettingVersion, Secret |
 | 5.1 | Giriş | İlk açılış | → 5.2 | — | User |
 | 5.2–5.4 | Karşılama 1–3 | 5.1 | → 5.5 | Çipler ya da kendi cümlen | Profile, Setting |
 | 5.5 | Seni tanıyayım | 5.4 | Atla / söyle → 5.6 | "14 Mart 1992 doğumluyum", "Kilom 74" | Profile, Measurement, consents |

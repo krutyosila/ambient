@@ -24,11 +24,11 @@ Durum: ☐ başlamadı · ◐ sürüyor · ☑ bitti
 |---|---|---|---|---|
 | **M0** Temel | pnpm monorepo, CI, Docker Compose, `design-tokens` (v1 + v2 farkları, koyu ve açık tema, 7 palet), `shared` iskeleti (`iconKey` enum'u dahil), i18n (tr varsayılan, en hazır), temel bileşenler ve **45 ikonluk set** (`design/icons`), bileşen galerisi | Galeri her iki temada; küçük metin kontrastı tüm paletlerde ölçüldü (açık tema dahil) | 1–2 hf | ☐ |
 | **M1** Local-first çekirdek | expo-sqlite + Drizzle şeması (**sayaçlı rutin ve LogEntry dahil**), Bugün (Sırada kartı, su sayacı), Akış, Geçmiş, Gün gezinmesi, Karşılama, Çevrimdışı ve Boş gün durumları | Uçak modunda tam çalışan Bugün/Akış; 60 fps geçişler | 3 hf | ☐ |
-| **M2** API ve senkron | NestJS, Prisma, JWT, magic link + Apple + Google, UTC ve zaman dilimi, delta senkron, soft delete, OpenAPI, **salt okunur takvim içe aktarma** | İki cihaz arası senkron; senkron testleri; takvim olayları Bugün'de görünür | 3 hf | ☐ |
+| **M2** API ve senkron | NestJS, Prisma, JWT, magic link + Apple + Google, UTC ve zaman dilimi, delta senkron, soft delete, OpenAPI, **salt okunur takvim içe aktarma**, **ayar altyapısı (kayıt defteri, sürümlü `Setting`, şifreli `Secret`, `.env` 6 satır; `docs/ADMIN.md` §3)** | İki cihaz arası senkron; senkron testleri; takvim olayları Bugün'de görünür | 3 hf | ☐ |
 | **M3** LLM katmanı | `LlmProvider` + adaptörler + yedek, araç çağrıları (zod): 9 temel + `log_progress`, `update_item`, `cancel_item`, `set_preference`, `set_icon`, `undo_last`, `forget_pattern`; deterministik yürütücü, ikon atama, birim dönüşümü ve su kaydı testleri, policy hook, Türkçe göreli tarih, Konuşma ve Hızlı not, 100+ cümlelik değerlendirme seti CI'da | Değerlendirme seti hedef doğruluk; prompt injection testleri; token ve maliyet kaydı | 4 hf | ☐ |
 | **M4** Kontrol, bildirimler ve ritim | BullMQ, proaktif kontrol, boş aralıktan saat önerisi, yerel bildirimler, yoğunluk ve sessiz saat, **ritim öğrenme ve öneri motoru** (`docs/RHYTHM.md`), Ritmin sayfası | Bildirim kuralları (D-005) testlerle doğrulandı; yinelenen ya da sessiz bildirim yok; ritim desenleri simüle geçmişlerle test edildi, eşik altında öneri yok | 2 hf | ☐ |
 | **M5** Hayat ritmi, Günü kapat, Menü ve alt sayfalar | DayLog, Hayat ritmi, **Günü kapat** (Q1 onayıyla), Menü, Rutinlerim (**simge/renk seçici**), Önemli kişiler, Veri ve gizlilik (KVKK dışa aktarma ve silme), Profil, **Plan ve fiyat**, Yardım | Prototipteki tüm dokunma akışları gerçek navigasyonda | 3 hf | ☐ |
-| **M6** Admin paneli | Next.js + shadcn, RBAC + 2FA, kullanıcılar, LLM yönetimi, kullanım ve maliyet, rızalı ve PII maskeli kayıtlar, değerlendirme, içerik, feature flag, audit log, sistem sağlığı | Prompt sürümü değiştirilip geri alınabiliyor | 4 hf | ☐ |
+| **M6** Admin paneli | `docs/ADMIN.md`: kabuk (RBAC + 2FA, ortam şeridi, ⌘K, taslak şeridi), Yapılandırma merkezi + Entegrasyonlar, Maliyet ve politika + simülatör, Yapay zekâ (model, istem sürümü, oyun alanı, değerlendirme), kullanıcılar + KVKK, içerik, feature flag, beslenme, operasyon, zincirli audit log | Prompt sürümü ve bütçe değişikliği taslak → onay → yayın → geri al ile çalışıyor; hiçbir ayar `.env`'de kalmadı | 5 hf | ☐ |
 | **M7** Widget | WidgetKit + Android App Widget, derin bağlantı ile hızlı not | Widget'tan 3 saniyede kayıt | 2 hf | ☐ |
 | **M8** Faz 2 | Sağlık verisi (HealthKit, Health Connect), **Apple Watch** (Q9), değerlendirilecek: dış asistan bağlantısı (Q10) | MVP sonrası ayrı onay | belirsiz | ☐ |
 | **M9** Cilalama ve yayın | Erişilebilirlik, Maestro e2e, OWASP, Sentry, EAS Build, mağaza hazırlığı (açık fiyat ve iptal yolu dahil) | Beta (TestFlight / dahili test) | 3 hf | ☐ |
@@ -64,7 +64,7 @@ Durum: ☐ başlamadı · ◐ sürüyor · ☑ bitti
 | Ritim seviyeleri (Temel/Tam/Gelişmiş) | M4 | `docs/RHYTHM.md` §11 |
 | Günü kapat hatırlatma ve otomatik kapanış | M4–M5 | D-018 |
 | Plan ve fiyat, karşılaştırma, anlama hakkı sayfası, StoreKit abonelik, deneme | M5 | `docs/PRICING.md`; fiyatlar yapılandırma |
-| Admin: Maliyet ve politika modülü | M6 | Tasarım 6.3 |
+| Admin: Maliyet ve politika modülü | M6 | Tasarım 6.3; tüm panel tasarımı `docs/ADMIN.md` (6.3, 6.6, 6.7) |
 | Beta ölçümü: maliyet/net gelir, yerel çözüm oranı, escalation | M9 öncesi beta | Fiyat ve bütçe 4. haftada gözden geçirilir |
 | Pazarlama: ASO, ekran görüntüleri, video, içerik üretici programı | M9 | `docs/MARKETING.md` |
 | Proje özeti güncel tutma | Sürekli | `docs/SUMMARY.md` |

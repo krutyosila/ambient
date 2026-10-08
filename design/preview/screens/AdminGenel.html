@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>6.6 · Admin: pano · Ambient</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#07090c;font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.k{padding:18px 20px;border-radius:18px;background:#12161b}
+.k>small{display:block;font-size:12px;color:#9ba5b0;font-weight:300}
+.k>b{display:block;margin-top:6px;font-size:28px;font-weight:300;letter-spacing:-.02em}
+.k>i{display:block;margin-top:2px;font-style:normal;font-size:12px;color:#7f8894}
+.h{font-size:12px;letter-spacing:.14em;color:#8fbcff;font-weight:500}
+.t{display:grid;gap:12px;padding:10px 0;font-size:14px;color:#c9d1d8;font-weight:300;align-items:center}
+.t b{font-weight:400;color:#e6ecf2}
+.n{display:flex;align-items:center;height:36px;padding:0 14px;border-radius:12px;font-size:14px;color:#9ba5b0}
+.g{font-size:11px;letter-spacing:.14em;color:#7f8894;padding:14px 14px 4px;font-weight:500}
+.b{height:44px;padding:0 18px;border-radius:12px;background:#1B2027;font-size:14px;display:inline-flex;align-items:center;color:#e6ecf2}
+.b.p{background:#e6ecf2;color:#07090c;font-weight:500}
+.d{width:8px;height:8px;border-radius:50%;flex:none}
+.tg{width:52px;height:30px;border-radius:15px;background:#2A323B;position:relative;display:inline-block;flex:none}
+.tg i{position:absolute;left:3px;top:3px;width:24px;height:24px;border-radius:50%;background:#9ba5b0;transition:.2s}
+.tg.on{background:#8fbcff}.tg.on i{left:25px;background:#07090c}
+.in{height:44px;padding:0 14px;border-radius:12px;background:#0a0d11;display:flex;align-items:center;font-size:14px;color:#e6ecf2;font-weight:300}
+.chip{font-size:12px;padding:4px 10px;border-radius:10px;background:rgba(143,188,255,.12);color:#8fbcff}
+.chip.w{background:rgba(242,180,92,.14);color:#f2b45c}
+.chip.o{background:rgba(143,207,159,.14);color:#8fcf9f}
+.chip.l{background:#1B2027;color:#9ba5b0}
+</style>
+<style>.ambient-link{cursor:pointer}.ambient-link:hover{filter:brightness(1.15)}.ambient-link:focus-visible{outline:2px solid #8fbcff;outline-offset:2px}html.hint .ambient-link{outline:2px dashed rgba(143,188,255,.8);outline-offset:2px}html.embed .frame{margin:0;border-radius:0;box-shadow:none}html.embed{background:transparent}html{background:#0b0d10}body{margin:0;min-height:100vh}.frame{width:390px;height:844px;margin:24px auto;border-radius:36px;overflow:hidden;box-shadow:0 30px 80px -30px rgba(0,0,0,.6)}.wide{width:1440px;margin:0 auto}</style>
+</head>
+<body>
+<div class="wide">
+
+<div style="width:1440px;height:960px;box-sizing:border-box;display:flex;background:#07090c;color:#e6ecf2;font-family:Inter,system-ui,sans-serif">
+<div style="width:248px;flex:none;padding:24px 16px;background:#0a0d11;display:flex;flex-direction:column;gap:2px;overflow:hidden">
+<div style="font-size:22px;font-weight:300;letter-spacing:-.03em;padding:0 14px 8px">Ambient · Admin</div>
+<div style="margin:0 14px 6px;font-size:12px;color:#f2b45c;display:flex;align-items:center;gap:8px"><i class="d" style="background:#f2b45c"></i>STAGING</div>
+<div class="g">GENEL BAKIŞ</div><div class="n" style="background:rgba(143,188,255,.14);color:#e6ecf2">Pano</div><div class="g">KULLANICILAR</div><div class="n">Kullanıcılar</div><div class="n">KVKK talepleri</div><div class="g">GELİR</div><div class="n">Abonelikler</div><div class="g">YAPAY ZEKÂ</div><div class="n">Modeller ve yönlendirme</div><div class="n">İstem sürümleri</div><div class="n">Değerlendirme</div><div class="g">MALİYET</div><div class="n">Maliyet ve politika</div><div class="g">ÜRÜN</div><div class="n">Ürün kuralları</div><div class="n">Feature flag’ler</div><div class="g">İÇERİK</div><div class="n">Metinler ve şablonlar</div><div class="g">BESLENME</div><div class="n">Referans aralıkları</div><div class="g">OPERASYON</div><div class="n">Sistem sağlığı</div><div class="g">GÜVENLİK</div><div class="n">Yöneticiler ve roller</div><div class="n">Audit log</div><div class="g">AYARLAR</div><div class="n">Yapılandırma merkezi</div><div class="n">Entegrasyonlar</div>
+</div>
+<div style="flex:1;padding:24px 40px;display:flex;flex-direction:column;gap:18px;min-width:0;overflow:hidden">
+<div style="display:flex;align-items:center;justify-content:space-between;gap:20px">
+<div><div style="font-size:34px;font-weight:300;letter-spacing:-.03em">Pano</div><div style="margin-top:4px;font-size:14px;color:#9ba5b0;font-weight:300">Bugün · staging · tüm sayılar günlük özetten gelir</div></div>
+<div style="display:flex;align-items:center;gap:12px"><span class="chip w">Örnek veri</span><span class="in" style="width:260px;color:#7f8894;justify-content:space-between">Ara: sayfa, kullanıcı, ayar<span style="font-size:12px">⌘K</span></span></div></div>
+<div style="display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px">
+<div class="k"><small>Bugünkü harcama</small><b>$1,42</b><i>Günlük tavan $5,00</i></div>
+<div class="k"><small>Kullanıcı başı maliyet (ay)</small><b>$0,09</b><i>Normal 0,03 · Plus 0,11 · Pro 0,23</i></div>
+<div class="k"><small>Yerel çözüm oranı</small><b>%58</b><i>Hedef ≥ %55</i></div>
+<div class="k"><small>Anlaşılmayan cümle</small><b>%3,1</b><i>Dün %3,4</i></div>
+<div class="k"><small>Kuyruk gecikmesi</small><b>0,8 sn</b><i>Hata oranı %0,2</i></div>
+<div class="k"><small>Aktif kullanıcı (bugün)</small><b>38</b><i>Yeni abonelik 2 · iptal 0</i></div>
+</div>
+<div style="display:grid;grid-template-columns:1.2fr 1fr;gap:16px;min-width:0">
+<div class="k" style="padding:22px 24px"><div class="h">DİKKAT GEREKTİRENLER</div><div style="margin-top:8px;display:flex;flex-direction:column">
+<div style="display:flex;gap:12px;align-items:center;min-height:44px;font-size:14px;font-weight:300;color:#c9d1d8"><i class="d" style="background:#f2b45c"></i><span style="flex:1">Onay bekleyen değişiklik: Plus bütçe tavanı $0,40 → $0,50 (seviye 2)</span><span style="color:#7f8894;font-size:12px">Maliyet ve politika</span></div><div style="display:flex;gap:12px;align-items:center;min-height:44px;font-size:14px;font-weight:300;color:#c9d1d8"><i class="d" style="background:#f2b45c"></i><span style="flex:1">Günlük tavanın %80’ine yaklaşıldı olabilir: tahmin 17:40’ta</span><span style="color:#7f8894;font-size:12px">Maliyet ve politika</span></div><div style="display:flex;gap:12px;align-items:center;min-height:44px;font-size:14px;font-weight:300;color:#c9d1d8"><i class="d" style="background:#f2b45c"></i><span style="flex:1">KVKK silme talebi: 23 gün kaldı (7. günden sonra uyarı)</span><span style="color:#7f8894;font-size:12px">KVKK talepleri</span></div><div style="display:flex;gap:12px;align-items:center;min-height:44px;font-size:14px;font-weight:300;color:#c9d1d8"><i class="d" style="background:#8fcf9f"></i><span style="flex:1">Anthropic bağlantı testi başarılı (2 dk önce)</span><span style="color:#7f8894;font-size:12px">Entegrasyonlar</span></div><div style="display:flex;gap:12px;align-items:center;min-height:44px;font-size:14px;font-weight:300;color:#c9d1d8"><i class="d" style="background:#8fcf9f"></i><span style="flex:1">Son yedek 03:00, geri yükleme testi 12 gün önce</span><span style="color:#7f8894;font-size:12px">Operasyon</span></div>
+</div></div>
+<div class="k" style="padding:22px 24px"><div class="h">SON DEĞİŞİKLİKLER</div><div style="margin-top:8px;display:flex;flex-direction:column">
+<div class="t" style="grid-template-columns:1fr auto auto"><span><b>Haiku çabası</b> orta → düşük</span><span style="color:#7f8894;font-size:12px">ali · 12 dk</span><span class="chip">Geri al</span></div>
+<div class="t" style="grid-template-columns:1fr auto auto"><span><b>Kur</b> 54,2 → 55,0 (otomatik)</span><span style="color:#7f8894;font-size:12px">sistem · 3 sa</span><span class="chip">Geri al</span></div>
+<div class="t" style="grid-template-columns:1fr auto auto"><span><b>SSS</b> “Verilerimi nasıl silerim”</span><span style="color:#7f8894;font-size:12px">ali · dün</span><span class="chip">Geri al</span></div>
+<div class="t" style="grid-template-columns:1fr auto auto"><span><b>İstem</b> v14 yayına alındı</span><span style="color:#7f8894;font-size:12px">ali · dün</span><span class="chip">Geri al</span></div>
+</div></div>
+</div>
+<div class="k" style="padding:22px 24px"><div class="h">SİSTEM</div>
+<div style="margin-top:10px;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;font-size:14px;font-weight:300">
+<span style="display:flex;gap:8px;align-items:center"><i class="d" style="background:#8fcf9f"></i>API</span><span style="display:flex;gap:8px;align-items:center"><i class="d" style="background:#8fcf9f"></i>Veritabanı</span><span style="display:flex;gap:8px;align-items:center"><i class="d" style="background:#8fcf9f"></i>Redis ve kuyruk</span><span style="display:flex;gap:8px;align-items:center"><i class="d" style="background:#8fcf9f"></i>Anthropic</span><span style="display:flex;gap:8px;align-items:center"><i class="d" style="background:#f2b45c"></i>E-posta (yavaş)</span><span style="display:flex;gap:8px;align-items:center"><i class="d" style="background:#8fcf9f"></i>Ayar önbelleği v212</span></div></div>
+
+</div>
+</div>
+</div>
+<script>window.__NAV={"links": [{"t": "Maliyet ve politika", "to": "AdminMaliyet", "up": 0, "all": false}, {"t": "Yapılandırma merkezi", "to": "AdminAyarlar", "up": 0, "all": false}, {"t": "Referans aralıkları", "to": "AdminReferans", "up": 0, "all": false}], "name": "AdminGenel"};</script>
+<script src="../nav.js"></script>
+</body>
+</html>

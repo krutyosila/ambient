@@ -106,7 +106,7 @@ User, Profile (uyanma/uyku saati, çalışma düzeni, durum: Müsait/Odakta/Dinl
 
 ## 5. LLM katmanı (çekirdek)
 **İlke: LLM anlar, kod karar verir ve uygular.**
-1. `LlmProvider` arayüzü (`complete`, `toolCall`, `usage`). Adaptörler: Anthropic ve OpenAI. Sağlayıcı/model/sıcaklık **admin panelinden ve env'den** değiştirilebilir, yedek (fallback) sağlayıcı desteklenir. İş mantığı hiçbir sağlayıcıya özgü tipe bağlanmaz.
+1. `LlmProvider` arayüzü (`complete`, `toolCall`, `usage`). Adaptörler: Anthropic ve OpenAI. Sağlayıcı/model/çaba **admin panelinden** (env'den değil, D-046) değiştirilebilir, yedek (fallback) sağlayıcı desteklenir. İş mantığı hiçbir sağlayıcıya özgü tipe bağlanmaz.
 2. LLM serbest metin üretmez, **tanımlı araç çağrıları** (function calling) döndürür: `create_event`, `create_routine`, `add_floating_item`, `mark_done`, `reschedule`, `add_reminder`, `add_person_note`, `query_day`, `ask_clarification` ve düzenleme/kayıt araçları `log_progress` (sayaçlı rutine kayıt: miktar, birim, zaman), `update_item`, `cancel_item`, `set_preference` (sessiz saatler, yoğunluk, uyanma saati vb.), `set_icon`, `undo_last`, `forget_pattern`. Her öğeye ve rutine kütüphaneden bir `iconKey` atanır. Şemalar zod ile `packages/shared`'da; çıktı doğrulanmadan uygulanmaz.
 3. Sunucu tarafı **eylem yürütücü** (deterministik): doğrular, çakışma kontrol eder, öğeyi doğru duruma yerleştirir (planlı / zamansız / rutin), sonucu LLM'e geri verir; LLM kullanıcıya kısa, sakin bir cümleyle yanıt yazar. Gelecekte üyelik/kota için araya **policy katmanı** girebilecek şekilde bir hook bırak (şimdilik uygulama, hepsi izinli) → **güncel karar:** Normal/Plus/Pro katmanları ve bütçe politikası `docs/COST-POLICY.md`'dedir.
 4. Bağlama her istekte eklenecekler: "şu an" (kullanıcı saat dilimiyle), bugünün planı, aktif rutinler, tercihler. Türkçe göreli ifadeler doğru çözülmeli: "yarın 3:15'te", "bu akşam", "haftaya perşembe", "işten çıkınca" (konum/olay tabanlı, zaman değil).
@@ -139,7 +139,7 @@ HealthKit ve Health Connect: uyku, antrenman, su. Veri türü bazında izin, cih
 - **Dış asistan bağlantısı (MCP):** kullanıcının kendi asistanından (ör. Claude, ChatGPT) rutin ve öğe eklemesi. Routinery bunu ücretsiz sunuyor. Değerlendirilecek, taahhüt değil.
 
 ## 10. Admin paneli (Next.js)
-Rol tabanlı erişim (superadmin, destek, analist, **diyetisyen danışman**: yalnız anonim raporlar ve referans aralıkları), 2FA. Modüller:
+**Ayrıntılı tasarım ve yapılandırma modeli: `docs/ADMIN.md` (bu bölümün üstündedir).** Temel ilke: `.env` yalnız önyükleme (6 değişken); model, bütçe, anahtar, eşik, metin, bayrak hepsi panelden, taslak → yayın → geri al ile, sürümlü ve denetli (D-046, D-047). Rol tabanlı erişim (superadmin, destek, analist, içerik, **diyetisyen danışman**: yalnız anonim raporlar ve referans aralıkları), 2FA. Modüller:
 - **Kullanıcılar:** liste, detay, devre dışı bırak, KVKK dışa aktarma ve silme.
 - **LLM yönetimi:** sağlayıcı/model seçimi, yedek sağlayıcı, sistem prompt'u **sürümleri** (geri alma), araç tanımlarını görüntüleme, test alanı (playground).
 - **Kullanım ve maliyet:** günlük token, maliyet, gecikme, hata oranı, sağlayıcı bazında.

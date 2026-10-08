@@ -17,7 +17,7 @@ Seçilmiş test kullanıcılarının **gerçek cihazda (iOS, TestFlight)**, **ge
 | Kişiselleştirme | Elle/yazıyla bilgi girişi, kilo çizgisi, referans tabloları (yer tutucu → diyetisyen), 18 yaş koruması |
 | Üyelik | Normal/Plus/Pro; **StoreKit sandbox**; 3 gün deneme; limit ve düşürme; Plan sayfaları |
 | Maliyet | Yerel → Haiku → Sonnet yönlendirme; bütçe; kademeli düşürme; telemetri |
-| Admin (çekirdek) | Kullanıcılar, LLM ve maliyet panosu, referans aralıkları ve Diyetisyen alanı (temel), içerik, feature flag, audit log |
+| Admin (çekirdek) | Yapılandırma merkezi + Entegrasyonlar (anahtarlar panelden), Maliyet ve politika, Modeller/istem sürümü, Kullanıcılar (okuma), referans aralıkları ve Diyetisyen alanı (temel), içerik, feature flag, audit log (`docs/ADMIN.md` §12) |
 | Kalite | CI, birim + API + e2e testleri, 100+ cümlelik değerlendirme seti, Sentry, yapılandırılmış log |
 
 **Kapsam dışı (sonraki testler):** Android widget ve iOS widget (M7), Apple Watch, sağlık verisi, dış asistan bağlantısı, ödeme dışı pazarlama araçları. Android test dahili sürümü test 2'de.
@@ -43,7 +43,7 @@ Monorepo (pnpm): `apps/mobile` (Expo, expo-router, local-first SQLite/Drizzle), 
 | T4 LLM ve maliyet (M3) | Yerel çözümleyici, araç çağrıları, yürütücü, yönlendirme, bütçe, telemetri, değerlendirme seti | 4 |
 | T5 Bildirim ve ritim (M4) | Kontrol, bildirimler, Günü kapat ve hatırlatma, ritim motoru | 3 |
 | T6 Kişisel ve üyelik (M5 çekirdek) | Kişisel bilgiler ve rıza, Plan/StoreKit sandbox, limit/düşürme, alt sayfalar | 3 |
-| T7 Admin çekirdeği (M6 alt küme) | Kullanıcılar, maliyet, referans ve diyetisyen alanı, flag, audit | 3 |
+| T7 Admin çekirdeği (M6 alt küme) | Yapılandırma merkezi, entegrasyonlar, maliyet ve politika, model/istem, kullanıcılar (okuma), referans ve diyetisyen alanı, flag, audit | 3–4 |
 | T8 Beta hazırlığı | E2E, erişilebilirlik, güvenlik gözden geçirme, TestFlight, test planı | 2 |
 Toplam **yaklaşık 24–26 hafta** (tek geliştirici). Bağımsız işler (admin, API, mobil, tasarım sistemi) paralel yürütülürse 14–16 haftaya inebilir. Bu bir tahmindir; T0 sonunda yenilenir.
 

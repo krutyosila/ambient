@@ -2,11 +2,11 @@
 
 Kişisel günlük işletim sistemi. Kullanıcı **söyler ya da yazar**, Ambient bunu plana, rutine, hatırlatmaya ve kayda çevirir. Skor, seri, rozet, yüzde ya da suçluluk dili yok. Türkçe-önce, önce iOS.
 
-> Durum (8 Ekim 2026): **kod yok; ürün tanımı, tasarım (50 sayfa), kararlar ve kurulum planı hazır.** Sıradaki hedef: tam çalışır test ortamı (TestFlight + staging). Plan: [`docs/TEST-ENV.md`](docs/TEST-ENV.md). Kurulum: [`docs/SETUP.md`](docs/SETUP.md).
+> Durum (8 Ekim 2026): **kod yok; ürün tanımı, tasarım (52 sayfa; admin dahil), kararlar ve kurulum planı hazır.** Sıradaki hedef: tam çalışır test ortamı (TestFlight + staging). Plan: [`docs/TEST-ENV.md`](docs/TEST-ENV.md). Kurulum: [`docs/SETUP.md`](docs/SETUP.md).
 
 ## Arayüzleri incele (indirip yerelde aç)
 - **Tıklanabilir prototip (yerelde):** `design/preview/app.html` dosyasını tarayıcıda aç. Yeni kullanıcı akışından (Giriş → Karşılama → Bugün), bildirim yoklamasından ya da menüden başlayıp sayfalar arasında gezebilirsin; geri düğmeleri çalışır.
-- **Galeri (yerelde):** `design/preview/index.html` (50 sayfa; karta tıklayınca prototipte açılır).
+- **Galeri (yerelde):** `design/preview/index.html` (52 sayfa; karta tıklayınca prototipte açılır).
 - GitHub üzerinden yayın yoktur; depoyu indirip dosyayı açman yeterli. İnternet yalnız Inter yazı tipi içindir; yoksa sistem yazı tipi kullanılır.
 - **Tuval (düzenlenebilir, özel bağlantı):** https://claude.ai/artifact/CHcQgkvtgDe2JDoqGd1TX2
 
