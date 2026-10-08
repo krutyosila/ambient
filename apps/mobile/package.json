@@ -1,0 +1,9 @@
+{
+  "name": "@ambient/mobile",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "typecheck": "echo 'skeleton pending (M0 follow-up)'",
+    "test": "echo 'no tests yet'"
+  }
+}

@@ -47,6 +47,9 @@ docker-compose.yml  PostgreSQL, Redis, (Mailpit)
 6. `pnpm dev` (API + admin) ve `pnpm --filter mobile ios` (simülatör).
 7. İlk sağlık kontrolü: `GET /health` 200, admin giriş sayfası açılıyor (bootstrap e-postasına bağlantı gelir), panelde Entegrasyonlar'dan Anthropic anahtarı girilip "Test et" başarılı, mobil "Giriş" ekranı görünüyor.
 
+## 4.1 Geliştirici komutları (bugün çalışır)
+`pnpm install` · `pnpm tokens` (tasarım token'ları prototipten üretilir) · `pnpm lint` · `pnpm typecheck` · `pnpm test` · `pnpm --filter @ambient/shared docs` (ayar kataloğu `docs/SETTINGS.md`). CI aynı adımları çalıştırır (`.github/workflows/ci.yml`).
+
 ## 5. Ortam değişkenleri
 `.env` yalnız 6 önyükleme değişkenidir (`.env.example`; D-046). API anahtarı, model, bütçe, kur, komisyon, SMTP, OAuth ve Sentry **ilk girişten sonra yönetim panelinden** girilir (`docs/ADMIN.md` §2). Staging'de panelden günlük harcama tavanı düşük tutulur. `SETTINGS_MASTER_KEY` üretimi: `openssl rand -base64 32`; kaybolursa yalnız sırlar yeniden girilir.
 

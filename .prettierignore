@@ -1,0 +1,8 @@
+design/
+pnpm-lock.yaml
+*.md
+docs/
+*.html
+*.svg
+CLAUDE.md
+packages/design-tokens/src/generated.ts

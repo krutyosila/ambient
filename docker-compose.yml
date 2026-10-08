@@ -1,0 +1,22 @@
+# Yerel geliştirme: PostgreSQL, Redis, Mailpit (magic link e-postaları için test sunucusu)
+services:
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: ambient
+      POSTGRES_PASSWORD: ambient
+      POSTGRES_DB: ambient
+    ports: ['5432:5432']
+    volumes: ['pgdata:/var/lib/postgresql/data']
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U ambient']
+      interval: 5s
+      retries: 10
+  redis:
+    image: redis:7
+    ports: ['6379:6379']
+  mailpit:
+    image: axllent/mailpit
+    ports: ['1025:1025', '8025:8025']
+volumes:
+  pgdata:
