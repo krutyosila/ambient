@@ -29,7 +29,7 @@ Her kayıt konuşmadan ya da yazıdan gelir (`DECISIONS.md` D-012). Yapay zekâ 
 | `occurredAt` | Gerçekleşme zamanı, UTC |
 | `amount` | Kanonik birimde miktar (su için ml, diğerleri için adet) |
 | `displayUnit` | Kullanıcının söylediği birim (bardak, litre, fincan) |
-| `source` | `voice`, `text`, `answer` (bildirim/widget yanıtı), `import` |
+| `source` | `voice`, `text`, `answer` (bildirim/widget yanıtı), `tap` (Bugün'deki sayaç kartına tek dokunuş, miktar = rutinin sabit birimi), `import` |
 | `timeInferred` | `true` ise saat söylenmemiş, tahmin edilmiş (kullanıcıya "Doğru mu?" sorulur) |
 | `messageId` | Kaydı doğuran konuşma |
 | `undoneAt` | Geri alındıysa zaman |
@@ -111,6 +111,9 @@ Hayat ritmi ekranının yedi kategorisi (hareket, okuma, uyku, su, odak, sosyal,
 - **Türetilen (LLM bağlamına giden):** `ageGroup`, `waterTarget`, `sleepTarget`, `hasConsent` — ham ölçümler gitmez.
 - 18 yaş altı: `weight/height` kayıtları oluşturulmaz, soru çıkmaz.
 - Silme/dışa aktarma bu varlıkları kapsar; rıza geri çekilince kullanım durur.
+
+### FollowUp (D-048)
+`id`, `itemId`, `date`, `step` (0…tavan), `askedAt[]`, `answeredAt`, `answer` (`done`, `postponed`, `skipped`, `pending`), `postponedTo`. Öğe başına gün başına bir kayıt; yanıt gelince bekleyen yerel bildirimler iptal edilir. Ayrıntı: `docs/FOLLOWUP.md`.
 
 ## 10. Yönetim ve yapılandırma varlıkları (`docs/ADMIN.md`)
 - **Setting:** `key, scope (global|tier:*|platform:*), value (json), version, updatedBy, reason, updatedAt`. **SettingVersion** (salt eklenir): `key, scope, oldValue, newValue, by, reason, changeRequestId, at`.

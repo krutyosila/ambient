@@ -20,7 +20,7 @@
 Yeni özellik tasarlarken hangi katmana ait olduğunu ve LLM maliyetini düşün: önce yerel çözüm, sonra Haiku, Sonnet yalnız gerektiğinde (`docs/COST-POLICY.md`). Katman farkları `docs/PRICING.md`'de; kodda sabit değil yapılandırma.
 
 ## Girdi kuralı
-Kayıt yalnızca söz ya da yazıyla girer (D-012); **tek istisna** doğum tarihi, cinsiyet, boy, kilo (D-030). Yeni bir ekran tasarlarken form, saat seçici ya da sayı ayarlayıcı ekleme; dokunuş yalnızca yanıt, onay ve geri al içindir. Her yeni ekranın altında o sayfaya özgü örnek cümleli konuşma çubuğu olur. Cümle → araç eşlemesi `docs/FLOWS.md`'de.
+Kayıt yalnızca söz ya da yazıyla girer (D-012); **tek istisna** doğum tarihi, cinsiyet, boy, kilo (D-030). Yeni bir ekran tasarlarken form, saat seçici ya da sayı ayarlayıcı ekleme; dokunuş yalnızca yanıt, onay, geri al ve sayaçlı rutinde sabit birimli tek dokunuş kaydı içindir (D-046); Bugün'de öğeler içeriğe göre eylem sunar (Katıl, Başla, Yaptım, Olur). Her yeni ekranın altında o sayfaya özgü örnek cümleli konuşma çubuğu olur. Cümle → araç eşlemesi `docs/FLOWS.md`'de.
 
 ## Ürün yasakları (kısa)
 Seri, rozet, yüzde, skor, suçluluk dili, robot/parıltı dekorasyonu yok. Yapay zekâ planı kendi başına değiştirmez, yalnızca önerir. Ayrıntı: `start.md` §1.
