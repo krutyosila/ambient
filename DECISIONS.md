@@ -40,6 +40,9 @@ Yeni kararlar en alta eklenir. Büyük ve geri dönüşü zor kararlar önce sor
 | D-033 | 2026-10-08 | Kabul | **Yapay zekâ bütçesi net gelirin %30'u; sistem kendini otomatik ayarlar:** her abonenin bütçesi kendi plan ve mağazasındaki net aylık gelirinin %30'u (katman tabanı ve tavanıyla sınırlı); kur, komisyon (Small Business durumu) ve gerçek maliyet izlenip günlük yeniden hesaplanır; ücretsiz katman toplam gelirin sabit bir yüzdesiyle sınırlanır. Q20 kapandı. | Kullanıcı kararı. `docs/COST-POLICY.md` §4. |
 | D-034 | 2026-10-08 | Kabul | **Diyetisyen danışman olarak çalışır:** yayına girmeden önce referans tablolarını (su, uyku) hazırlar ve onaylar; yayın süresince kendisine özel admin alanından (yalnız toplu, anonim raporlar ve referans düzenleme) raporlarımıza göre gerekli güncellemeleri yapar. Tek seferde %15'ten büyük değişiklik kurucu onayı ister. Her yayın sürümlü, denetimli, geri alınabilir. Ekipten biridir, ayrı ücret yok; sözleşmede ve Yardım'da "Öneri aralıkları [AD SOYAD] diyetisyen ile düşünülmüştür; tıbbi tavsiye değildir" ifadesi yer alır (kişinin yazılı onayıyla). | Kullanıcı kararı. Q25 kapandı. `docs/PERSONALIZATION.md` §3. |
 | D-035 | 2026-10-08 | Kabul | Tahmini kilo değişimi karşılıkları uygundur: "biraz" ≈ ±2 kg, "çok" ≈ ±5 kg (diyetisyen danışmanla gözden geçirilebilir). | Kullanıcı kararı. Q26 kapandı. |
+| D-036 | 2026-10-08 | Kabul | Rapor gruplarında en küçük grup **50 kullanıcı**; altındaki gruplar gizlenir ya da üst bantla birleştirilir. | Kullanıcı kararı. Q27'nin eşik kısmı kapandı. |
+| D-037 | 2026-10-08 | Kabul | **18 yaş altı** kullanıcıya cinsiyet, boy ve kilo **sorulmaz**; su/uyku yaşa göre ortalamayla devam eder; kullanıcı dilerse kendi hedef değerlerini ("programını") kendisi ekleyebilir. **13 yaş altı kullanamaz.** Kullanıcıya göre hukuken sakınca yok; yine de yayın öncesi hukuk hazırlığında teyit edilir. | Kullanıcı kararı. Q24 kapandı. |
+| D-038 | 2026-10-08 | Kabul | **Önce tam çalışır bir test ortamı:** uygulama TestFlight + staging ile test edilir; diyetisyenin adı/unvan ifadesi, hukuk ve mağaza hazırlıkları yayından önce, bu sürede tamamlanır. | Kullanıcı kararı. Plan: `docs/TEST-ENV.md`. Q27'nin kalan kısmı yayın öncesi hazırlanır. |
 
 ## Bekleyen sorular
 
@@ -68,7 +71,7 @@ Yeni kararlar en alta eklenir. Büyük ve geri dönüşü zor kararlar önce sor
 | Q21 | Apple Small Business Program? | Net gelir. | **Kapandı:** başvurulacak (D-028); plan B baz. |
 | Q22 | Kişiselleştirme aralıkları kim gözden geçirsin? | — | **Kapandı:** kurum içi diyetisyen (D-032). Henüz kimin olacağı belirsiz (Q25). |
 | Q23 | Kilo sorma sıklığı? | — | **Kapandı:** 6 ayda bir (D-031). |
-| Q24 | Yaş eşikleri: 13 yaş altı desteklenmez; 18 yaş altına yalnız yaşa göre ortalama sunulur, boy/kilo sorulmaz. Bu eşikler hukuken doğru mu (KVKK çocuk verisi, veli rızası, mağaza yaş sınıfı)? | KVKK ve Apple kuralları. | Öneri geçerli; hukuk görüşü alınır. |
+| Q24 | Yaş eşikleri? | — | **Kapandı:** 18 yaş altına cinsiyet/boy/kilo sorulmaz, 13 altı kullanamaz (D-037). |
 | Q25 | Diyetisyen kim ve nasıl çalışacak? | — | **Kapandı:** danışman (D-034). Kişi ve sözleşme henüz belirlenmedi (Q27). |
 | Q26 | Tahmini kilo karşılıkları? | — | **Kapandı:** uygun (D-035). |
-| Q27 | Diyetisyenin adı ve unvanı; "[AD SOYAD] diyetisyen ile düşünülmüştür" ifadesinin hukuki uygunluğu (unvan kullanımı, yanıltıcı beyan olmaması); rapor gruplarında en küçük grup (varsayılan 50). | Sorumluluk, KVKK. | Yayın öncesi hukukla doğrulanır. |
+| Q27 | Diyetisyenin adı ve unvan ifadesinin hukuki uygunluğu. | Sorumluluk. | **Yayın öncesi hazırlanır** (D-038); rapor eşiği 50 kabul (D-036). |

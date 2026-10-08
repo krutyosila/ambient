@@ -59,7 +59,7 @@ Kullanıcı kilosunu iki biçimde verebilir:
 - **Ayrı açık rıza:** kilo ve boy için Karşılama 5.5'te kısa, anlaşılır ve geri çekilebilir rıza. Doğum tarihi ve cinsiyet için aynı sayfada ayrı satır.
 - **Geri çekme:** Veri ve gizlilik'te "Kişisel bilgilerimi planlamada kullan" anahtarı; kapatılınca kayıtlar silinir mi saklanır mı sorulur (varsayılan: saklanır, kullanılmaz).
 - **Dışa aktarma ve silme** bu verileri de kapsar.
-- **Yaş koruması (Q24):** 18 yaş altı kullanıcıya **boy, kilo ve cinsiyet sorulmaz**, kilo çizgisi yoktur; su ve uyku önerisi yalnız **yaşa göre ortalama** ile verilir (tabloda 14–17 bandı). Gerekçe: gelişim çağında kilo takibi hassastır (yeme bozukluğu riski) ve çocukların kişisel/sağlık verisi için veli rızası ve KVKK kuralları ayrıca gerekir. **13 yaş altı bu sürümde desteklenmez.** Eşikler hukuk görüşüyle doğrulanır.
+- **Yaş koruması (Q24):** 18 yaş altı kullanıcıya **boy, kilo ve cinsiyet sorulmaz**, kilo çizgisi yoktur; su ve uyku önerisi yalnız **yaşa göre ortalama** ile verilir (tabloda 14–17 bandı). Gerekçe: gelişim çağında kilo takibi hassastır (yeme bozukluğu riski) ve çocukların kişisel/sağlık verisi için veli rızası ve KVKK kuralları ayrıca gerekir. **13 yaş altı kullanamaz.** 18 yaş altı kullanıcı dilerse su, uyku vb. hedeflerini kendisi girebilir (kendi programı). Karar D-037; hukuki teyit yayın öncesi hazırlıkta yapılır.
 - **LLM'e gidenler:** yalnız türetilmiş alanlar; kimlik ve ham ölçüm gitmez (`DATA-MODEL.md` §9).
 - **Hassasiyet:** yeme bozukluğu ya da tıbbi risk belirtisi sinyalinde kilo isteği durdurulur, nazik bir yönlendirme gösterilir; metin diyetisyenle yazılır.
 

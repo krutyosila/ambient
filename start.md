@@ -178,6 +178,7 @@ Ekran süresi entegrasyonu, sosyal/paylaşım özellikleri, seri, rozet ve yarı
 | `docs/COST-POLICY.md` | Yönlendirme, bütçe, kademeli düşürme, telemetri, özetleme. | Maliyet mimarisi değiştiğinde |
 | `docs/MARKETING.md` | Konumlandırma, ASO, kanallar, ölçütler, lansman. | Strateji değiştiğinde |
 | `docs/PERSONALIZATION.md` | Doğum tarihi, cinsiyet, boy, kilo: alma, kullanma, rıza, sıklık. | Kişisel veri değiştiğinde |
+| `docs/TEST-ENV.md` | Tam çalışır test ortamı planı, ortamlar, çıkış ölçütleri. | Plan değiştiğinde |
 | `docs/SUMMARY.md` | Tek sayfa özet; her oturumda önce okunur. | Her büyük karardan sonra |
 
 Çelişki olursa öncelik sırası: `start.md` > `DECISIONS.md` > `docs/*` > prototip dışındaki her şey. Tasarım ve davranış için prototip (`design/life-os-case-study.html`) hâlâ tek doğruluk kaynağıdır; `docs/DESIGN.md` yalnızca onaylanmış v2 farklarını ekler.

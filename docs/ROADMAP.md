@@ -75,3 +75,6 @@ Durum: ☐ başlamadı · ◐ sürüyor · ☑ bitti
 - Diyetisyen: referans tablolarını (su, uyku) hazırlayıp onaylar; admin'de "Referans aralıkları" modülü (M6). Yayın önkoşulu (D-032, Q25).
 - Bütçe otomatik ayarlama işi: kur/komisyon/gelir verisi, günlük hesap, haftalık ±%10 sınırı (M3–M6, D-033).
 - Diyetisyen danışman: yayın öncesi tablo hazırlığı; yayın süresince Diyetisyen alanı (M6) ve anonim raporlar (M4 sonrası telemetri).
+
+## Önce test ortamı (D-038)
+Sıra ve ölçütler `docs/TEST-ENV.md` içinde: T0 hazırlık → T1 temel → … → T8 beta hazırlığı. Yayın (M9) bundan sonra; hukuk, diyetisyen adı ve mağaza hazırlıkları paralel yürür.
