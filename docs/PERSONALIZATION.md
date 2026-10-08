@@ -21,7 +21,7 @@ Durum: kabul (`DECISIONS.md` D-029…D-032). Kullanıcıdan doğum tarihi, cinsi
 | (İsteğe bağlı) Hareket düzeyi | Seçim | Seçenek | Başlangıç önerileri |
 
 ## 3. Ortalamalar ve diyetisyen
-**Başlangıç değeri bir insan ortalamasıdır.** Su ve uyku için varsayılanlar, kurum içi **diyetisyen** tarafından yönetilen **referans tablolarından** gelir (admin panelinde "Referans aralıkları", tasarım 6.4). Tablo yaş grubu, cinsiyet ve kilo bandına göre ortalama değerleri tutar. Bilgi eksikse genel yetişkin ortalaması kullanılır.
+**Başlangıç değeri bir insan ortalamasıdır.** Su ve uyku için varsayılanlar, kurum içi **diyetisyen** tarafından yönetilen **referans tablolarından** gelir (admin panelinde "Referans aralıkları", tasarım 6.4). Tablo **yaş grubu, cinsiyet ve kilo bandına göre** ayrı ortalama değerler tutar (kullanıcının girdiği bilgiye göre ilgili satır seçilir; bilgi eksikse bir üst satıra düşülür). Bilgi eksikse genel yetişkin ortalaması kullanılır.
 
 | Girdi | Başlangıç davranışı |
 |---|---|
@@ -34,9 +34,10 @@ Durum: kabul (`DECISIONS.md` D-029…D-032). Kullanıcıdan doğum tarihi, cinsi
 - Tablolar sürümlüdür (yürürlük tarihi, değişiklik notu, denetim kaydı). Kaynak/atıf bilgisi tabloda tutulur.
 
 **Diyetisyen danışman (D-034).** Yayına girmeden önce tabloları hazırlar ve onaylar. Yayın süresince **kendisine özel alandan** (admin'de "Diyetisyen alanı", tasarım 6.5) yalnız şunlara erişir:
-- **Raporlar (toplu, anonim):** kullanıcıların kendi su/uyku hedeflerinin dağılımı ve referanstan sapması, öneriye "bunu unut" oranı, yardım ve geri bildirim temaları. Kimlik, kilo, doğum tarihi görünmez; en az 50 kullanıcılık gruplar gösterilir (Q27).
+- **Raporlar (toplu, anonim; neden gruplar?):** referans tablosu yaş, cinsiyet ve kilo bantlarına göredir; bir bandı güncellemek için o bandın kullanıcılarının toplu davranışı görülmelidir (ör. "18–64 yaş kadınlarda su hedefi dağılımı"). En az 50 kullanıcılık eşik, küçük gruplarda sayıdan bir kişinin tanınmasını (yeniden kimliklendirme) önler; bu yüzden küçük gruplar gizlenir ya da üst bantla birleştirilir. Danışman ekipten biri olsa da veri en aza indirme ve en az yetki ilkesi geçerlidir. İçerik: kullanıcıların kendi su/uyku hedeflerinin dağılımı ve referanstan sapması, öneriye "bunu unut" oranı, yardım ve geri bildirim temaları. Kimlik, kilo, doğum tarihi görünmez; en az 50 kullanıcılık gruplar gösterilir (Q27).
 - **Referans aralıkları:** taslak → danışman onayı → etki önizlemesi → yayın. Tek seferde %15'ten büyük değişiklik kurucu onayı ister; her yayın geri alınabilir.
-- Başka admin modüllerine erişimi yoktur; gizlilik ve KVKK uyumlu bir çalışma sözleşmesi gerekir.
+- Başka admin modüllerine erişimi yoktur. Danışman **ekipten biridir**, ayrı ücret yoktur; yine de **en az yetki** ilkesiyle yalnız bu alana erişir.
+- **Sözleşme ve metin:** sözleşmede ve Yardım'da "Öneri aralıkları [AD SOYAD] diyetisyen ile düşünülmüştür; tıbbi tavsiye değildir" ifadesi yer alır. İfade yalnız kişinin yazılı onayıyla ve unvanı doğru kullanılarak yayınlanır (Q27).
 - Hareket başlangıcı ("Haftada 3 gün, 20 dakikayla başlayalım") yalnız kullanıcı isterse ve tabloya göre önerilir.
 
 ## 4. Kilo: elle girilen sayı ya da tahmini çizgi
@@ -58,7 +59,7 @@ Kullanıcı kilosunu iki biçimde verebilir:
 - **Ayrı açık rıza:** kilo ve boy için Karşılama 5.5'te kısa, anlaşılır ve geri çekilebilir rıza. Doğum tarihi ve cinsiyet için aynı sayfada ayrı satır.
 - **Geri çekme:** Veri ve gizlilik'te "Kişisel bilgilerimi planlamada kullan" anahtarı; kapatılınca kayıtlar silinir mi saklanır mı sorulur (varsayılan: saklanır, kullanılmaz).
 - **Dışa aktarma ve silme** bu verileri de kapsar.
-- **Yaş koruması:** doğum tarihine göre 18 yaş altı için boy ve kilo istenmez, kilo çizgisi yoktur, öneriler nötr. 13 yaş altı bu sürümde desteklenmez (Q24: hukuk görüşü).
+- **Yaş koruması (Q24):** 18 yaş altı kullanıcıya **boy, kilo ve cinsiyet sorulmaz**, kilo çizgisi yoktur; su ve uyku önerisi yalnız **yaşa göre ortalama** ile verilir (tabloda 14–17 bandı). Gerekçe: gelişim çağında kilo takibi hassastır (yeme bozukluğu riski) ve çocukların kişisel/sağlık verisi için veli rızası ve KVKK kuralları ayrıca gerekir. **13 yaş altı bu sürümde desteklenmez.** Eşikler hukuk görüşüyle doğrulanır.
 - **LLM'e gidenler:** yalnız türetilmiş alanlar; kimlik ve ham ölçüm gitmez (`DATA-MODEL.md` §9).
 - **Hassasiyet:** yeme bozukluğu ya da tıbbi risk belirtisi sinyalinde kilo isteği durdurulur, nazik bir yönlendirme gösterilir; metin diyetisyenle yazılır.
 
@@ -69,7 +70,7 @@ Kullanıcı kilosunu iki biçimde verebilir:
 Kişiselleştirme **her katmanda** (sağlıkla ilgili bir veriyi ücret duvarının arkasına koymayız). Pro'da Faz 2'de sağlık verisi (uyku, adım, antrenman) eklenir.
 
 ## 9. Maliyet
-Kurallar deterministik ve cihazdadır: LLM maliyeti $0. Diyetisyen danışmanlığı sabit gider olarak `PRICING.md` varsayımlarına eklenir ([DANIŞMANLIK ÜCRETİ]).
+Kurallar deterministik ve cihazdadır: LLM maliyeti $0. Diyetisyen ekipten biridir, ek maliyet yoktur.
 
 ## 10. Test
 - Birim: referans bandı seçimi (eksik veri, bant sınırları), kullanıcı değerinin tablodan öncelikli olması, tablo güncellemesinin kullanıcı değerine dokunmaması.
