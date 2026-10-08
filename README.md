@@ -7,7 +7,7 @@ Kişisel günlük işletim sistemi. Kullanıcı **söyler ya da yazar**, Ambient
 ## Arayüzleri web'de incele
 - **Tıklanabilir prototip (yerelde):** `design/preview/app.html` dosyasını tarayıcıda aç. Yeni kullanıcı akışından (Giriş → Karşılama → Bugün), bildirim yoklamasından ya da menüden başlayıp sayfalar arasında gezebilirsin; geri düğmeleri çalışır.
 - **Galeri (yerelde):** `design/preview/index.html` (50 sayfa; karta tıklayınca prototipte açılır).
-- **GitHub Pages ile:** Settings → Pages → dal ve `/ (root)`; adres `…/design/preview/app.html`. Dikkat: herkese açık olabilir ([`design/preview/README.md`](design/preview/README.md)).
+- **GitHub Pages ile:** Settings → Pages → Source: GitHub Actions (iş akışı hazır); değişiklik `main`'e birleşince `…/app.html` yayınlanır. 404 görürsen nedeni ve çözümü: [`design/preview/README.md`](design/preview/README.md).
 - **Tuval (düzenlenebilir, özel bağlantı):** https://claude.ai/artifact/CHcQgkvtgDe2JDoqGd1TX2
 
 ## Ürün ilkeleri (değişmez)

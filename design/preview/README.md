@@ -7,7 +7,9 @@
 
 ## Açma
 - **Yerelde:** `app.html` (prototip) ya da `index.html` (galeri) dosyasını tarayıcıda aç.
-- **GitHub Pages (herkese açık olur, dikkat):** Depo → Settings → Pages → Source: "Deploy from a branch", Branch: bu dal, Folder: `/ (root)`. Adres: `https://<kullanıcı>.github.io/<depo>/design/preview/app.html`. Depo özelse Pages planınıza bağlıdır. İçerikte fiyat önerileri ve yer tutucular var; yayına açmadan karar verin.
+- **GitHub Pages (otomatik, önerilen):** `.github/workflows/pages.yml` `design/preview` klasörünü site köküne yayınlar. Tek seferlik kurulum: depo → Settings → Pages → Source: **GitHub Actions**. Sonra değişiklik `main`'e (ya da `claude/**` dalına, aşağıdaki nota bak) gönderilince yayınlanır. Adresler: `https://<kullanıcı>.github.io/<depo>/` (galeri) ve `.../app.html` (prototip).
+  - **404 görüyorsan:** Pages'i "branch" kaynağıyla `main` dalından yayınlıyorsan `design/preview` orada yoktur (dosyalar çalışma dalındadır). Çözüm: kaynağı GitHub Actions yap ve değişikliği `main`'e birleştir; ya da `github-pages` ortamının "Deployment branches" ayarına bu dalı ekle. Eski prototip için `main`'de `design/life-os-case-study.html` vardır, yeni önizleme için değil.
+  - Depo özelse Pages plan şartına bağlıdır; içerik herkese açık olabilir (fiyat önerileri ve yer tutucular var).
 - **Kendi sunucunda:** `design/preview` klasörünü olduğu gibi yayınla.
 
 ## Notlar
