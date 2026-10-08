@@ -38,6 +38,8 @@ Yeni kararlar en alta eklenir. Büyük ve geri dönüşü zor kararlar önce sor
 | D-031 | 2026-10-08 | Kabul | **Kilo güncellemesi 6 ayda bir** sorulur. Kullanıcı kesin sayı girebilir ya da kesin bilmiyorsa tahmini değişim verir (aynı kaldı, biraz aldım/verdim, çok aldım/verdim, bilmiyorum); sistem bunu nötr bir **kilo çizgisi** olarak izler (tahminler kesikli). | Kullanıcı kararı. Q23 kapandı. |
 | D-032 | 2026-10-08 | Kabul | **Su ve uyku başlangıçta bir insan ortalamasına göre sunulur**; kullanıcı "benim için uygun olan şu" diyerek düzeltir ve düzeltmesi her zaman önceliklidir. Ortalama tabloları **kurum içi diyetisyen** yönetir (sürümlü, denetimli, admin'de "Referans aralıkları"). Q22 kapandı: diyetisyen onayı yayın önkoşuludur. | Kullanıcı kararı. |
 | D-033 | 2026-10-08 | Kabul | **Yapay zekâ bütçesi net gelirin %30'u; sistem kendini otomatik ayarlar:** her abonenin bütçesi kendi plan ve mağazasındaki net aylık gelirinin %30'u (katman tabanı ve tavanıyla sınırlı); kur, komisyon (Small Business durumu) ve gerçek maliyet izlenip günlük yeniden hesaplanır; ücretsiz katman toplam gelirin sabit bir yüzdesiyle sınırlanır. Q20 kapandı. | Kullanıcı kararı. `docs/COST-POLICY.md` §4. |
+| D-034 | 2026-10-08 | Kabul | **Diyetisyen danışman olarak çalışır:** yayına girmeden önce referans tablolarını (su, uyku) hazırlar ve onaylar; yayın süresince kendisine özel admin alanından (yalnız toplu, anonim raporlar ve referans düzenleme) raporlarımıza göre gerekli güncellemeleri yapar. Tek seferde %15'ten büyük değişiklik kurucu onayı ister. Her yayın sürümlü, denetimli, geri alınabilir. Danışmanlık ücreti sabit gider. | Kullanıcı kararı. Q25 kapandı. `docs/PERSONALIZATION.md` §3. |
+| D-035 | 2026-10-08 | Kabul | Tahmini kilo değişimi karşılıkları uygundur: "biraz" ≈ ±2 kg, "çok" ≈ ±5 kg (diyetisyen danışmanla gözden geçirilebilir). | Kullanıcı kararı. Q26 kapandı. |
 
 ## Bekleyen sorular
 
@@ -67,5 +69,6 @@ Yeni kararlar en alta eklenir. Büyük ve geri dönüşü zor kararlar önce sor
 | Q22 | Kişiselleştirme aralıkları kim gözden geçirsin? | — | **Kapandı:** kurum içi diyetisyen (D-032). Henüz kimin olacağı belirsiz (Q25). |
 | Q23 | Kilo sorma sıklığı? | — | **Kapandı:** 6 ayda bir (D-031). |
 | Q24 | Yaş eşikleri: 13 yaş altı desteklenmez, 18 yaş altına boy/kilo sorulmaz; hukuk görüşü gerekli mi? | KVKK, mağaza yaş sınıfı. | Evet, hukuk görüşü alınır. |
-| Q25 | Diyetisyen kim ve nasıl çalışacak (ücretli kadro, danışman, ortak)? Hangi kaynak ve rehberlere dayanacak? | Referans tabloları ve sorumluluk. | Yayın öncesi bir diyetisyen belirlenir; kaynaklar tabloda tutulur. Sabit gider olarak maliyet modeline eklenir. |
-| Q26 | "Biraz/çok" kilo tahmininin kg karşılıkları (±2 / ±5 kg) uygun mu? | Çizgi doğruluğu. | Diyetisyenle gözden geçirilir. |
+| Q25 | Diyetisyen kim ve nasıl çalışacak? | — | **Kapandı:** danışman (D-034). Kişi ve sözleşme henüz belirlenmedi (Q27). |
+| Q26 | Tahmini kilo karşılıkları? | — | **Kapandı:** uygun (D-035). |
+| Q27 | Diyetisyen danışmanın seçimi, sözleşmesi (gizlilik, KVKK veri erişimi sınırı) ve ücreti; rapor gruplarında en küçük grup (varsayılan 50) | Sorumluluk, KVKK, sabit gider. | Yayın öncesi belirlenir; rapor eşiği hukukla doğrulanır. |

@@ -44,6 +44,7 @@ Görsel kaynak: tuvaldeki 38 sayfa (https://claude.ai/artifact/CHcQgkvtgDe2JDoqG
 | 3.9 | Kişisel bilgilerim | Profil | Kaydet | Elle ya da yazıyla/sözle | Profile, Measurement |
 | 3.10 | Kilo çizgisi | Kişisel bilgilerim | — | — | Measurement |
 | 6.4 | Admin: Referans aralıkları | Admin (diyetisyen rolü) | — | — | ReferenceTable |
+| 6.5 | Admin: Diyetisyen alanı (raporlar) | Admin (diyetisyen rolü) | Taslak → onay → yayın | — | Toplu anonim raporlar, ReferenceTable |
 | 2.8 | Gün kapanmadı | Sabah, Bugün üstü | Kapat → 2.2; Geç → Bugün | — | DayLog (açık gün) |
 | 4.6 | Plan karşılaştırma | 4.3 | Seç → Plan ve fiyat | — | Abonelik |
 | 4.8 | Deneme bitti | Deneme sonu | Tamam | — | Abonelik |

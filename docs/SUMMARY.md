@@ -28,10 +28,10 @@ En yakını D-Plan (aynı vaat, seri+istatistik, Türkçe var; Pro ₺249,99/ay)
 `start.md` (tam tanım) · `DECISIONS.md` (kararlar, bekleyen sorular) · `docs/DESIGN.md` (token, bileşen) · `docs/FLOWS.md` (ekran/akış, cümle→araç) · `docs/DATA-MODEL.md` · `docs/RHYTHM.md` · `docs/ICONS.md` · `docs/PRICING.md` · `docs/COST-POLICY.md` · `docs/MARKETING.md` · `docs/ROADMAP.md` · `docs/RESEARCH.md`.
 
 ## Durum
-Kod yok; tasarım ve belgeler hazır. Tuvalde 49 sayfa. Sıradaki: açık soruların kapanması (`DECISIONS.md` Q'lar), mimari özet ve milestone onayı (`start.md` §0), spike'lar (widget, bildirim, senkron, Türkçe çözümleyici).
+Kod yok; tasarım ve belgeler hazır. Tuvalde 50 sayfa. Sıradaki: açık soruların kapanması (`DECISIONS.md` Q'lar), mimari özet ve milestone onayı (`start.md` §0), spike'lar (widget, bildirim, senkron, Türkçe çözümleyici).
 
 ## Açık kararlar (kısa)
-Diyetisyen kim (Q25) · yaş eşikleri (Q24) · LLM sağlayıcı (Haiku/Sonnet 5.5 varsayım) · senkron stratejisi · fiyat/komisyon/vergi doğrulaması · platform sırası (iOS önce) · barındırma/bütçe.
+Diyetisyen danışmanın seçimi ve sözleşmesi (Q27) · yaş eşikleri (Q24) · LLM sağlayıcı (Haiku/Sonnet 5.5 varsayım) · senkron stratejisi · fiyat/komisyon/vergi doğrulaması · platform sırası (iOS önce) · barındırma/bütçe.
 
 ## Tasarruf kuralları (oturum için)
 Tüm belgeleri baştan okuma; önce bu dosya. Sabit kalan dosyaları tekrar okuma. Çıktıyı kısa tut, tabloları belge içinde bırak, sohbette özetle. Tuval dosyalarını yalnız değişeceklerse oku.

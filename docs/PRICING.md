@@ -52,6 +52,7 @@ Gözlemler: D-Plan Standart Türkiye fiyatı Plus önerimizle aynı, D-Plan Pro'
 - Tipik niyet çıkarma çağrısı: Haiku, 1.800 giriş + 350 çıkış token ≈ **$0,00036**. Zor cümle: Sonnet, 3.000 + 600 ≈ **$0,012**. Önbellek ve toplu işleme tasarrufu hesaba **katılmadı** (üst sınır).
 - Yönlendirme: cümlelerin %55'i cihazda kural tabanlı çözülür (hedef; ölçülecek), kalanı Haiku; Plus ve Pro'da %2'si Sonnet'e çıkar.
 - Aylık tipik kullanım: Normal 60, Plus 150, Pro 300 cümle. Pro'da cümlelerin %25'i bulutta ses tanımaya gider (0,1 dk × $0,006/dk).
+- Diyetisyen danışmanlığı: sabit gider, [DANIŞMANLIK ÜCRETİ] (henüz belli değil; birim ekonomiye dahil edilmedi).
 - Altyapı (API, veritabanı, kuyruk, push): kullanıcı başına Normal $0,02, Plus $0,04, Pro $0,06 (tahmin).
 
 ### Kullanıcı başına aylık maliyet

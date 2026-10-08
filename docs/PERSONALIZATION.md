@@ -31,7 +31,12 @@ Durum: kabul (`DECISIONS.md` D-029…D-032). Kullanıcıdan doğum tarihi, cinsi
 
 - Sistem kullanıcıyı ortalamaya zorlamaz; ortalamadan sapmayı yargılamaz.
 - Referans tablosu güncellenirse, **kendi değerini girmemiş** kullanıcılar için "Ortalamayı güncelledim" sakin bir bilgi olarak gösterilir.
-- Tablolar sürümlüdür (yürürlük tarihi, değişiklik notu, denetim kaydı). Diyetisyen rolü yalnız referans modülünü düzenler. Kaynak/atıf bilgisi tabloda tutulur.
+- Tablolar sürümlüdür (yürürlük tarihi, değişiklik notu, denetim kaydı). Kaynak/atıf bilgisi tabloda tutulur.
+
+**Diyetisyen danışman (D-034).** Yayına girmeden önce tabloları hazırlar ve onaylar. Yayın süresince **kendisine özel alandan** (admin'de "Diyetisyen alanı", tasarım 6.5) yalnız şunlara erişir:
+- **Raporlar (toplu, anonim):** kullanıcıların kendi su/uyku hedeflerinin dağılımı ve referanstan sapması, öneriye "bunu unut" oranı, yardım ve geri bildirim temaları. Kimlik, kilo, doğum tarihi görünmez; en az 50 kullanıcılık gruplar gösterilir (Q27).
+- **Referans aralıkları:** taslak → danışman onayı → etki önizlemesi → yayın. Tek seferde %15'ten büyük değişiklik kurucu onayı ister; her yayın geri alınabilir.
+- Başka admin modüllerine erişimi yoktur; gizlilik ve KVKK uyumlu bir çalışma sözleşmesi gerekir.
 - Hareket başlangıcı ("Haftada 3 gün, 20 dakikayla başlayalım") yalnız kullanıcı isterse ve tabloya göre önerilir.
 
 ## 4. Kilo: elle girilen sayı ya da tahmini çizgi
@@ -58,13 +63,13 @@ Kullanıcı kilosunu iki biçimde verebilir:
 - **Hassasiyet:** yeme bozukluğu ya da tıbbi risk belirtisi sinyalinde kilo isteği durdurulur, nazik bir yönlendirme gösterilir; metin diyetisyenle yazılır.
 
 ## 7. Ekranlar (tuval)
-5.5 Seni tanıyayım (elle ya da yazıyla), 3.2 Profil (satırlara dokununca düzenleme), 3.9 Kişisel bilgilerim (elle giriş), 3.10 Kilo çizgisi, 2.9 Kilo güncelleme sorusu, 4.1 Veri ve gizlilik (anahtar), 6.4 Admin: Referans aralıkları (diyetisyen).
+5.5 Seni tanıyayım (elle ya da yazıyla), 3.2 Profil (satırlara dokununca düzenleme), 3.9 Kişisel bilgilerim (elle giriş), 3.10 Kilo çizgisi, 2.9 Kilo güncelleme sorusu, 4.1 Veri ve gizlilik (anahtar), 6.4 Admin: Referans aralıkları, 6.5 Admin: Diyetisyen alanı (raporlar).
 
 ## 8. Katmanlar
 Kişiselleştirme **her katmanda** (sağlıkla ilgili bir veriyi ücret duvarının arkasına koymayız). Pro'da Faz 2'de sağlık verisi (uyku, adım, antrenman) eklenir.
 
 ## 9. Maliyet
-Kurallar deterministik ve cihazdadır: LLM maliyeti $0. Diyetisyen emeği sabit gider olarak `PRICING.md` varsayımlarına eklenir.
+Kurallar deterministik ve cihazdadır: LLM maliyeti $0. Diyetisyen danışmanlığı sabit gider olarak `PRICING.md` varsayımlarına eklenir ([DANIŞMANLIK ÜCRETİ]).
 
 ## 10. Test
 - Birim: referans bandı seçimi (eksik veri, bant sınırları), kullanıcı değerinin tablodan öncelikli olması, tablo güncellemesinin kullanıcı değerine dokunmaması.

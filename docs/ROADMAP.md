@@ -74,3 +74,4 @@ Durum: ☐ başlamadı · ◐ sürüyor · ☑ bitti
 - Deneme sonrası yükseltme kartı ve düşürme davranışı: M5.
 - Diyetisyen: referans tablolarını (su, uyku) hazırlayıp onaylar; admin'de "Referans aralıkları" modülü (M6). Yayın önkoşulu (D-032, Q25).
 - Bütçe otomatik ayarlama işi: kur/komisyon/gelir verisi, günlük hesap, haftalık ±%10 sınırı (M3–M6, D-033).
+- Diyetisyen danışman: yayın öncesi tablo hazırlığı; yayın süresince Diyetisyen alanı (M6) ve anonim raporlar (M4 sonrası telemetri).

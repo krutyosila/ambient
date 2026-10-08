@@ -139,7 +139,7 @@ HealthKit ve Health Connect: uyku, antrenman, su. Veri türü bazında izin, cih
 - **Dış asistan bağlantısı (MCP):** kullanıcının kendi asistanından (ör. Claude, ChatGPT) rutin ve öğe eklemesi. Routinery bunu ücretsiz sunuyor. Değerlendirilecek, taahhüt değil.
 
 ## 10. Admin paneli (Next.js)
-Rol tabanlı erişim (superadmin, destek, analist, **diyetisyen**), 2FA. Modüller:
+Rol tabanlı erişim (superadmin, destek, analist, **diyetisyen danışman**: yalnız anonim raporlar ve referans aralıkları), 2FA. Modüller:
 - **Kullanıcılar:** liste, detay, devre dışı bırak, KVKK dışa aktarma ve silme.
 - **LLM yönetimi:** sağlayıcı/model seçimi, yedek sağlayıcı, sistem prompt'u **sürümleri** (geri alma), araç tanımlarını görüntüleme, test alanı (playground).
 - **Kullanım ve maliyet:** günlük token, maliyet, gecikme, hata oranı, sağlayıcı bazında.
