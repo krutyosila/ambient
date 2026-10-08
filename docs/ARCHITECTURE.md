@@ -23,7 +23,7 @@ Durum: **onay bekliyor** (`start.md` §0 ve "Başlarken"). Onaylanmadan uygulama
 1. **Local-first:** cihazdaki SQLite doğruluk kaynağıdır; sunucu senkron, yedek ve LLM içindir. Uçak modunda Bugün, Akış, kayıt ve yerel bildirimler çalışır (D-012, `start.md` §3).
 2. **LLM anlar, kod karar verir (§5):** önce cihazda yerel çözümleyici ($0), çözemezse sunucuda Haiku, gerekirse (Plus/Pro, bütçe izin verirse) Sonnet. LLM yalnız tanımlı, zod ile doğrulanan araç çağrısı döndürür; **deterministik yürütücü** uygular; çıktı doğrulanmadan hiçbir şey yazılmaz (D-020, D-039).
 3. **Plan sabit:** öneri yalnız "Önerilen" olarak gelir, onaysız değişmez; her çıkarım kartında Geri al (`ParsedAction` kaydına göre).
-4. **Ayarlar veritabanında** (kayıt defteri, sürümlü, taslak→yayın); `.env` 6 değişken (D-046). Kodda sabit politika sayısı yok.
+4. **Ayarlar veritabanında** (kayıt defteri, sürümlü, taslak→yayın); `.env` 6 değişken (D-049). Kodda sabit politika sayısı yok.
 5. **Bildirim yerel planlanır** (sunucu yalnız push ve senkron); ritim öğrenme cihazda (maliyet ≈ 0, gizlilik).
 6. **Sağlayıcıdan bağımsız arayüzler:** `LlmProvider`, `SecretStore`, hata izleme (boş DSN = no-op), `Clock` (test için), barındırma Docker ile taşınabilir (D-040).
 

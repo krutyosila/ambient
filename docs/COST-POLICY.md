@@ -62,7 +62,7 @@ Panoda izlenenler: kullanıcı başına aylık maliyet, katman başına maliyet 
 Uyarılar: katman maliyeti net gelirin %35'ini aşarsa, yerel oran %40'ın altına düşerse, Sonnet oranı %5'i aşarsa.
 
 ## 8. Admin paneli (M6)
-"Maliyet ve politika" modülü (tasarım 6.3): katman bütçeleri (Otomatik/Sabit kip), yönlendirme tablosu, model/sürüm ve çaba, kill-switch, kur ve komisyon, günlük tavan, kademeli düşürme eşikleri, hız sınırları, uyarılar ve **simülatör**. **Bu belgedeki tüm sayı ve eşikler panelden ayarlanır; `.env`'de yalnız önyükleme değişkenleri kalır (D-046).** Değişiklik yaşam döngüsü, risk seviyeleri, onaylar ve ayrıntılı sayfa tasarımı: `docs/ADMIN.md`. Her değişiklik denetim kaydına yazılır.
+"Maliyet ve politika" modülü (tasarım 6.3): katman bütçeleri (Otomatik/Sabit kip), yönlendirme tablosu, model/sürüm ve çaba, kill-switch, kur ve komisyon, günlük tavan, kademeli düşürme eşikleri, hız sınırları, uyarılar ve **simülatör**. **Bu belgedeki tüm sayı ve eşikler panelden ayarlanır; `.env`'de yalnız önyükleme değişkenleri kalır (D-049).** Değişiklik yaşam döngüsü, risk seviyeleri, onaylar ve ayrıntılı sayfa tasarımı: `docs/ADMIN.md`. Her değişiklik denetim kaydına yazılır.
 
 ## 9. Ölçüm planı (beta)
 1. İlk 2 hafta: gerçek cümle dağılımı; yerel çözüm oranı; token ortalamaları; escalation oranı.

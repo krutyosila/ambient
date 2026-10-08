@@ -1,9 +1,9 @@
 # Yönetim paneli: tasarım ve yapılandırma modeli
 
-Durum: **kabul** (D-046, D-047; Q28–Q30 kapandı). `start.md` §10 ve `docs/COST-POLICY.md` §8'in yerine geçen, onları genişleten ana belgedir; onlarla çelişirsen bu belge geçerlidir. Kod yazılmadı; M6'da uygulanır, ama **ayar altyapısı (§3) M2'de** kurulur, çünkü API'nin geri kalanı ayarları ondan okur.
+Durum: **kabul** (D-049, D-050; Q28–Q30 kapandı). `start.md` §10 ve `docs/COST-POLICY.md` §8'in yerine geçen, onları genişleten ana belgedir; onlarla çelişirsen bu belge geçerlidir. Kod yazılmadı; M6'da uygulanır, ama **ayar altyapısı (§3) M2'de** kurulur, çünkü API'nin geri kalanı ayarları ondan okur.
 
 ## 1. İlkeler
-1. **`.env` yalnız önyükleme içindir.** Veritabanına ulaşmak için gerekenler dışında hiçbir şey `.env`'de durmaz. Politika, model, bütçe, eşik, metin, anahtar, entegrasyon: hepsi panelden değişir (D-046).
+1. **`.env` yalnız önyükleme içindir.** Veritabanına ulaşmak için gerekenler dışında hiçbir şey `.env`'de durmaz. Politika, model, bütçe, eşik, metin, anahtar, entegrasyon: hepsi panelden değişir (D-049).
 2. **Her ayarın tek kaynağı bir kayıt defteridir** (`packages/shared/settings-registry.ts`): anahtar, tür (zod), varsayılan, birim, alt/üst sınır, katman bazlı mı, sır mı, yeniden başlatma gerekir mi, risk seviyesi, açıklama (Türkçe). Panel formları, doğrulama, belge tablosu ve mobil uzak yapılandırma bu tek kayıttan türer. Kod içinde sabit sayı yok (CLAUDE.md "kodda sabit değil yapılandırma").
 3. **Taslak → önizleme → yayın → geri al.** Hiçbir değişiklik yazılırken canlı olmaz; her yayın sürümlenir, gerekçelidir, denetlenir, tek tıkla geri alınır.
 4. **Risk kadar sürtünme.** Küçük, geri alınabilir değişiklik anında; para, gizlilik ve güvenliğe dokunan değişiklik etki önizlemesi ve ek onay ister (§4).

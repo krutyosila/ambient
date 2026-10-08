@@ -50,33 +50,33 @@ Yeni kararlar en alta eklenir. Büyük ve geri dönüşü zor kararlar önce sor
 | D-043 | 2026-10-08 | Kabul | Web önizleme **tıklanabilir prototip** olarak hazırlanır: `design/preview/app.html`, sayfalar birbirine bağlı (gezinme, geri, anahtarlar, birkaç küçük etkileşim). Kaynak: `design/preview/screens`. | Kullanıcı isteği. |
 | D-044 | 2026-10-08 | Kabul | `affaan-m/ecc` (Claude Code için agent/skill/komut/kural koleksiyonu) **gerekirse seçici** kullanılır; şimdilik kurulmaz. Çoklu kurulum ve çok sayıda skill/hook bağlam ve maliyet artırır, çakışma riski taşır. | Kullanıcı önerisi, depo özeti incelendi. `docs/SETUP.md` §9. |
 | D-045 | 2026-10-08 | Kabul | **Önizleme GitHub üzerinden (Pages) yayınlanmaz.** Depo indirilip `design/preview/app.html` yerelde açılır. Pages iş akışı kaldırıldı. `main` dalı projenin en güncel halidir. | Kullanıcı kararı. |
-| D-046 | 2026-10-08 | Kabul | **`.env` yalnız önyükleme içindir (6 değişken); her ayar yönetim panelinden değişir.** Politika, model, bütçe, kur, komisyon, eşik, metin, bayrak ve entegrasyon anahtarları veritabanında: tek bir tipli ayar kayıt defteri, sürümlü, denetli, taslak → yayın → geri al. Sırlar zarf şifrelemeyle saklanır, panelde yazma-yalnızdır. JWT/oturum sırları kalktı (anahtar halkası). | Kullanıcı isteği. `docs/ADMIN.md` §2–4. Ayar altyapısı M2'de, panel M6'da. |
-| D-047 | 2026-10-08 | Kabul | **Yönetim paneli yeniden tasarlandı:** 11 gruplu bilgi mimarisi, risk seviyeleri (anında / önizlemeli / onaylı / kilitli), etki önizlemeli bütçe simülatörü, Otomatik/Sabit bütçe kipi, zincirli audit log, yönetici için içeriksiz kullanıcı görünümü ve "kullanıcı olarak gir" yok, uzak mobil yapılandırma, beş rol. Kilitli ilkeler (13/18 yaş, rıza, alkol/sigara) panelden değişmez. M6 4 → 5 hafta. | Kullanıcı isteği ("detaylı ve kullanışlı"). `docs/ADMIN.md`. |
-| D-048 | 2026-10-08 | Kabul | **Mimari özet, milestone planı ve `docs/ARCHITECTURE.md` §4'teki 11 varsayılan onaylandı:** Q4 alan bazında birleştirme (T0 spike'ı ile doğrulanır), Q17 katman/fiyat önerisi, Q19, Q2, Q8 (Apple Takvim salt okunur), Q9 ve Q10 (Faz 2), Q7 (D-016), Q13, Q14. T0 + M0 ile başlanır. | Kullanıcı onayı. Kod aşaması başladı. |
+| D-049 | 2026-10-08 | Kabul | **`.env` yalnız önyükleme içindir (6 değişken); her ayar yönetim panelinden değişir.** Politika, model, bütçe, kur, komisyon, eşik, metin, bayrak ve entegrasyon anahtarları veritabanında: tek bir tipli ayar kayıt defteri, sürümlü, denetli, taslak → yayın → geri al. Sırlar zarf şifrelemeyle saklanır, panelde yazma-yalnızdır. JWT/oturum sırları kalktı (anahtar halkası). | Kullanıcı isteği. `docs/ADMIN.md` §2–4. Ayar altyapısı M2'de, panel M6'da. |
+| D-050 | 2026-10-08 | Kabul | **Yönetim paneli yeniden tasarlandı:** 11 gruplu bilgi mimarisi, risk seviyeleri (anında / önizlemeli / onaylı / kilitli), etki önizlemeli bütçe simülatörü, Otomatik/Sabit bütçe kipi, zincirli audit log, yönetici için içeriksiz kullanıcı görünümü ve "kullanıcı olarak gir" yok, uzak mobil yapılandırma, beş rol. Kilitli ilkeler (13/18 yaş, rıza, alkol/sigara) panelden değişmez. M6 4 → 5 hafta. | Kullanıcı isteği ("detaylı ve kullanışlı"). `docs/ADMIN.md`. |
+| D-051 | 2026-10-08 | Kabul | **Mimari özet, milestone planı ve `docs/ARCHITECTURE.md` §4'teki 11 varsayılan onaylandı:** Q4 alan bazında birleştirme (T0 spike'ı ile doğrulanır), Q17 katman/fiyat önerisi, Q19, Q2, Q8 (Apple Takvim salt okunur), Q9 ve Q10 (Faz 2), Q7 (D-016), Q13, Q14. T0 + M0 ile başlanır. | Kullanıcı onayı. Kod aşaması başladı. |
 
 ## Bekleyen sorular
 
 | # | Soru | Neden önemli | Varsayılan (cevap gelene kadar) |
 |---|---|---|---|
 | Q1 | "Günü kapat" ekranı ürüne girsin mi? | — | **Kapandı:** evet (D-018). |
-| Q2 | Yoğun bir günde taşıma önerisini yapay zekâ sunsun mu, yoksa hiç sunmasın mı? | Plan güveni ilkesiyle çakışabilir. | **Kapandı (D-048):** Yalnızca öneri, onaysız hareket yok. |
+| Q2 | Yoğun bir günde taşıma önerisini yapay zekâ sunsun mu, yoksa hiç sunmasın mı? | Plan güveni ilkesiyle çakışabilir. | **Kapandı (D-051):** Yalnızca öneri, onaysız hareket yok. |
 | Q3 | LLM sağlayıcısı? | — | **Kapandı:** Anthropic (D-039). |
-| Q4 | Senkron: "son yazan kazanır" mı, alan bazında birleştirme mi? | En pahalı geri dönüşsüz karar. | **Kapandı (D-048):** Alan bazında birleştirme (öğe başına `updatedAt`). |
+| Q4 | Senkron: "son yazan kazanır" mı, alan bazında birleştirme mi? | En pahalı geri dönüşsüz karar. | **Kapandı (D-051):** Alan bazında birleştirme (öğe başına `updatedAt`). |
 | Q5 | Barındırma ve bütçe? | — | **Kapandı:** kullanıcıya ait (D-040). |
 | Q6 | İlk platform? | — | **Kapandı:** iOS (D-042). |
-| Q7 | "Önerilen" durumunun rengi: ikincil renk (`--w`) + kesikli çizgi mi, başka bir şey mi? | Anlam çakışması (prototipte amber "yaklaşıyor"). | **Kapandı (D-048):** D-016 olarak uygulandı; itiraz yoksa kapanır. |
-| Q8 | Takvim içe aktarma kapsamı: yalnızca Apple Takvim mi, Google da mı? Salt okunur mu, iki yönlü mü? | Senkron karmaşıklığı. | **Kapandı (D-048):** Apple Takvim, salt okunur. |
-| Q9 | Apple Watch Faz 2'de mi, MVP'de mi? | Rakip yorumlarında hem istek hem çökme şikâyeti. | **Kapandı (D-048):** Faz 2. |
-| Q10 | Dış asistan bağlantısı (MCP) değerlendirilsin mi? | Routinery ücretsiz sunuyor. | **Kapandı (D-048):** Faz 2 adayı, taahhüt yok. |
+| Q7 | "Önerilen" durumunun rengi: ikincil renk (`--w`) + kesikli çizgi mi, başka bir şey mi? | Anlam çakışması (prototipte amber "yaklaşıyor"). | **Kapandı (D-051):** D-016 olarak uygulandı; itiraz yoksa kapanır. |
+| Q8 | Takvim içe aktarma kapsamı: yalnızca Apple Takvim mi, Google da mı? Salt okunur mu, iki yönlü mü? | Senkron karmaşıklığı. | **Kapandı (D-051):** Apple Takvim, salt okunur. |
+| Q9 | Apple Watch Faz 2'de mi, MVP'de mi? | Rakip yorumlarında hem istek hem çökme şikâyeti. | **Kapandı (D-051):** Faz 2. |
+| Q10 | Dış asistan bağlantısı (MCP) değerlendirilsin mi? | Routinery ücretsiz sunuyor. | **Kapandı (D-051):** Faz 2 adayı, taahhüt yok. |
 | Q11 | D-Plan'ın tasarım dilinden bilinçli ayrışma düzeyi? | Marka kimliği. | Cevaplandı: çizgi korunur ve geliştirilir (D-001). |
 | Q12 | Tek dokunuşlu yanıtlar uygun mu? | — | **Kapandı:** uygun (D-024). |
-| Q13 | Konuşma sırasında ses dalgası olmadan "dinliyor" hali nasıl görünsün? | Konuşma balonu butonunun tasarımında dalga ve mikrofon yok. | **Kapandı (D-048):** İmleç yerine nefes alan halka. |
-| Q14 | Ritim öğrenme rızası karşılamada ayrı bir adım mı, Veri ve gizlilik'te anahtar mı? | KVKK açık rıza şartı. | **Kapandı (D-048):** Karşılamada kısa anlatım + Veri ve gizlilik'te anahtar. |
+| Q13 | Konuşma sırasında ses dalgası olmadan "dinliyor" hali nasıl görünsün? | Konuşma balonu butonunun tasarımında dalga ve mikrofon yok. | **Kapandı (D-051):** İmleç yerine nefes alan halka. |
+| Q14 | Ritim öğrenme rızası karşılamada ayrı bir adım mı, Veri ve gizlilik'te anahtar mı? | KVKK açık rıza şartı. | **Kapandı (D-051):** Karşılamada kısa anlatım + Veri ve gizlilik'te anahtar. |
 | Q15 | Hassas sayaçlar ve tıbbi hatırlatmalar? | — | **Kapandı:** alkol ve sigara önerilmez (D-023); ilaç hatırlatılır. |
 | Q16 | Fiyat ve deneme süresi? | Plan ve fiyat sayfası. | Öneri D-021 ve D-022; onay bekliyor (Q17). |
-| Q17 | Katmanlar ve fiyatlar onaylanıyor mu (D-021, D-022)? | Plan ve fiyat, paywall, bütçeler buna bağlı. | **Kapandı (D-048):** Öneri olarak ilerler, kodda yapılandırma değeri. |
+| Q17 | Katmanlar ve fiyatlar onaylanıyor mu (D-021, D-022)? | Plan ve fiyat, paywall, bütçeler buna bağlı. | **Kapandı (D-051):** Öneri olarak ilerler, kodda yapılandırma değeri. |
 | Q18 | Deneme süresi? | — | **Kapandı:** 3 gün (D-026). |
-| Q19 | Normal katmanda 3 sayaçlı rutin ve 30 gün görünür geçmiş sınırı kabul mü? | Ücretsiz katmanın cömertliği. | **Kapandı (D-048):** Kabul varsayıldı. |
+| Q19 | Normal katmanda 3 sayaçlı rutin ve 30 gün görünür geçmiş sınırı kabul mü? | Ücretsiz katmanın cömertliği. | **Kapandı (D-051):** Kabul varsayıldı. |
 | Q20 | Anlama bütçesi net gelirin %30'u mu? | — | **Kapandı:** evet, kendini ayarlayan sistemle (D-033). |
 | Q21 | Apple Small Business Program? | Net gelir. | **Ertelendi:** yayına hazır olunca (D-028). |
 | Q22 | Kişiselleştirme aralıkları kim gözden geçirsin? | — | **Kapandı:** kurum içi diyetisyen (D-032). Henüz kimin olacağı belirsiz (Q25). |

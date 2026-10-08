@@ -51,7 +51,7 @@ docker-compose.yml  PostgreSQL, Redis, (Mailpit)
 `pnpm install` · `pnpm tokens` (tasarım token'ları prototipten üretilir) · `pnpm lint` · `pnpm typecheck` · `pnpm test` · `pnpm --filter @ambient/shared docs` (ayar kataloğu `docs/SETTINGS.md`). CI aynı adımları çalıştırır (`.github/workflows/ci.yml`).
 
 ## 5. Ortam değişkenleri
-`.env` yalnız 6 önyükleme değişkenidir (`.env.example`; D-046). API anahtarı, model, bütçe, kur, komisyon, SMTP, OAuth ve Sentry **ilk girişten sonra yönetim panelinden** girilir (`docs/ADMIN.md` §2). Staging'de panelden günlük harcama tavanı düşük tutulur. `SETTINGS_MASTER_KEY` üretimi: `openssl rand -base64 32`; kaybolursa yalnız sırlar yeniden girilir.
+`.env` yalnız 6 önyükleme değişkenidir (`.env.example`; D-049). API anahtarı, model, bütçe, kur, komisyon, SMTP, OAuth ve Sentry **ilk girişten sonra yönetim panelinden** girilir (`docs/ADMIN.md` §2). Staging'de panelden günlük harcama tavanı düşük tutulur. `SETTINGS_MASTER_KEY` üretimi: `openssl rand -base64 32`; kaybolursa yalnız sırlar yeniden girilir.
 
 ## 6. İlk görevler
 **T0 (hazırlık, spike'lar; her biri ≤ 1–2 gün, sonuçlar `DECISIONS.md`'ye not edilir)**

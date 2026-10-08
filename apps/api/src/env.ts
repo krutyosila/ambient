@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-/** The only environment variables the API reads (docs/ADMIN.md section 2, D-046). Everything else is a panel setting. */
+/** The only environment variables the API reads (docs/ADMIN.md section 2, D-049). Everything else is a panel setting. */
 export const bootEnvSchema = z.object({
   APP_ENV: z.enum(['local', 'staging', 'production']),
   DATABASE_URL: z.string().url(),
