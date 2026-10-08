@@ -30,7 +30,7 @@ En yakını D-Plan (aynı vaat, seri+istatistik, Türkçe var; Pro ₺249,99/ay)
 ## Durum (8 Ekim 2026)
 Kod yok; tasarım ve belgeler hazır. **Sıradaki hedef: tam çalışır test ortamı (TestFlight + staging), plan `docs/TEST-ENV.md`, onay bekliyor (D-038). Kararlar: Anthropic, önce iOS, hosting kullanıcıda, hata izleme ücretsiz katmanla, Small Business sonra. Kurulum: `docs/SETUP.md`. Tıklanabilir prototip: `design/preview/app.html`.** Tuvalde 50, `design/preview` içinde 52 sayfa (admin: 6.3–6.7). Sıradaki: açık soruların kapanması (`DECISIONS.md` Q'lar), mimari özet ve milestone onayı (`start.md` §0), spike'lar (widget, bildirim, senkron, Türkçe çözümleyici).
 
-## Yönetim paneli (öneri, D-046/D-047, `docs/ADMIN.md`)
+## Yönetim paneli (kabul, D-046/D-047, `docs/ADMIN.md`)
 `.env` yalnız 6 önyükleme değişkeni (APP_ENV, DATABASE_URL, REDIS_URL, SETTINGS_MASTER_KEY, ADMIN_BOOTSTRAP_EMAIL, PORT); anahtar, model, bütçe, kur, komisyon, eşik, metin, bayrak hepsi panelde. Tek tipli ayar kayıt defteri; sürümlü; taslak → yayın → geri al; risk seviyeleri (anında / önizlemeli / onaylı / kilitli); sırlar şifreli ve yazma-yalnız; bütçe simülatörü; zincirli audit log; yönetici kullanıcı içeriğini görmez, "kullanıcı olarak gir" yok; 5 rol. Ayar altyapısı M2'de, panel M6'da (5 hf).
 
 ## Açık kararlar (kısa)

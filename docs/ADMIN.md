@@ -1,6 +1,6 @@
 # Yönetim paneli: tasarım ve yapılandırma modeli
 
-Durum: **öneri, onay bekliyor** (D-046, D-047). `start.md` §10 ve `docs/COST-POLICY.md` §8'in yerine geçen, onları genişleten ana belgedir; onlarla çelişirsen bu belge geçerlidir. Kod yazılmadı; M6'da uygulanır, ama **ayar altyapısı (§3) M2'de** kurulur, çünkü API'nin geri kalanı ayarları ondan okur.
+Durum: **kabul** (D-046, D-047; Q28–Q30 kapandı). `start.md` §10 ve `docs/COST-POLICY.md` §8'in yerine geçen, onları genişleten ana belgedir; onlarla çelişirsen bu belge geçerlidir. Kod yazılmadı; M6'da uygulanır, ama **ayar altyapısı (§3) M2'de** kurulur, çünkü API'nin geri kalanı ayarları ondan okur.
 
 ## 1. İlkeler
 1. **`.env` yalnız önyükleme içindir.** Veritabanına ulaşmak için gerekenler dışında hiçbir şey `.env`'de durmaz. Politika, model, bütçe, eşik, metin, anahtar, entegrasyon: hepsi panelden değişir (D-046).
@@ -193,4 +193,4 @@ Yönetici yetki aşımına karşı: ayrı yönetici hesapları (kullanıcı hesa
 4. **Test ortamı (T7)** için çekirdek alt küme: Yapılandırma merkezi, Entegrasyonlar, Maliyet ve politika, Kullanıcılar (okuma), Modeller/istem, Beslenme, Feature flag, Audit log. Gelir, oyun alanı, deney ve bakım kipi sonraya.
 
 ## 13. Açık sorular
-Bkz. `DECISIONS.md` Q28 (sır deposu), Q29 (tek yöneticide ikinci onay), Q30 (panelin erişim sınırı).
+Kapandı: Q28 sırlar veritabanında şifreli; Q29 tek yöneticide gerekçe + yazarak onay + 15 dk bekleme; Q30 VPN yok, zorunlu 2FA yeterli, IP listesi isteğe bağlı.
