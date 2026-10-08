@@ -20,7 +20,7 @@ Görsel kaynak: tuvaldeki 38 sayfa (https://claude.ai/artifact/CHcQgkvtgDe2JDoqG
 | 1.5 | Konuşma (tek soru) | Belirsiz cümle | Yanıt → 1.3 | "Perşembe doktora gideceğim" → "Bugün mü, 15 Ekim mi?" | Item (beklemede) |
 | 1.6 | Hızlı not | Widget, kilit ekranı, uzun basma | Gönder → 1.1 | "İşten çıkınca kahve al" | FloatingItem (konum/olay tabanlı) |
 | 1.7 | Kilit ekranı ve widget | Bildirim, ana ekran | Yanıt eylemleri, balon → 1.6 | "Su · 3" yanıtı, hızlı not | OutboxUtterance, LogEntry |
-| 2.1 | Proaktif kontrol | Bildirim | Yaptım / Bu akşam daha geç / Bugün dinleniyorum | "Daha geç" → saat önerisi → Olur | Item durumu, Suggestion |
+| 2.1 | Proaktif kontrol (takip zinciri, D-048) | Bildirim; yanıt gelmezse sakin aralıklarla tekrar; tavandan sonra Bugün'de "Yanıt bekliyor" | Yaptım / Bu akşam daha geç / Bugün dinleniyorum | "Daha geç" → saat önerisi → Olur | Item durumu, Suggestion |
 | 2.2 | Günü kapat | Akşam bildirimi (isteğe bağlı) | Günü kapat → 1.1 | "Koşuyu yarına al" | DayLog, Item |
 | 2.3 | Gün gezinmesi | 1.1 cetvel | Gün → 2.4 | Salt okunur; liste tıklanmaz | Items |
 | 2.4 | Günlük geçmiş | 2.3 | ← 2.3 | "Dün kaç bardak su içmişim?" (`query_day`) | DayLog, LogEntry |

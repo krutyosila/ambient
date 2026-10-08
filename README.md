@@ -13,7 +13,7 @@ Kişisel günlük işletim sistemi. Kullanıcı **söyler ya da yazar**, Ambient
 ## Ürün ilkeleri (değişmez)
 1. **Kayıt yalnız söz ya da yazıyla girer.** Form, saat seçici yok. Tek istisna: doğum tarihi, cinsiyet, boy, kilo (elle de girilebilir).
 2. **Plan sabit; yapay zekâ yalnız "Önerilen" sunar,** nedeniyle; onaysız hiçbir şey değişmez.
-3. **Bildirim:** neyi hatırlattığını söyler, aynı iş için günde bir, sessiz saatlere uyar.
+3. **Bildirim:** neyi hatırlattığını söyler, yanıtlanmayan iş için sakin, sınırlı takip zinciri (yanıt ya da erteleme gelene kadar), sessiz saatlere uyar.
 4. **Sayaçlı rutinler** (su, kahve, ilaç): gün içinde birden çok kez, her tekrar zaman damgalı kayıt.
 5. **Günü kapat:** akşam isteğe bağlı kapanış; kapanmazsa akşam hatırlatma, ertesi sabah bilgi, 2 gün sonra otomatik kapanış.
 6. **Ritme göre öneri:** geçmişten cihazda öğrenilir; seviye katmana göre; unutturulabilir.

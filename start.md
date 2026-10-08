@@ -73,7 +73,7 @@ Kaynak: `docs/RESEARCH.md` (rakip taraması ve App Store incelemesi, Ekim 2026).
 - **En yakın rakip D-Plan:** yazılan cümleden yapay zekâ gün planı çıkarıyor, kullanıcı onaylıyor; ama seri, istatistik ve çok geniş kapsam (görev, alışkanlık, takvim, notlar, tuval) var. Bizim farkımız: sakin ton, tek odak, **Türkçe-önce**. Her şeyi yapmaya çalışmayacağız.
 - **Seri yok, atlamak nötr.** Her yoklamada "Bugün dinleniyorum" birinci sınıf bir seçenektir. Başarısızlık, kaçırdın, seri gibi sözcükler kullanılmaz.
 - **Plan sabittir; yapay zekâ yalnızca önerir.** Öneriler "Önerilen" durumuyla (kesikli çizgi) gelir. Kullanıcı onaylamadan hiçbir öğe taşınmaz, silinmez ya da yeniden zamanlanmaz.
-- **Bildirim güveni:** her bildirim neyi hatırlattığını söyler, aynı iş için en fazla bir kez gelir, tek dokunuşla yanıtlanır, sessiz saatlere uyar. Yinelenen ya da sessiz kalan bildirim kritik hata sayılır.
+- **Bildirim güveni:** her bildirim neyi hatırlattığını söyler, aynı iş için sakin aralıklı ve sınırlı sayıda gelir (D-048), tek dokunuşla yanıtlanır, sessiz saatlere uyar. Yinelenen ya da sessiz kalan bildirim kritik hata sayılır.
 - **Fiyat şeffaflığı:** abonelik fiyatı ve deneme koşulları karşılamada ve Profil > Plan ve fiyat sayfasında açıkça yazar. Satın alma sonrası iptal ve iade yolu uygulama içinde görünür.
 - **Türkçe birinci sınıf:** Türkçe doğal dil girişi çekirdek özelliktir ve hiçbir pakete kilitlenmez. Rakiplerin Türkçe boşluğu gerçek bir fırsattır.
 - **Kapsam disiplini:** not tuvali, sosyal, yarışma, listeler ve genel görev yönetimi yok.
@@ -119,7 +119,7 @@ Sunucuda zamanlanmış işler (BullMQ) + cihazda yerel bildirimler. Örnek: "Bug
 
 Bildirim kuralları (rakip yorumlarından, bkz. `docs/RESEARCH.md`):
 - Metin neyi hatırlattığını söyler ("Koşu hâlâ planında mı?"). Genel "rutinin başladı" bildirimi yok.
-- Aynı öğe için aynı gün en fazla bir bildirim. Kullanıcı yanıtladığında ya da eylemi yaptığında o öğenin bekleyen bildirimleri iptal edilir.
+- Yanıtlanmayan iş için **takip zinciri** (D-048, `docs/FOLLOWUP.md`): açılan aralıklar, öğe başına günlük tavan, sessiz saat; tavan dolunca iş "Yanıt bekliyor" olarak açıkta kalır. Kullanıcı yanıtladığında ya da eylemi yaptığında o öğenin bekleyen bildirimleri iptal edilir.
 - Her bildirimde en fazla üç eylem: Yaptım / Daha geç / Dinleniyorum.
 - Bildirimin gerçekten planlandığını doğrulayan test bulunur (yerel bildirimler için cihaz izni, pil tasarrufu ve sessiz saat senaryoları dahil). Sessiz kalan alarm kritik hatadır.
 

@@ -37,7 +37,7 @@ Sistem kullanıcının geçmişine bakarak günlük ritmini öğrenir ve öneril
 
 ## 5. Öneri üretimi
 1. **Kod karar verir.** Desen eşleşmesi, zamanlama ve tavan kontrolü deterministiktir. LLM yalnızca öneri cümlesini sakin bir dille yazar (gerekçe sabit şablonlardan beslenir).
-2. Sıra: sessiz saat ve odak modu kontrolü → günlük tavan → aynı öğe için günde 1 kural → çakışma/boşluk kontrolü → öneri.
+2. Sıra: sessiz saat ve odak modu kontrolü → günlük tavan → öğe başına takip tavanı (`docs/FOLLOWUP.md`) → çakışma/boşluk kontrolü → öneri.
 3. **Öneri türleri:** boş aralığa saat önerisi (Bugün'deki "Önerilen" satır, Kontrol'deki "Daha geç" önerisi), unutulan pencerede tek hatırlatma, uyku ve hafta sonu için baskısız ton ayarı (ör. cumartesi 23:00'te hatırlatmama).
 4. **Yanıtlar:** Olur (kabul), Başka saat söyle (yeniden öneri değil, kullanıcı söyler), Sonra, ya da "bir daha önerme" (kalıcı susturma). Reddedilen öneri aynı öğe için 14 gün tekrarlanmaz.
 

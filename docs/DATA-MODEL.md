@@ -111,3 +111,6 @@ Hayat ritmi ekranının yedi kategorisi (hareket, okuma, uyku, su, odak, sosyal,
 - **Türetilen (LLM bağlamına giden):** `ageGroup`, `waterTarget`, `sleepTarget`, `hasConsent` — ham ölçümler gitmez.
 - 18 yaş altı: `weight/height` kayıtları oluşturulmaz, soru çıkmaz.
 - Silme/dışa aktarma bu varlıkları kapsar; rıza geri çekilince kullanım durur.
+
+### FollowUp (D-048)
+`id`, `itemId`, `date`, `step` (0…tavan), `askedAt[]`, `answeredAt`, `answer` (`done`, `postponed`, `skipped`, `pending`), `postponedTo`. Öğe başına gün başına bir kayıt; yanıt gelince bekleyen yerel bildirimler iptal edilir. Ayrıntı: `docs/FOLLOWUP.md`.
