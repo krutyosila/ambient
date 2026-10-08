@@ -9,6 +9,11 @@ design/life-os-case-study.html    tasarım referansı (gezilebilir prototip)
 docs/RESEARCH.md                  rakip ve kullanıcı araştırması, kaynaklar, sınırlar
 docs/DESIGN.md                    tasarım ilkeleri, token'lar (v1 → v2), ekran envanteri, ton rehberi
 docs/ROADMAP.md                   milestone'lar, çıkış ölçütleri, riskler
+docs/FLOWS.md                     ekran envanteri, akışlar, cümle → araç eşlemesi
+docs/DATA-MODEL.md                sayaçlı rutinler, kayıtlar, ritim ve öneri varlıkları
+docs/RHYTHM.md                    geçmişten ritim öğrenme ve öneri kuralları
+docs/ICONS.md                     ikon listesi ve seçim kuralı
+design/icons/ambient-icons.svg    45 ikonluk SVG sprite
 ```
 Kullanıcı **"başla"** dediğinde:
 1. Bu dosyayı, `CLAUDE.md`'yi, `DECISIONS.md`'yi ve `docs/DESIGN.md`'yi baştan sona oku.
@@ -38,6 +43,19 @@ Ambient, kullanıcının hayatını sessizce organize eden kişisel bir günlük
 
 Ton: sakin, insani. **Skor, streak, suçluluk, rozet, yüzdeli baskı yok.** Robot, parıltı, "AI" dekorasyonu yok. Yapay zekâ davranışla görünür: anlar, önerir, sorar.
 
+### Girdi kuralı: kayıt yalnızca söz ve yazıyla girer
+- Kullanıcı hiçbir kaydı (etkinlik, rutin, su, not, kişi, ayar değişikliği) form, saat seçici ya da sayı ayarlayıcıyla girmez. Prototipteki ayarlayıcı sayfaları (saat ve sayı stepper'ları) kaldırılır.
+- Dokunuş yalnızca üç iş görür: sistemin sorusunu yanıtlamak (Yaptım, Daha geç, Dinleniyorum), bir öneriyi onaylamak (Olur) ve son işlemi geri almak. Seçenek ve anahtar ayarları (yoğunluk, durum, bildirim anahtarları) yalnızca seçimdir, kayıt değildir; yine de aynı ayarlar konuşmayla da değişir.
+- Her sayfanın altındaki konuşma çubuğu o sayfaya özgü örnek cümleler önerir ("Saati 16:00 yap", "Hedefim 10 bardak olsun").
+- Sistem anlamazsa tek kısa soru sorar; yine anlamazsa söyleneni not olarak saklar, hiçbir şeyi sessizce atmaz.
+- Ayrıntı ve cümle → araç eşlemesi: `docs/FLOWS.md`. Karar: `DECISIONS.md` D-012.
+
+### Gün içinde birden çok kez yapılan şeyler (sayaçlı rutin)
+Su, kahve, ilaç, mola gibi aynı gün içinde birden çok kez yapılan şeyler **sayaçlı rutin**dir ve her tekrar zaman damgasıyla ayrı bir **kayıt** olarak saklanır ("bir bardak su içtim", "yarım litre", "sabah da bir bardak içmiştim"). Hedef "en az" (su) ya da "en fazla" (kahve) olabilir. Gün toplamı, saatler ve son 7 gün her zaman kayıtlardan türetilir. Birim kanonik tutulur (su için ml), kullanıcının diliyle gösterilir (bardak). Skor, yüzde ya da halka yok; sayı ve sakin bir hedef çizgisi. Veri modeli: `docs/DATA-MODEL.md`.
+
+### Geçmişe bakıp ritme göre öneri
+Sistem kayıtlara ve geçmişe bakarak kullanıcının ritmini öğrenir (ör. perşembe akşamları koşuyor, 16:00'dan sonra su unutuyor) ve önerilerini buna göre zamanlar. Öneri her zaman "Önerilen" olarak gelir, nedeniyle birlikte ("Perşembe akşamları genelde koşuyorsun."), onay olmadan hiçbir şeyi değiştirmez. Kullanıcı öğrenilenleri Ritmin sayfasında görür ve "bunu unut" diyebilir; tümü kapatılabilir ve cihazda hesaplanır. Ayrıntı: `docs/RHYTHM.md`.
+
 ### Konumlandırma ve ürün ilkeleri
 Kaynak: `docs/RESEARCH.md` (rakip taraması ve App Store incelemesi, Ekim 2026). Bu ilkeler tasarım ve geliştirme kararlarında bağlayıcıdır.
 - **En yakın rakip D-Plan:** yazılan cümleden yapay zekâ gün planı çıkarıyor, kullanıcı onaylıyor; ama seri, istatistik ve çok geniş kapsam (görev, alışkanlık, takvim, notlar, tuval) var. Bizim farkımız: sakin ton, tek odak, **Türkçe-önce**. Her şeyi yapmaya çalışmayacağız.
@@ -55,7 +73,7 @@ Kaynak: `docs/RESEARCH.md` (rakip taraması ve App Store incelemesi, Ekim 2026).
 - **Çizgi v2:** çizgimiz korunur ve şu noktalarda geliştirilir: okunur "geçmiş" satırları (kontrast ≥ 4,5:1), üç kademeli metin rengi, tonal yüzey merdiveni, "Sırada" odak kartı, "Önerilen" durumu, 44 px dokunma hedefi. Ayrıntı ve sayılar `docs/DESIGN.md` içinde.
 - **Stil ilkeleri:** kenarlıksız, tonal yüzeyler (border yok); derinlik ton ve hafif gradyanla. Bugün satırları durum renginde soldan sağa sönen ışımayla. Liste, tarih bölümünün altına ve alt butonların altına kayarken solarak kaybolur (mask).
 - **Ekranlar:** Karşılama (3 soruluk akış), Bugün (header: avatar, isim, durum, ayar menüsü; gün daireleri; büyük tarih; "Senin için"; "Planlar"), Günlük akış (geçmiş sönük, şimdi çizgisi, sıradaki belirgin), Konuşma, Proaktif kontrol, Gün gezinmesi (**yatay kaydırılan tırtıklı cetvel**, seçili gün büyük rakam; liste tıklanamaz), Günlük geçmiş, Hızlı not, Hayat ritmi, Günü kapat (yeni, prototipte yok; bkz. `DECISIONS.md` D-006), Widget, tam ekran Menü çekmecesi, alt sayfalar (Rutinlerim, Önemli kişiler, Hatırlatma yoğunluğu, Bildirimler ve odak, Veri ve gizlilik, Profil, Yardım, etkinlik detayı, saat/sayı ayarlayıcı sayfaları, not yazma).
-- **Bileşenler:** iki tonlu çizgi ikon seti (su, koşu, kitap, toplantı, kontrol, uyku, kahve), yazı yok/dalga yok/mikrofon yok **konuşma balonu butonu** (imleç yanıp söner), toggle, radyo seçenekleri, stepper, durum chip'leri.
+- **Bileşenler:** iki tonlu çizgi ikon seti (prototipte 7 ikon vardı; v2'de **45 ikona** genişletildi: `design/icons/ambient-icons.svg`, liste ve seçim kuralları `docs/ICONS.md`), yazı yok/dalga yok/mikrofon yok **konuşma balonu butonu** (imleç yanıp söner), toggle, radyo seçenekleri, stepper, durum chip'leri.
 - Prototipteki tüm **dokunma bağlantıları ve geri akışı** (‹ butonu, alt çubukla Bugün'e dönüş) gerçek navigasyona çevrilecek.
 
 ## 3. Mimari
@@ -72,12 +90,12 @@ packages/design-tokens   renk, tipografi, spacing, tema
 - **Docker Compose** ile yerel kurulum, GitHub Actions CI, EAS Build, Sentry, yapılandırılmış log.
 
 ## 4. Veri modeli (başlangıç)
-User, Profile (uyanma/uyku saati, çalışma düzeni, durum: Müsait/Odakta/Dinleniyor), Routine (tür, sıklık kuralı RRULE benzeri, hedef), Item (planlı etkinlik: başlangıç/bitiş, durum: planlı/yapıldı/atlandı/ertelendi), FloatingItem (bugün beklenen, zamansız), Person (önemli kişi, ilişki), Note, Message (konuşma), ParsedAction (LLM çıktısı ve uygulanma sonucu), CheckIn, DayLog (gün özeti, AI gözlemi), Setting (hatırlatma yoğunluğu, sessiz saatler), PushToken, AuditLog. Silme: soft delete + KVKK için kalıcı silme ve dışa aktarma uçları.
+User, Profile (uyanma/uyku saati, çalışma düzeni, durum: Müsait/Odakta/Dinleniyor), Routine (tür: işaretleme / saatli / sayaç, sıklık kuralı RRULE benzeri, hedef ve hedef modu, birim, `iconKey`), LogEntry (sayaçlı rutin kaydı: zaman, miktar, birim, kaynak), Pattern (öğrenilen ritim) ve Suggestion (öneri, gerekçesi ve yanıtı), OutboxUtterance (çevrimdışı cümle kuyruğu), Item (planlı etkinlik: başlangıç/bitiş, durum: planlı/yapıldı/atlandı/ertelendi), FloatingItem (bugün beklenen, zamansız), Person (önemli kişi, ilişki), Note, Message (konuşma), ParsedAction (LLM çıktısı ve uygulanma sonucu), CheckIn, DayLog (gün özeti, AI gözlemi), Setting (hatırlatma yoğunluğu, sessiz saatler), PushToken, AuditLog. Silme: soft delete + KVKK için kalıcı silme ve dışa aktarma uçları.
 
 ## 5. LLM katmanı (çekirdek)
 **İlke: LLM anlar, kod karar verir ve uygular.**
 1. `LlmProvider` arayüzü (`complete`, `toolCall`, `usage`). Adaptörler: Anthropic ve OpenAI. Sağlayıcı/model/sıcaklık **admin panelinden ve env'den** değiştirilebilir, yedek (fallback) sağlayıcı desteklenir. İş mantığı hiçbir sağlayıcıya özgü tipe bağlanmaz.
-2. LLM serbest metin üretmez, **tanımlı araç çağrıları** (function calling) döndürür: `create_event`, `create_routine`, `add_floating_item`, `mark_done`, `reschedule`, `add_reminder`, `add_person_note`, `query_day`, `ask_clarification`. Şemalar zod ile `packages/shared`'da; çıktı doğrulanmadan uygulanmaz.
+2. LLM serbest metin üretmez, **tanımlı araç çağrıları** (function calling) döndürür: `create_event`, `create_routine`, `add_floating_item`, `mark_done`, `reschedule`, `add_reminder`, `add_person_note`, `query_day`, `ask_clarification` ve düzenleme/kayıt araçları `log_progress` (sayaçlı rutine kayıt: miktar, birim, zaman), `update_item`, `cancel_item`, `set_preference` (sessiz saatler, yoğunluk, uyanma saati vb.), `set_icon`, `undo_last`, `forget_pattern`. Her öğeye ve rutine kütüphaneden bir `iconKey` atanır. Şemalar zod ile `packages/shared`'da; çıktı doğrulanmadan uygulanmaz.
 3. Sunucu tarafı **eylem yürütücü** (deterministik): doğrular, çakışma kontrol eder, öğeyi doğru duruma yerleştirir (planlı / zamansız / rutin), sonucu LLM'e geri verir; LLM kullanıcıya kısa, sakin bir cümleyle yanıt yazar. Gelecekte üyelik/kota için araya **policy katmanı** girebilecek şekilde bir hook bırak (şimdilik uygulama, hepsi izinli).
 4. Bağlama her istekte eklenecekler: "şu an" (kullanıcı saat dilimiyle), bugünün planı, aktif rutinler, tercihler. Türkçe göreli ifadeler doğru çözülmeli: "yarın 3:15'te", "bu akşam", "haftaya perşembe", "işten çıkınca" (konum/olay tabanlı, zaman değil).
 5. Belirsizlikte **tek kısa soru** sor ("20:00 olur mu?"). Bir cümlede birden çok iş varsa hepsini çıkar.
@@ -138,6 +156,10 @@ M0 repo, tokens (v2), tasarım sistemi bileşenleri → M1 local-first Bugün ("
 | `docs/RESEARCH.md` | Araştırma bulguları, kaynaklar, sınırlar. | Yeni araştırma yapıldığında |
 | `docs/DESIGN.md` | Token'lar, bileşenler, ekran envanteri, ton rehberi. | Tasarım değiştiğinde |
 | `docs/ROADMAP.md` | Milestone durumu ve riskler. | Her milestone sonunda |
+| `docs/FLOWS.md` | Ekran envanteri, akışlar, cümle → araç eşlemesi, özel durumlar. | Ekran ya da akış değiştiğinde |
+| `docs/DATA-MODEL.md` | Sayaçlı rutinler, kayıtlar, birimler, ritim ve öneri varlıkları, senkron notları. | Veri modeli değiştiğinde |
+| `docs/RHYTHM.md` | Geçmişten ritim öğrenme ve öneri kuralları, gizlilik, metrikler. | Öneri mantığı değiştiğinde |
+| `docs/ICONS.md` | İkon listesi, anahtar sözcükler, seçim kuralı, eksik ikon süreci. | İkon eklendiğinde |
 
 Çelişki olursa öncelik sırası: `start.md` > `DECISIONS.md` > `docs/*` > prototip dışındaki her şey. Tasarım ve davranış için prototip (`design/life-os-case-study.html`) hâlâ tek doğruluk kaynağıdır; `docs/DESIGN.md` yalnızca onaylanmış v2 farklarını ekler.
 

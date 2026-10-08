@@ -16,6 +16,12 @@ Yeni kararlar en alta eklenir. Büyük ve geri dönüşü zor kararlar önce sor
 | D-009 | 2026-10-08 | Kabul | Yeni maddeler yol haritasına alındı: rutinlere simge ve renk seçimi (M5), salt okunur takvim içe aktarma (M2), Plan ve fiyat sayfası (M5), Apple Watch (Faz 2). | Habit Tracker ve Productive yorumları. Kapsam ayrıntıları aşağıdaki sorularda. |
 | D-010 | 2026-10-08 | Varsayım | Ürün konumlandırması: D-Plan'dan sakin ton, tek odak ve Türkçe-önce ile ayrışır. Not tuvali, sosyal ve genel görev yönetimi kapsam dışı. | `docs/RESEARCH.md`. |
 | D-011 | 2026-10-08 | Varsayım | Metin renginde üç kademe (`--t`, `--d2`, `--d`) kullanılır; `--f` yalnızca dekoratif çizgi ve işaretlerde, metinde kullanılmaz. Geçmiş satırlar opaklık yerine `--d` rengiyle gösterilir. | Ölçülen kontrast: prototipte `--f` ≈ 2,7:1 ve `.tr.past` ≈ 2,5:1. `docs/DESIGN.md`. |
+| D-012 | 2026-10-08 | Kabul | **Kayıt yalnızca söz ve yazıyla girer.** Form, saat seçici ve sayı ayarlayıcı yok; prototipteki ayarlayıcı sayfaları kaldırılır. Dokunuş yalnızca yanıt (Yaptım, Daha geç, Dinleniyorum, Doğru), onay (Olur) ve geri al içindir. Seçim ve anahtar ayarları kayıt sayılmaz, ama aynı ayarlar konuşmayla da değişir. | Kullanıcı isteği: "manuel kayıt girilmemeli, her durumda konuşarak ya da yazışarak sonuç anlaşılmalı." Yorum: bildirim ve widget'taki tek dokunuşlu yanıtlar sistemin sorusuna yanıt sayıldı (Q12). |
+| D-013 | 2026-10-08 | Kabul | Sistem geçmişi izleyip kullanıcının ritmine göre öneri yapar. Öneri her zaman "Önerilen" olarak, nedeniyle gelir; cihazda hesaplanır; kullanıcı unutturabilir ve kapatabilir. | Kullanıcı isteği. Kurallar `docs/RHYTHM.md`. |
+| D-014 | 2026-10-08 | Kabul | Su gibi gün içinde birden çok kez yapılan eylemler **sayaçlı rutin**dir; her tekrar zaman damgalı `LogEntry` olarak saklanır, toplam ve geçmiş kayıtlardan türetilir. Birim kanonik (su için ml), gösterim kullanıcının birimiyle (bardak). | Kullanıcı isteği. `docs/DATA-MODEL.md`. |
+| D-015 | 2026-10-08 | Kabul | İkon kütüphanesi 45 ikona çıkarıldı (`design/icons/ambient-icons.svg`). Yapay zekâ her öğeye ikon atar; kullanıcı ikon seçmez; eşleşme yoksa `genel` ve eksik ikon kaydı. | Kullanıcı isteği: tüm alternatifler için ikon hazır olmalı. `docs/ICONS.md`. |
+| D-016 | 2026-10-08 | Varsayım | "Önerilen" durum rengi ikincil renk (`--w`, su/teal) + kesikli çizgi; amber yalnızca "yaklaşıyor". Tuvaldeki sayfalar buna göre güncellendi (Bugün, Akış, Kontrol). Konuşma'da "Bugün beklenen" etiketi hâlâ amber kullanıyor, bu gözden geçirilecek. | Q7'nin varsayılanı. |
+| D-017 | 2026-10-08 | Varsayım | Sayaçlı rutinde hedef ve ilerleme "skor" gibi sunulmaz: yüzde, halka, "tamamlandı" rozeti yok; yalnızca sayı, sakin bir hedef çizgisi ve saat saat kayıtlar. | `start.md` §1. |
 
 ## Bekleyen sorular
 
@@ -27,8 +33,13 @@ Yeni kararlar en alta eklenir. Büyük ve geri dönüşü zor kararlar önce sor
 | Q4 | Senkron: "son yazan kazanır" mı, alan bazında birleştirme mi? | En pahalı geri dönüşsüz karar. | Alan bazında birleştirme (öğe başına `updatedAt`). |
 | Q5 | Barındırma ve bütçe hedefi? | Altyapı seçimi. | Docker Compose ile yerel; üretim sonra. |
 | Q6 | Mobilde önce hangi platform? | Widget, giriş seçenekleri, test cihazları. | iOS önce. |
-| Q7 | "Önerilen" durumunun rengi: prototipte amber "yaklaşıyor" anlamına geliyor, tuvaldeki v2 ekranlarında "Önerilen" için de amber kullanıldı. | Anlam çakışması. | Karar çıkana dek amber yalnızca "yaklaşıyor"; "Önerilen" için kesikli çizgi + ikincil renk (`--w`). Tuvaldeki ekranlar bu noktada güncellenecek. |
+| Q7 | "Önerilen" durumunun rengi: ikincil renk (`--w`) + kesikli çizgi mi, başka bir şey mi? | Anlam çakışması (prototipte amber "yaklaşıyor"). | D-016 olarak uygulandı; itiraz yoksa kapanır. |
 | Q8 | Takvim içe aktarma kapsamı: yalnızca Apple Takvim mi, Google da mı? Salt okunur mu, iki yönlü mü? | Senkron karmaşıklığı. | Apple Takvim, salt okunur. |
 | Q9 | Apple Watch Faz 2'de mi, MVP'de mi? | Rakip yorumlarında hem istek hem çökme şikâyeti. | Faz 2. |
 | Q10 | Dış asistan bağlantısı (MCP) değerlendirilsin mi? | Routinery ücretsiz sunuyor. | Faz 2 adayı, taahhüt yok. |
-| Q11 | D-Plan'ın tasarım dilinden bilinçli ayrışma düzeyi? | Marka kimliği. | Mevcut çizgi korunur (D-001). |
+| Q11 | D-Plan'ın tasarım dilinden bilinçli ayrışma düzeyi? | Marka kimliği. | Cevaplandı: çizgi korunur ve geliştirilir (D-001). |
+| Q12 | Bildirim ve widget'taki tek dokunuşlu yanıtlar ("İçtim", "Su · 3") D-012 ile uyumlu sayılsın mı? | "Her durumda konuşarak" ifadesinin sınırı. | Evet: sistemin sorusuna yanıt sayılır; Bugün'de manuel "+1" düğmesi yok. |
+| Q13 | Konuşma sırasında ses dalgası olmadan "dinliyor" hali nasıl görünsün? | Konuşma balonu butonunun tasarımında dalga ve mikrofon yok. | İmleç yerine nefes alan halka. |
+| Q14 | Ritim öğrenme rızası karşılamada ayrı bir adım mı, Veri ve gizlilik'te anahtar mı? | KVKK açık rıza şartı. | Karşılamada kısa anlatım + Veri ve gizlilik'te anahtar. |
+| Q15 | Su dışındaki hassas sayaçlar (alkol, sigara) ve tıbbi hatırlatmalar (ilaç) kapsamda mı? | Sağlık ve yasal sorumluluk. | İlaç hatırlatılır ve kaydedilir, tıbbi tavsiye verilmez. Alkol ve sigara ilk sürümde kapsam dışı. |
+| Q16 | Fiyat ve deneme süresi? | Plan ve fiyat sayfası köşeli parantezlerle bekliyor. | Fiyatlandırma kararı gelene dek [AYLIK FİYAT] yer tutucu. |

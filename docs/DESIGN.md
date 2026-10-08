@@ -2,7 +2,10 @@
 
 Kaynak: `design/life-os-case-study.html` prototipi. Bu belge prototipin **yerine geçmez**; yalnızca onaylanmış v2 farklarını (karar D-001, D-011) ve eksik envanteri tanımlar. Kod `packages/design-tokens` altında tek kaynak olacak.
 
-Görsel çalışma (7 ekran + araştırma panosu): https://claude.ai/artifact/CHcQgkvtgDe2JDoqGd1TX2 (özel bağlantı; paylaşım sahibinin Paylaş menüsünden yapılır). Tuvaldeki ekranlar statiktir ve Q7 kararına kadar "Önerilen" renginde sapma içerir (aşağıya bak).
+Görsel çalışma (38 sayfa: ekranlar, ikon kütüphanesi, kurgu haritası, araştırma panosu): https://claude.ai/artifact/CHcQgkvtgDe2JDoqGd1TX2 (özel bağlantı; paylaşım sahibinin Paylaş menüsünden yapılır). Tuvaldeki ekranlar statiktir ve Q7 kararına kadar "Önerilen" renginde sapma içerir (aşağıya bak).
+
+## 0. İkonlar
+Prototipteki 7 ikon 45'e çıkarıldı: `design/icons/ambient-icons.svg`, liste ve seçim kuralı `docs/ICONS.md`. Yeni ekranlar yalnızca bu kütüphaneyi kullanır.
 
 ## 1. İlkeler
 1. **Sakin ve insani.** Skor, seri, rozet, yüzde, robot ve parıltı yok. Yapay zekâ davranışla görünür: anlar, önerir, sorar.
@@ -11,6 +14,7 @@ Görsel çalışma (7 ekran + araştırma panosu): https://claude.ai/artifact/CH
 4. **Okunur sönüklük.** Geçmiş ve ikincil öğeler soluk görünür ama kontrast ≥ 4,5:1 kalır.
 5. **Öneri ≠ karar.** Yapay zekâ çıktıları "Önerilen" olarak görsel olarak ayrılır, tek dokunuşla onaylanır, onaylanmadan plan değişmez.
 6. **Üç saniyede yakalama.** Konuşma balonu butonu her ana ekranda aynı yerde.
+7. **Form yok.** Kayıt yalnızca söz ve yazıyla girer; dokunuş yanıt, onay ve geri al içindir (D-012).
 
 ## 2. Token'lar
 
@@ -69,7 +73,7 @@ Prototipin açık paletinde bazı renkler küçük metinde 4,5:1'i geçmiyor (Bu
 | Önerilen | kesikli çizgi + "Önerilen" chip + "Olur / Başka saat" |
 | Atlandı / dinleniyor | ay ikonu, `--d2`; hiçbir uyarı rengi kullanılmaz |
 
-**Açık nokta (Q7):** tuvaldeki v2 ekranlarında "Önerilen" için amber kullanıldı; prototipte amber "yaklaşıyor" demek. Karar çıkana dek kodda amber yalnızca "yaklaşıyor"; "Önerilen" için ikincil renk (`--w`) ve kesikli çizgi kullanılır.
+**Önerilen rengi (D-016):** ikincil renk (`--w`) + kesikli çizgi + "Önerilen" chip'i. Amber yalnızca "yaklaşıyor". Tuvalde Bugün, Akış ve Kontrol buna göre; Konuşma sayfasındaki "Bugün beklenen" etiketi hâlâ amber, gözden geçirilecek.
 
 ## 4. Bileşenler
 Prototipten: iki tonlu çizgi ikon seti (su, koşu, kitap, toplantı, kontrol, uyku, kahve), konuşma balonu butonu (yazı yok, dalga yok, mikrofon yok, imleç yanıp söner), toggle, radyo, stepper, durum chip'i.
@@ -85,23 +89,19 @@ v2 ile eklenenler:
 - **Rutin simge ve renk seçici** (M5; Habit Tracker kullanıcılarının sevdiği özelleştirme).
 
 ## 5. Ekran envanteri
-| Ekran | Prototip | v2 tuvali | Durum |
-|---|---|---|---|
-| Karşılama (3 soru) | Var | Yok | v1'den uygulanır, v2 stiline uyarlanır; fiyat ve plan bilgisi eklenecek |
-| Bugün | Var | Var | v2 |
-| Günlük akış | Var | Bugün içine katıldı | Prototip ve v2 birlikte değerlendirilecek |
-| Konuşma | Var | Var | v2 |
-| Proaktif kontrol | Var | Var | v2 |
-| Gün gezinmesi | Var | Var | v2 |
-| Günlük geçmiş | Var | Yok | v1 |
-| Hızlı not | Var | Yok | v1 |
-| Hayat ritmi | Var | Var | v2 |
-| Widget | Var | Var (kilit ekranıyla) | v2 |
-| **Günü kapat** | Yok | Var | Yeni (D-006, onay bekliyor) |
-| Menü çekmecesi, Rutinlerim, Önemli kişiler, Hatırlatma yoğunluğu, Bildirimler ve odak, Veri ve gizlilik, Profil, Yardım, etkinlik detayı, ayarlayıcılar, not yazma | Var (prototipte gezilebilir) | Yok | v1 |
-| **Plan ve fiyat** | Yok | Yok | Tasarlanacak (D-007) |
-| **Rutin simge/renk seçici** | Yok | Yok | Tasarlanacak (D-009) |
-| **Takvim içe aktarma ayarı** | Yok | Yok | Tasarlanacak, kapsam Q8 |
+Tam envanter, giriş ve çıkışlar, cümle → araç eşlemesi: `docs/FLOWS.md`. Tuvalde 38 sayfa var (36 ekran + ikon kütüphanesi + kurgu haritası); prototipte olmayıp eklenenler:
+
+| Yeni | Neden |
+|---|---|
+| Günü kapat | Sunsama bulgusu (D-006, onay bekliyor) |
+| Konuşma: su kaydı, tek soru | Sayaçlı rutin (D-014), tek soru kuralı |
+| Rutin detayı: Su | Gün içi çok kayıtlı rutin |
+| Ritmin | Geçmişten öğrenme (D-013) |
+| Plan ve fiyat, Takvim, İzinler, Giriş | Fiyat şeffaflığı, takvim içe aktarma, izin akışı |
+| Anlaşılmadı, Çevrimdışı, Boş gün | Özel durumlar |
+| Tüm verileri sil onayı, Kişi detayı, Etkinlik detayı, Günün akışı, Günlük geçmiş, Menü, Profil ve alt sayfalar | Prototipteki gezilebilir sayfaların v2 hali |
+
+Prototipteki **saat ve sayı ayarlayıcı sayfaları kaldırıldı** (D-012). Karşılama, Gün gezinmesi, Hayat ritmi ve Widget prototip düzenini korur.
 
 ## 6. Ton ve metin rehberi
 Kısa, sakin, düz cümle. Soru sorulacaksa tek soru.

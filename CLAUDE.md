@@ -3,7 +3,7 @@
 Ürün tanımı ve değişmez ilkeler `start.md` içinde. Bu dosya kısa tutulur; ayrıntı için belge haritasına bak (`start.md` §14).
 
 ## Her oturumda
-1. `start.md`, `DECISIONS.md` ve `docs/DESIGN.md` dosyalarını oku. Bekleyen sorular `DECISIONS.md` sonundadır.
+1. `start.md`, `DECISIONS.md` ve `docs/DESIGN.md` dosyalarını oku. Ekran ve akış işlerinde `docs/FLOWS.md`, veri işlerinde `docs/DATA-MODEL.md`, öneri işlerinde `docs/RHYTHM.md`, ikon işlerinde `docs/ICONS.md`. Bekleyen sorular `DECISIONS.md` sonundadır.
 2. Tasarım ve davranış için kaynak `design/life-os-case-study.html` prototipidir. `docs/DESIGN.md` yalnızca onaylanmış v2 farklarını ekler. Tasarımdan sapman gerekiyorsa gerekçeyi yaz ve sor.
 3. Kod yazmadan önce mimari plan ve milestone onayı al (`start.md` §0). Onay gelmeden uygulama kodu yazma.
 
@@ -14,6 +14,9 @@
 
 ## Dil
 - Arayüz metinleri Türkçe (varsayılan), i18n ile İngilizceye hazır. Kod, yorumlar ve commit mesajları İngilizce. Belgeler Türkçe.
+
+## Girdi kuralı
+Kayıt yalnızca söz ve yazıyla girer (D-012). Yeni bir ekran tasarlarken form, saat seçici ya da sayı ayarlayıcı ekleme; dokunuş yalnızca yanıt, onay ve geri al içindir. Her yeni ekranın altında o sayfaya özgü örnek cümleli konuşma çubuğu olur. Cümle → araç eşlemesi `docs/FLOWS.md`'de.
 
 ## Ürün yasakları (kısa)
 Seri, rozet, yüzde, skor, suçluluk dili, robot/parıltı dekorasyonu yok. Yapay zekâ planı kendi başına değiştirmez, yalnızca önerir. Ayrıntı: `start.md` §1.
