@@ -89,7 +89,7 @@ v2 ile eklenenler:
 - **Rutin simge ve renk seçici** (M5; Habit Tracker kullanıcılarının sevdiği özelleştirme).
 
 ## 5. Ekran envanteri
-Tam envanter, giriş ve çıkışlar, cümle → araç eşlemesi: `docs/FLOWS.md`. Tuvalde 42 sayfa var (38 ekran + ikon kütüphanesi + kurgu haritası + admin maliyet paneli); prototipte olmayıp eklenenler:
+Tam envanter, giriş ve çıkışlar, cümle → araç eşlemesi: `docs/FLOWS.md`. Tuvalde 46 sayfa var (42 ekran + ikon kütüphanesi + kurgu haritası + admin maliyet paneli); prototipte olmayıp eklenenler:
 
 | Yeni | Neden |
 |---|---|

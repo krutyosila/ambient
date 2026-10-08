@@ -25,7 +25,7 @@ Ayarlar: Haiku 5.5'te `effort` varsayılanı `medium`; araç çıkarma için **a
 - Özetler cihazda ve sunucuda kullanıcıya açıktır ve silinir ("Hafıza" anahtarı, Veri ve gizlilik).
 
 ## 4. Bütçe ve kademeli düşürme
-Kullanıcı başına aylık bütçe (LLM + bulut ses, USD): Normal 0,04 · Plus 0,20 · Pro 0,45. Her çağrının gerçek maliyeti (token ve ses dakikası) kullanıcıya yazılır.
+Kullanıcı başına aylık bütçe (LLM + bulut ses, USD): **başlangıçta plan B (Small Business onaysız, %30 komisyon):** Normal 0,04 · Plus 0,16 · Pro 0,32; onay ve komisyon doğrulanınca plan A: Plus 0,19 · Pro 0,38. Kural: bütçe ≤ en düşük net gelirli planın %30'u (`PRICING.md` §5). Her çağrının gerçek maliyeti (token ve ses dakikası) kullanıcıya yazılır.
 
 | Bütçe kullanımı | Davranış |
 |---|---|

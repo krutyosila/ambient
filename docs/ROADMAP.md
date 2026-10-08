@@ -68,3 +68,7 @@ Durum: ☐ başlamadı · ◐ sürüyor · ☑ bitti
 | Beta ölçümü: maliyet/net gelir, yerel çözüm oranı, escalation | M9 öncesi beta | Fiyat ve bütçe 4. haftada gözden geçirilir |
 | Pazarlama: ASO, ekran görüntüleri, video, içerik üretici programı | M9 | `docs/MARKETING.md` |
 | Proje özeti güncel tutma | Sürekli | `docs/SUMMARY.md` |
+
+## Kişiselleştirme (D-029)
+- Kişisel bilgi alma ve kullanma kuralları: `docs/PERSONALIZATION.md`. M2 (veri) ve M5 (Karşılama adımı, Profil, kilo sorusu); aralıklar uzman gözden geçirmesinden sonra (Q22).
+- Deneme sonrası yükseltme kartı ve düşürme davranışı: M5.

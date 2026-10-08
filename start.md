@@ -16,6 +16,7 @@ docs/ICONS.md                     ikon listesi ve seçim kuralı
 docs/PRICING.md                   üyelik katmanları, fiyat, birim ekonomi
 docs/COST-POLICY.md               maliyet politikası ve yönlendirme
 docs/MARKETING.md                 konumlandırma ve pazarlama
+docs/PERSONALIZATION.md           kişisel bilgiler ve kişiselleştirme
 docs/SUMMARY.md                   tek sayfa özet (önce bunu oku)
 design/icons/ambient-icons.svg    45 ikonluk SVG sprite
 ```
@@ -57,7 +58,10 @@ Ton: sakin, insani. **Skor, streak, suçluluk, rozet, yüzdeli baskı yok.** Rob
 ### Gün içinde birden çok kez yapılan şeyler (sayaçlı rutin)
 Su, kahve, ilaç, mola gibi aynı gün içinde birden çok kez yapılan şeyler **sayaçlı rutin**dir ve her tekrar zaman damgasıyla ayrı bir **kayıt** olarak saklanır ("bir bardak su içtim", "yarım litre", "sabah da bir bardak içmiştim"). Hedef "en az" (su) ya da "en fazla" (kahve) olabilir. Gün toplamı, saatler ve son 7 gün her zaman kayıtlardan türetilir. Birim kanonik tutulur (su için ml), kullanıcının diliyle gösterilir (bardak). Skor, yüzde ya da halka yok; sayı ve sakin bir hedef çizgisi. Veri modeli: `docs/DATA-MODEL.md`.
 
-### Üyelik ve maliyet (öneri, D-020…D-022)
+### Kişiselleştirme (D-029)
+Doğum tarihi, cinsiyet, boy ve kilo isteğe bağlı, konuşarak ve açık rızayla alınır; planlama (su hedefi başlangıcı, uyku aralığı vb.) buna göre kural tabanlı ayarlanır. Kilo ara ara (varsayılan 4 haftada bir) sorulur; hedef, skor, VKİ yok. Ayrıntı ve KVKK: `docs/PERSONALIZATION.md`.
+
+### Üyelik ve maliyet (öneri, D-020…D-028)
 Üç katman: **Normal** (süresiz ücretsiz), **Plus**, **Pro**. Katmanlar özellik ve **maliyet bütçesiyle** ayrılır; sistem bütçeye göre ucuz yoldan çalışır: yerel Türkçe çözümleyici → Haiku 5.5 → (Plus/Pro) Sonnet 5.5, kullanıcı başına aylık bütçe, kademeli düşürme. Ritim öğrenme seviyesi katmana göre seçilir. Ayrıntı: `docs/PRICING.md` (katmanlar, fiyatlar, birim ekonomi), `docs/COST-POLICY.md` (yönlendirme, bütçe, telemetri), `docs/MARKETING.md`. Proje ve kullanıcı bağlamı düzenli özetlenir (`docs/SUMMARY.md`, kullanıcı "Hafıza" özeti).
 
 ### Geçmişe bakıp ritme göre öneri
@@ -170,6 +174,7 @@ Ekran süresi entegrasyonu, sosyal/paylaşım özellikleri, seri, rozet ve yarı
 | `docs/PRICING.md` | Katmanlar, rakip fiyatları, birim ekonomi, paywall kuralları. | Fiyat ya da maliyet değiştiğinde |
 | `docs/COST-POLICY.md` | Yönlendirme, bütçe, kademeli düşürme, telemetri, özetleme. | Maliyet mimarisi değiştiğinde |
 | `docs/MARKETING.md` | Konumlandırma, ASO, kanallar, ölçütler, lansman. | Strateji değiştiğinde |
+| `docs/PERSONALIZATION.md` | Doğum tarihi, cinsiyet, boy, kilo: alma, kullanma, rıza, sıklık. | Kişisel veri değiştiğinde |
 | `docs/SUMMARY.md` | Tek sayfa özet; her oturumda önce okunur. | Her büyük karardan sonra |
 
 Çelişki olursa öncelik sırası: `start.md` > `DECISIONS.md` > `docs/*` > prototip dışındaki her şey. Tasarım ve davranış için prototip (`design/life-os-case-study.html`) hâlâ tek doğruluk kaynağıdır; `docs/DESIGN.md` yalnızca onaylanmış v2 farklarını ekler.

@@ -30,6 +30,10 @@ Yeni kararlar en alta eklenir. Büyük ve geri dönüşü zor kararlar önce sor
 | D-023 | 2026-10-08 | Kabul | **Alkol ve sigara gibi alışkanlıklar önerilmez** ve kütüphane/öneri motorunda yer almaz. İlaç ve vitamin hatırlatılır, kaydedilir; tıbbi tavsiye verilmez. Kullanıcı kendi söylerse genel sayaç olarak yalnız kaydedilebilir, öneri ve hedef üretilmez. | Kullanıcı kararı (Q15). |
 | D-024 | 2026-10-08 | Kabul | Bildirim ve widget'taki tek dokunuşlu yanıtlar uygundur. | Kullanıcı onayı (Q12 kapandı). |
 | D-025 | 2026-10-08 | Kabul | Proje **düzenli özetlenir**: `docs/SUMMARY.md` her oturumda önce okunur ve büyük karardan sonra güncellenir; uygulamada da kullanıcı bağlamı düzenli kısa "Hafıza" özetine indirgenir. Amaç tutarlılık ve maliyet. | Kullanıcı isteği. |
+| D-026 | 2026-10-08 | Kabul | **Deneme 3 gün.** Abone olmazsa kullanıcı Normal olarak devam eder; ara ara, baskısız ve sınırlı sıklıkta yükseltme hatırlatması görür (uygulama içi kart, bildirim yok; ilk 2 haftada 4 günde en fazla 1, sonra 10 günde en fazla 1, ayda en fazla 3; Kontrol, Günü kapat, Dinleniyorum ve sessiz saatte asla). | Kullanıcı kararı. `docs/PRICING.md` §6. Q18 kapandı. |
+| D-027 | 2026-10-08 | Kabul | Düşürme (Pro/Plus → Normal) veri silmez: 3'ten fazla sayaçlı rutin duraklatılır, geçmiş 30 gün görünür, ritim Temel'e iner; yükseltince geri gelir. | `docs/PRICING.md` §6. |
+| D-028 | 2026-10-08 | Kabul | **Apple Small Business Program'a başvurulacak**; onay ve abonelik komisyonu kuralı doğrulanana dek bütçeler **%30 komisyon (plan B)** baz alınarak başlatılır, onayla plan A değerlerine çıkılır. | Kullanıcı kararı. Q21 kapandı. |
+| D-029 | 2026-10-08 | Kabul | Kullanıcıdan **doğum tarihi, cinsiyet, boy, kilo** isteğe bağlı, konuşarak ve açık rızayla alınır; planlama buna göre ayarlanır. Kilo "ara ara" sorulur (varsayılan 4 haftada bir, kullanıcı ayarlar). Hedef, skor, VKİ ve yargı yok; 18 yaş altına boy/kilo sorulmaz. Temel kişiselleştirme tüm katmanlarda. | Kullanıcı isteği. `docs/PERSONALIZATION.md`. |
 
 ## Bekleyen sorular
 
@@ -52,7 +56,10 @@ Yeni kararlar en alta eklenir. Büyük ve geri dönüşü zor kararlar önce sor
 | Q15 | Hassas sayaçlar ve tıbbi hatırlatmalar? | — | **Kapandı:** alkol ve sigara önerilmez (D-023); ilaç hatırlatılır. |
 | Q16 | Fiyat ve deneme süresi? | Plan ve fiyat sayfası. | Öneri D-021 ve D-022; onay bekliyor (Q17). |
 | Q17 | Katmanlar ve fiyatlar onaylanıyor mu (D-021, D-022)? | Plan ve fiyat, paywall, bütçeler buna bağlı. | Öneri olarak ilerler, kodda yapılandırma değeri. |
-| Q18 | Deneme süresi 7 gün mü? | Deneme maliyeti ve dönüşüm. | 7 gün. |
+| Q18 | Deneme süresi? | — | **Kapandı:** 3 gün (D-026). |
 | Q19 | Normal katmanda 3 sayaçlı rutin ve 30 gün görünür geçmiş sınırı kabul mü? | Ücretsiz katmanın cömertliği. | Kabul varsayıldı. |
-| Q20 | Anlama bütçesinin net gelire oranı %30 mu? | Marjin ve cömertlik dengesi. | %30, ilk 4 hafta ölçümle gözden geçirilir. |
-| Q21 | Apple Small Business Program'a (%15) başvurulacak mı? | Net gelir. | Evet; abonelik kuralı App Store Connect'te doğrulanacak. |
+| Q20 | Anlama bütçesi net gelirin %30'u mu? | Marjin ve cömertlik dengesi. | Kullanıcıya açıklandı (`PRICING.md` §5); onay bekleniyor. Varsayılan %30. |
+| Q21 | Apple Small Business Program? | Net gelir. | **Kapandı:** başvurulacak (D-028); plan B baz. |
+| Q22 | Kişiselleştirme aralıkları (su ml/kg, uyku saati, hareket başlangıcı, cinsiyete göre ayrım) bir uzman (diyetisyen/hekim) tarafından gözden geçirilsin mi, yayından önce? | Sağlıkla ilgili genel değerler; sorumluluk. | Evet; gözden geçirmeden bu aralıklar yayına girmez. |
+| Q23 | Kilo sorma sıklığı varsayılanı 4 haftada bir mi? | "Ara ara" tanımı. | 4 haftada bir; kullanıcı hiç/ayda bir/3 ayda bir seçebilir. |
+| Q24 | Yaş eşikleri: 13 yaş altı desteklenmez, 18 yaş altına boy/kilo sorulmaz; hukuk görüşü gerekli mi? | KVKK, mağaza yaş sınıfı. | Evet, hukuk görüşü alınır. |

@@ -40,16 +40,20 @@ Görsel kaynak: tuvaldeki 38 sayfa (https://claude.ai/artifact/CHcQgkvtgDe2JDoqG
 | 4.3 | Plan ve fiyat | 3.1, 5.1 | Devam et | — | Abonelik |
 | 4.4 | Yardım | 3.1 | — | Destek mesajı | — |
 | 4.5 | Takvim | 3.1, 5.5 | — | "Kişisel takvimi gizle" | Setting |
+| 2.9 | Kilo güncelleme sorusu | Bugün kartı (4 haftada bir) | Söyle / Daha sonra / Bir daha sorma | "Kilom 73" | Measurement |
 | 2.8 | Gün kapanmadı | Sabah, Bugün üstü | Kapat → 2.2; Geç → Bugün | — | DayLog (açık gün) |
 | 4.6 | Plan karşılaştırma | 4.3 | Seç → Plan ve fiyat | — | Abonelik |
+| 4.8 | Deneme bitti | Deneme sonu | Tamam | — | Abonelik |
+| 4.9 | Yükseltme kartı (Bugün) | Seyrek, kurallı | Sonra / 30 gün gösterme / planlar | — | UpsellState |
 | 4.7 | Anlama hakkı doldu | Bütçe %100 | Sıraya al / Plus'a geç / Tamam | — | OutboxUtterance |
 | 6.3 | Admin: maliyet ve politika | Admin paneli | — | — | Politika yapılandırması |
 | 5.1 | Giriş | İlk açılış | → 5.2 | — | User |
 | 5.2–5.4 | Karşılama 1–3 | 5.1 | → 5.5 | Çipler ya da kendi cümlen | Profile, Setting |
-| 5.5 | İzinler | 5.4 | → 5.6 | — | İzin durumları |
-| 5.6 | Boş gün | Yeni kullanıcı, boş gün | → 1.3 | Örnek cümleler | — |
-| 5.7 | Anlaşılmadı | Başarısız çıkarım | Not olarak sakla / yeniden | — | Note |
-| 5.8 | Çevrimdışı | Bağlantı yok | Bağlanınca kuyruk işlenir | Her cümle | OutboxUtterance |
+| 5.5 | Seni tanıyayım | 5.4 | Atla / söyle → 5.6 | "14 Mart 1992 doğumluyum", "Kilom 74" | Profile, Measurement, consents |
+| 5.6 | İzinler | 5.5 | → 5.7 | — | İzin durumları |
+| 5.7 | Boş gün | Yeni kullanıcı, boş gün | → 1.3 | Örnek cümleler | — |
+| 5.8 | Anlaşılmadı | Başarısız çıkarım | Not olarak sakla / yeniden | — | Note |
+| 5.9 | Çevrimdışı | Bağlantı yok | Bağlanınca kuyruk işlenir | Her cümle | OutboxUtterance |
 
 ## 3. Anahtar akışlar
 

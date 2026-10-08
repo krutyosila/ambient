@@ -24,7 +24,7 @@ Durum: taslak, onay bekliyor. Kaynak veriler `docs/RESEARCH.md` ve `docs/PRICING
 - **Anahtar kelimeler (Türkçe, doğrulanacak):** günlük planlayıcı, rutin, alışkanlık, hatırlatıcı, su içme hatırlatıcı, yapay zeka asistan, gün planı, yapılacaklar, odak. Mağaza arama hacimleri bir ASO aracıyla ölçülmeden kesinleşmez.
 - **Ekran görüntüleri (sıra):** (1) "Söyle, plan olsun" Konuşma, (2) "Sırada tek şey" Bugün, (3) "Su, kahve, ilaç: gün içinde kaç kez istersen" Su detayı, (4) "Ritmini öğrenir, önerir" Ritmin, (5) "Skor yok" Günü kapat, (6) "Verilerin sende".
 - **Önizleme videosu:** 15 sn: tek cümleden üç kartın oluşması.
-- **Yorum isteme:** yalnız olumlu anda (Günü kapat sonrası, 7. gün); hata ya da "anlaşılmadı" akışından sonra asla.
+- **Yorum isteme:** yalnız olumlu anda (Günü kapat sonrası, 7. gün kullanım); hata ya da "anlaşılmadı" akışından sonra asla.
 - **Yerelleştirme:** Türkçe birincil; İngilizce ikincil. Rakip sayfaları İngilizce ağırlıklı, Türkçe sayfa bir fırsat.
 
 ## 4. Kanallar (düşük maliyet öncelikli)
@@ -41,7 +41,7 @@ Durum: taslak, onay bekliyor. Kaynak veriler `docs/RESEARCH.md` ve `docs/PRICING
 ## 5. Yaşam döngüsü ve dönüşüm
 - **Aktivasyon:** ilk 3 dakikada ilk cümle ve ilk "Olur" (Boş gün ekranındaki örnek cümleler). Metrik: ilk gün cümle sayısı ≥ 3.
 - **Alışkanlık:** 7. gün geri dönüş; Günü kapat kullanımı.
-- **Dönüşüm (Normal → Plus):** kullanıcı Plus özelliğine dokununca ya da bütçe dolunca; 7 günlük deneme. Satış baskısı yok.
+- **Dönüşüm (Normal → Plus):** kullanıcı Plus özelliğine dokununca ya da bütçe dolunca; 3 günlük deneme; deneme sonrası Normal'e devam, uygulama içi seyrek yükseltme kartı (bildirim yok). Satış baskısı yok.
 - **Plus → Pro:** gelişmiş ritim, çoklu takvim, Faz 2 sağlık ve saat.
 - **Elde tutma:** baskı bildirimi yok; yalnız neyi hatırlattığı belli bildirimler. Düşürme veri silmez.
 - **Kayıp önleme:** iptal sayfasında tek soru ("Neden?"), indirim zorlaması yok.

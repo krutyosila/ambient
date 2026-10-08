@@ -5,8 +5,8 @@ Durum: **öneri** (`DECISIONS.md` D-018…D-022, onay bekliyor). Fiyatlar, vergi
 ## 1. Özet
 - Üç katman: **Normal** (süresiz ücretsiz), **Plus**, **Pro**. Lifetime ve haftalık plan yok (değişken LLM maliyeti olduğu için).
 - Katmanlar özellik kadar **maliyet bütçesiyle** de ayrılır: her kullanıcıya aylık bir "anlama bütçesi" tanınır; sistem bütçeye göre ucuz yoldan çalışır (`COST-POLICY.md`).
-- Önerilen fiyatlar (KDV dahil, Türkiye): **Plus ₺99,99/ay · ₺599,99/yıl**, **Pro ₺199,99/ay · ₺1.199,99/yıl**. Global: Plus $3,99 · $29,99; Pro $8,99 · $59,99. Abonelik başlatınca **7 gün ücretsiz** (Apple tanıtım teklifi).
-- Hesaplanan tipik maliyet kullanıcı başına ayda: Normal ≈ $0,03, Plus ≈ $0,11, Pro ≈ $0,23. En kötü senaryoda (bütçe sınırı dolu, yıllık plan, %30 komisyon, TL zayıf) marjin Plus ≈ %44, Pro ≈ %42.
+- Önerilen fiyatlar (KDV dahil, Türkiye): **Plus ₺99,99/ay · ₺599,99/yıl**, **Pro ₺199,99/ay · ₺1.199,99/yıl**. Global: Plus $3,99 · $29,99; Pro $8,99 · $59,99. Abonelik başlatınca **3 gün ücretsiz** (Apple tanıtım teklifi). Deneme bitip abone olunmazsa **Normal olarak devam** edilir; ara ara, baskısız yükseltme hatırlatması gösterilir (§6).
+- Hesaplanan tipik maliyet kullanıcı başına ayda: Normal ≈ $0,03, Plus ≈ $0,11, Pro ≈ $0,23. En kötü senaryoda (bütçe sınırı dolu, yıllık plan, Small Business'a başvuru **yok** → %30 komisyon, TL zayıf) marjin Plus ≈ %53, Pro ≈ %57; başvuru onaylanırsa daha yüksek (§4).
 
 ## 2. Rakip fiyatları (App Store, 8 Ekim 2026)
 Uygulama sayfalarındaki "Uygulama İçi Satın Alımlar" listesinden. Plan adları listelendiği gibi; bir uygulamanın birden çok fiyat noktası olabilir.
@@ -28,7 +28,7 @@ Gözlemler: D-Plan Standart Türkiye fiyatı Plus önerimizle aynı, D-Plan Pro'
 | | **Normal** (ücretsiz) | **Plus** | **Pro** |
 |---|---|---|---|
 | Söz ve yazıyla kayıt | Basit kayıtlar (su, "yaptım", saatli etkinlik) cihazda, **sınırsız** | Aynı | Aynı |
-| Yapay zekâ anlama (karmaşık cümle) | Günde yaklaşık 8 | Günde yaklaşık 17 | Günde yaklaşık 28 |
+| Yapay zekâ anlama (karmaşık cümle) | Günde yaklaşık 8 | Günde yaklaşık 14 | Günde yaklaşık 20 |
 | Zor cümleler için güçlü model | Yok | Gerektiğinde, sınırlı | Gerektiğinde, sınırlı, öncelikli |
 | Sayaçlı rutinler (su, kahve, ilaç) | 3 | Sınırsız | Sınırsız |
 | Ritim öğrenme | **Temel**: 2 desen, günde en fazla 3 öneri | **Tam**: 5 desen, hafta sonu ve uyku, Ritmin sayfası | **Gelişmiş**: Tam + çapraz sinyal (takvim yoğunluğu ↔ su/koşu), haftalık plan önerisi |
@@ -64,34 +64,64 @@ Gözlemler: D-Plan Standart Türkiye fiyatı Plus önerimizle aynı, D-Plan Pro'
 Karşılaştırma: yönlendirmesiz "her cümle Sonnet" yaklaşımında aynı kullanım Normal $0,72, Plus $1,80, Pro $3,60 olurdu (**yaklaşık 12–25 kat**). Maliyeti düşüren şey fiyat değil, mimaridir.
 
 ### Net gelir ve marjin (Türkiye, KDV dahil fiyattan)
-Net gelir = fiyat ÷ 1,20 (KDV) × (1 − komisyon) ÷ kur. Kur senaryoları 45 / 55 / 65 TL/USD (güncel kur bilinmiyor, senaryo).
+Net gelir = fiyat ÷ 1,20 (KDV) × (1 − komisyon) ÷ kur. Kur senaryoları 45 / 55 / 65 TL/USD (güncel kur bilinmiyor, senaryo). İki komisyon senaryosu: **A** = Small Business Program onaylı (%15), **B** = başvuru yok ya da onaylanmadı (%30, ilk yıl). Başvuru yapılacak, ama plan B'ye göre de sağlam olmalı.
 
-| Plan | En iyi durum (%15, kur 45) | En kötü durum (%30, kur 65) | Marjin tipik / bütçe sınırında (en kötü) |
-|---|---|---|---|
-| Plus aylık ₺99,99 | $1,57 | $0,90 | %93 / %72 |
-| Plus yıllık ₺599,99 (₺50/ay) | $0,79 | $0,45 | %86 / **%44** |
-| Pro aylık ₺199,99 | $3,15 | $1,79 | %93 / %71 |
-| Pro yıllık ₺1.199,99 (₺100/ay) | $1,57 | $0,90 | %85 / **%42** |
+Yıllık plan, aylık eşdeğer net gelir (USD):
 
+| Plan | A %15 · kur 45 | A · kur 55 | A · kur 65 | B %30 · kur 45 | B · kur 55 | B · kur 65 |
+|---|---|---|---|---|---|---|
+| Plus ₺599,99/yıl (₺50/ay) | 0,79 | 0,64 | 0,54 | 0,65 | **0,53** | 0,45 |
+| Pro ₺1.199,99/yıl (₺100/ay) | 1,57 | 1,29 | 1,09 | 1,30 | **1,06** | 0,90 |
+Aylık planlar yaklaşık 2 kat net gelir getirir (Plus ₺99,99/ay → B, kur 55: $1,06).
+
+Marjin (net gelirden toplam maliyet düşülür; kur 55 / kur 65):
+
+| | Tipik kullanım (A) | Bütçe sınırında (A) | Tipik (B) | Bütçe sınırında (B) |
+|---|---|---|---|---|
+| Plus yıllık | %83 / — | %62 / %55 | %80 / — | **%61 / %53** |
+| Pro yıllık | %82 / — | %65 / %58 | %78 / — | **%63 / %57** |
 Global fiyatlarda (net = fiyat × 0,70 en kötü): Plus aylık $3,99 → marjin %91; Plus yıllık $29,99 → %86; Pro aylık $8,99 → %92; Pro yıllık $59,99 → %85 (bütçe sınırında).
 
 ### Ücretsiz kullanıcı finansmanı
-Kur 55 ve komisyon %15'te bir Plus yıllık abone ayda yaklaşık $0,54 katkı verir; bu yaklaşık **18 ücretsiz kullanıcının** maliyetini (her biri $0,03) karşılar. Sabit maliyet örneği: ayda $300 sabit gider varsa başa baş için yaklaşık 600 Plus yıllık abone gerekir (kur 55). Gerçek sabit gider ve kur belli olunca güncellenecek.
+Kur 55'te bir Plus yıllık abone ayda yaklaşık $0,42 (B) ile $0,54 (A) katkı verir; bu yaklaşık **14–18 ücretsiz kullanıcının** maliyetini (her biri $0,03) karşılar. Sabit maliyet örneği: ayda $300 sabit gider varsa başa baş için yaklaşık 600 Plus yıllık abone gerekir (kur 55). Gerçek sabit gider ve kur belli olunca güncellenecek.
 
-## 5. Bütçe kuralı (maliyete göre değişen sistem)
-- Her katmana aylık bir **anlama bütçesi** (LLM + bulut ses) tanımlanır: Normal $0,04, Plus $0,20, Pro $0,45 (referans kur 55).
-- Kural: bütçe, o katmanın **en düşük net gelirli planının %30'unu** aşmaz. Kur ya da komisyon değişince admin panelinden güncellenir; üç ayda bir gerçek maliyetle yeniden hesaplanır.
-- Bütçe dolmaya yaklaştıkça sistem kademeli ucuzlar (Sonnet kapanır → yalnız Haiku → yerel mod). Ayrıntı: `COST-POLICY.md`.
+## 5. Bütçe kuralı: "%30" ne demek?
+Bir ücretli kullanıcıdan, KDV ve Apple komisyonu düştükten sonra elimize geçen paraya **net gelir** diyoruz. Yapay zekâ (cümleleri anlama ve bulut ses) için bu net gelirin **en fazla %30'unu** harcıyoruz; kalan %70'i sunucu, pazarlama, ekip ve kâr içindir. Bu bir **tavandır**, fiyat değil; tipik kullanıcı bütçenin yarısından azını harcar.
+
+Örnek (Plus yıllık, ₺599,99 → ayda ₺50, kur 55):
+1. KDV çıkar: ₺50 ÷ 1,20 = ₺41,67
+2. Apple komisyonu: **A (%15):** ₺35,42 = **$0,64**; **B (%30):** ₺29,17 = **$0,53**
+3. %30'u: **A: $0,19**, **B: $0,16**. Bu, o kullanıcının aylık anlama bütçesidir. Tipik Plus kullanıcısının gerçek harcaması yaklaşık $0,06'dır.
+
+Neden yıllık planın neti? Kullanıcı hangi planda olursa olsun bütçe en düşük net gelirli planı baz aldığı için, hiçbir plan zarar etmez. Neden %30? Pazarlama, altyapı ve kâr için yeterli pay bırakırken kullanıcıya yeterli anlama hakkı verir. %20 daha güvenli ama kullanıcıya daha az hak; %40 daha cömert ama marjin ince. Oran ilk 4 hafta ölçümle gözden geçirilir (Q20).
+
+**Başvuru senaryolarına göre bütçeler** (referans kur 55):
+
+| | Normal | Plus | Pro |
+|---|---|---|---|
+| **Plan B (başvuru yok, %30): başlangıç değeri** | $0,04 (≈ 8 cümle/gün) | **$0,16** (≈ 14/gün) | **$0,32** (≈ 20/gün) |
+| Plan A (Small Business onaylı, %15) | $0,04 | $0,19 (≈ 17/gün) | $0,38 (≈ 24/gün) |
+
+Karar: **bütçeleri plan B'ye göre başlatırız**; Small Business onayı gelince ve komisyon kuralı App Store Connect'te doğrulanınca plan A değerlerine çıkarız (kullanıcılara cömertlik artışı olarak). Böylece onay gecikse bile zarar etmeyiz. Normal katmanın bütçesi gelire bağlı değildir; pazarlama bütçesinden karşılanan sabit bir tavandır.
+Kur ya da komisyon değişince bütçeler admin panelinden yeniden hesaplanır (`COST-POLICY.md` §4).
 
 ## 6. Paywall ve deneme kuralları
 - Satış baskısı yok: paywall yalnızca (a) kullanıcı bir Plus/Pro özelliğine dokunduğunda, (b) anlama bütçesi dolduğunda, (c) Plan ve fiyat sayfasında gösterilir. Açılışta paywall yok.
-- 7 gün ücretsiz: Apple tanıtım teklifi; deneme bitmeden **3 gün önce** bildirim; ücret ve iptal yolu sayfada açık.
+- **3 gün ücretsiz:** Apple tanıtım teklifi; deneme bitmeden **1 gün önce** bildirim; ücret ve iptal yolu sayfada açık. Deneme maliyeti yaklaşık Plus $0,01, Pro $0,02.
 - Yıllık plan öne çıkarılır ama aylık plan aynı sayfada eşit görünürlükte.
 - İptal ve iade yolu uygulama içinde görünür. "Satın alımları geri yükle" her zaman erişilebilir.
 - Düşürme (Pro → Plus → Normal) veri silmez; yalnızca sınırlar ve ritim seviyesi düşer, geçmiş saklı kalır (Normal'de 30 gün görünür, sonrası gizli ama silinmez).
 
+### Deneme bittikten sonra ve yükseltme hatırlatması
+- Abone olmazsa **Normal olarak devam eder**; hiçbir şey kilitlenmez, veri silinmez.
+- Deneme bitince **bir kez** sakin bir bilgi sayfası ("Normal olarak devam ediyorsun") gösterilir.
+- Sonra yalnız **uygulama içi kart**, bildirim yok: ilk 2 haftada 4 günde en fazla 1, sonra 10 günde en fazla 1, ayda en fazla 3. Kart "Bir daha gösterme (30 gün)" ve "Sonra" seçenekleri taşır.
+- Hatırlatma **asla**: Günü kapat, Kontrol ya da bildirim yanıtı sırasında; Dinleniyorum durumunda; sessiz saatte; hata ya da "anlaşılmadı" sonrasında gösterilmez.
+- Plus/Pro özelliğine dokununca ya da anlama bütçesi dolunca ilgili bilgi sayfası açılır (tasarım 4.7).
+- Düşme etkisi: 3'ten fazla sayaçlı rutin **duraklatılır** (silinmez; ilk 3 aktif kalır), geçmiş 30 gün görünür (sonrası gizli, silinmez), ritim Temel'e iner, ek takvim hesapları pasifleşir. Yeniden yükseltince hepsi geri gelir.
+
 ## 7. Doğrulanacaklar
-1. **Apple komisyonu:** Small Business Program %15; abonelikte ilk yıl için kaynaklar çelişiyor (bazıları ilk günden %15, bazıları ilk yıl %30 diyor). App Store Connect'te ve Apple sayfasında doğrulanacak.
+1. **Apple komisyonu:** Small Business Program'a **başvurulacak** (D-028). Abonelikte kaynaklar çelişiyor: bazıları programdakilere ilk günden %15, bazıları standart hesaplar için ilk yıl %30 sonra %15 diyor. App Store Connect'te doğrulanacak; o zamana dek plan B (%30) baz alınır.
 2. **Türkiye vergileri:** KDV (%20 varsayıldı) ve dijital hizmet vergisinin fiyata yansıması muhasebeyle doğrulanacak.
 3. **TL fiyat noktaları:** Apple'ın o dönemki fiyat tablosu; önerilen ₺99,99 ve ₺199,99 noktalarının mevcut olup olmadığı.
 4. **Token ve yönlendirme varsayımları:** gerçek kullanımla beta'da ölçülür (`COST-POLICY.md` §9). İlk 4 hafta veriye göre fiyat ve bütçe gözden geçirilir.
